@@ -23,6 +23,9 @@ public class Parser {
             for(int i=0;i<sqlparser.sqlstatements.size();i++){
                 Plan plan = planFactory.makePlan(sqlparser.sqlstatements.get(i));
                 System.out.println("plan ready");
+                if (plan == null){
+                    return;
+                }
                 plan.execute();
                 System.out.println("");
             }

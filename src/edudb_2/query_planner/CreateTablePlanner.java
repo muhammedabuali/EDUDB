@@ -22,6 +22,8 @@ public class CreateTablePlanner implements Planer {
         if(!Schema.chekTableExists(statement.getTableName().toString())){
             Operation operation = new CreateOperation(statement);
             operations.add(operation);
+        }else {
+            System.out.println("table already exists");
         }
         Plan plan = new Plan(operations);
         return plan;

@@ -53,4 +53,9 @@ public class Schema {
         System.out.println("new table");
         FileManager.addToFile(FileManager.getSchema(), line);
     }
+
+    public static HashMap<String, ArrayList<String>> getSchema() {
+        initSchema();
+        return schema;
+    }
 }

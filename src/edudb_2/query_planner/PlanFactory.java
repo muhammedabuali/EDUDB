@@ -6,12 +6,15 @@ import gudusoft.gsqlparser.TCustomSqlStatement;
  * Created by mohamed on 4/1/14.
  */
 public class PlanFactory implements Planer{
-    private Planer planer;
+    private Planer planner;
 
     @Override
     public Plan makePlan(TCustomSqlStatement tCustomSqlStatement) {
         setPlanar(tCustomSqlStatement);
-        Plan plan = planer.makePlan(tCustomSqlStatement);
+        if (planner == null){
+            return null;
+        }
+        Plan plan = planner.makePlan(tCustomSqlStatement);
         return plan;
     }
 
@@ -19,9 +22,9 @@ public class PlanFactory implements Planer{
        System.out.println(statement.sqlstatementtype);
        switch (statement.sqlstatementtype){
            case sstcreatetable:
-               planer = new CreateTablePlanner(); break;
+               planner = new CreateTablePlanner(); break;
            case sstselect:
-               planer = new SelectPlanner();break;
+               planner = new SelectPlanner();break;
            default:
                System.out.println("Sorry! such statement not supported");
        }

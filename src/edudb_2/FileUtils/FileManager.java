@@ -72,8 +72,8 @@ public class FileManager {
             if (!dataFile.exists()){
                 dataFile.createNewFile();
             }
-            BufferedWriter output = new BufferedWriter(new FileWriter(file));
-            output.write(text);
+            BufferedWriter output = new BufferedWriter(new FileWriter(file, true));
+            output.append(text);
             output.close();
         } catch ( IOException e ) {
             e.printStackTrace();
