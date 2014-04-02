@@ -23,9 +23,9 @@
  * based on work by Simon Levy
  * http://www.cs.wlu.edu/~levy/software/kd/
  */
-package edudb_2.data_structures.KDTree;
+package edudb_2.data_structures.kDTree;
 
-// Hyper-Point class supporting KDTree class
+// Hyper-Point class supporting kDTree class
 
 import edudb_2.data_structures.dataTypes.DataType;
 

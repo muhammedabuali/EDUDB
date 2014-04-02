@@ -1,8 +1,8 @@
-package edudb_2.operations;
+package edudb_2.operators;
 
 /**
  * Created by mohamed on 4/1/14.
  */
-public interface Operation {
+public interface Operator {
     public void execute();
 }

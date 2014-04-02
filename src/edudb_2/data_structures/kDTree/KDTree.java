@@ -23,14 +23,14 @@
  * based on work by Simon Levy
  * http://www.cs.wlu.edu/~levy/software/kd/
  */
-package edudb_2.data_structures.KDTree;
+package edudb_2.data_structures.kDTree;
 
 import edudb_2.data_structures.dataTypes.DataType;
 
 import java.util.Vector;
 
 /**
- * KDTree is a class supporting KD-tree insertion, deletion, equality search,
+ * kDTree is a class supporting KD-tree insertion, deletion, equality search,
  * range search, and nearest neighbor(s) using double-precision floating-point
  * keys. Splitting dimension is chosen naively, by depth modulo K. Semantics are
  * as follows:
@@ -98,7 +98,7 @@ public class KDTree {
 	public void insert(DataType[] key, Object value) {
 
 		if (key.length != m_K) {
-			throw new RuntimeException("KDTree: wrong key size!");
+			throw new RuntimeException("kDTree: wrong key size!");
 		}
 
 		else
@@ -122,7 +122,7 @@ public class KDTree {
 	public Object search(DataType[] key) {
 
 		if (key.length != m_K) {
-			throw new RuntimeException("KDTree: wrong key size!");
+			throw new RuntimeException("kDTree: wrong key size!");
 		}
 
 		KDNode kd = KDNode.srch(new HPoint(key), m_root, m_K);
@@ -146,14 +146,14 @@ public class KDTree {
 	public void delete(DataType[] key) {
 
 		if (key.length != m_K) {
-			throw new RuntimeException("KDTree: wrong key size!");
+			throw new RuntimeException("kDTree: wrong key size!");
 		}
 
 		else {
 
 			KDNode t = KDNode.srch(new HPoint(key), m_root, m_K);
 			if (t == null) {
-				throw new RuntimeException("KDTree: key missing!");
+				throw new RuntimeException("kDTree: key missing!");
 			} else {
 				t.deleted = true;
 			}
@@ -217,7 +217,7 @@ public class KDTree {
 		}
 
 		if (key.length != m_K) {
-			throw new RuntimeException("KDTree: wrong key size!");
+			throw new RuntimeException("kDTree: wrong key size!");
 		}
 
 		Object[] nbrs = new Object[n];
@@ -255,11 +255,11 @@ public class KDTree {
 	public Object[] range(DataType[] lowk, DataType[] uppk) {
 
 		if (lowk.length != uppk.length) {
-			throw new RuntimeException("KDTree: wrong key size!");
+			throw new RuntimeException("kDTree: wrong key size!");
 		}
 
 		else if (lowk.length != m_K) {
-			throw new RuntimeException("KDTree: wrong key size!");
+			throw new RuntimeException("kDTree: wrong key size!");
 		}
 
 		else {

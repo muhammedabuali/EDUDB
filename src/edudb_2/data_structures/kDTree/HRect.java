@@ -23,9 +23,9 @@
  * based on work by Simon Levy
  * http://www.cs.wlu.edu/~levy/software/kd/
  */
-package edudb_2.data_structures.KDTree;
+package edudb_2.data_structures.kDTree;
 
-// Hyper-Rectangle class supporting KDTree class
+// Hyper-Rectangle class supporting kDTree class
 
 
 import edudb_2.data_structures.dataTypes.DB_Type;
@@ -72,7 +72,7 @@ class HRect {
 	return p;
     }
 
-    // used in initial conditions of KDTree.nearest()
+    // used in initial conditions of kDTree.nearest()
     protected static HRect infiniteHRect(int d) {
 	
 	HPoint vmin = new HPoint(d);

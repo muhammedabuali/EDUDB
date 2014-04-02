@@ -23,7 +23,7 @@
  * based on work by Simon Levy
  * http://www.cs.wlu.edu/~levy/software/kd/
  */
-package edudb_2.data_structures.KDTree;
+package edudb_2.data_structures.kDTree;
 
 import java.util.Vector;
 
@@ -31,7 +31,7 @@ import java.util.Vector;
 
 class KDNode {
 
-    // these are seen by KDTree
+    // these are seen by kDTree
     protected HPoint k;
 
     Object v;

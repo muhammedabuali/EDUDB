@@ -23,7 +23,7 @@
  * based on work by Simon Levy
  * http://www.cs.wlu.edu/~levy/software/kd/
  */
-package edudb_2.data_structures.KDTree;
+package edudb_2.data_structures.kDTree;
 
 // Bjoern Heckel's solution to the KD-Tree n-nearest-neighbor problem
 

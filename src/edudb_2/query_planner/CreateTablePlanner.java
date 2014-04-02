@@ -1,10 +1,9 @@
 package edudb_2.query_planner;
 
-import edudb_2.operations.CreateOperation;
-import edudb_2.operations.Operation;
+import edudb_2.operators.CreateOperator;
+import edudb_2.operators.Operator;
 import edudb_2.statistics.Schema;
 import gudusoft.gsqlparser.TCustomSqlStatement;
-import gudusoft.gsqlparser.nodes.TColumnDefinitionList;
 import gudusoft.gsqlparser.stmt.TCreateTableSqlStatement;
 
 import java.util.ArrayList;
@@ -18,14 +17,14 @@ public class CreateTablePlanner implements Planer {
     @Override
     public Plan makePlan(TCustomSqlStatement tCustomSqlStatement) {
         TCreateTableSqlStatement statement = (TCreateTableSqlStatement) tCustomSqlStatement;
-        ArrayList<Operation> operations= new ArrayList<Operation>();
+        ArrayList<Operator> operators = new ArrayList<Operator>();
         if(!Schema.chekTableExists(statement.getTableName().toString())){
-            Operation operation = new CreateOperation(statement);
-            operations.add(operation);
+            Operator operator = new CreateOperator(statement);
+            operators.add(operator);
         }else {
             System.out.println("table already exists");
         }
-        Plan plan = new Plan(operations);
+        Plan plan = new Plan(operators);
         return plan;
     }
 

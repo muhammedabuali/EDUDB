@@ -1,8 +1,7 @@
 package edudb_2.query_planner;
 
 import adipe.translate.sql.Queries;
-import edudb_2.operations.CreateOperation;
-import edudb_2.operations.Operation;
+import edudb_2.operators.Operator;
 import edudb_2.query_planner.relational_algebra.Translator;
 import edudb_2.statistics.Schema;
 import gudusoft.gsqlparser.TCustomSqlStatement;
@@ -20,8 +19,8 @@ public class SelectPlanner implements Planer {
     @Override
     public Plan makePlan(TCustomSqlStatement tCustomSqlStatement) {
         TSelectSqlStatement statement = (TSelectSqlStatement) tCustomSqlStatement;
-        ArrayList<Operation> operations = new ArrayList<Operation>();
-        // TODO  add a tree of operations
+        ArrayList<Operator> operators = new ArrayList<Operator>();
+        // TODO  add a tree of operators
         HashMap<String, ArrayList<String>> schema = Schema.getSchema();
         try{
             Term relationalAlgebra = Queries.getRaOf(schema, statement.toString());
@@ -31,7 +30,7 @@ public class SelectPlanner implements Planer {
             e.printStackTrace();
         }
 
-        Plan plan = new Plan(operations);
+        Plan plan = new Plan(operators);
         return plan;
     }
 }
