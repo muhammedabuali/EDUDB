@@ -6,7 +6,7 @@ package edudb_2.query_planner.relational_algebra;
 public class Translator {
 
     public static Object translate(String algebra){
-
+        //TODO transelate algebra to plan
         return null;
     }
 }

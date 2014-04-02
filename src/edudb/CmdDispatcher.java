@@ -2,7 +2,6 @@ package edudb;
 
 import adipe.translate.TranslationException;
 import adipe.translate.sql.Queries;
-import edudb_2.RA;
 import gudusoft.gsqlparser.EDbVendor;
 import gudusoft.gsqlparser.TGSqlParser;
 import ra.Term;

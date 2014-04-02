@@ -1,6 +1,5 @@
 package edudb;
 
-import edudb_2.RA;
 import gudusoft.gsqlparser.TBaseType;
 import gudusoft.gsqlparser.TCustomSqlStatement;
 import gudusoft.gsqlparser.nodes.TAlterTableOption;

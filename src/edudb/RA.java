@@ -1,4 +1,4 @@
-package edudb_2;
+package edudb;
 
 /**
  * Created by mohamed on 3/26/14.
