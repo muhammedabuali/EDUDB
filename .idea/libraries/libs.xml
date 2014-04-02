@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/jline-2.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/gsp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/jdbm-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

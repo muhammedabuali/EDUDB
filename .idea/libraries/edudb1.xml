@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="edudb1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/bin/edudb/jline-2.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/edudb/gsp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/edudb/jdbm-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,2 @@
+SELECT *
+FROM   bolbol WHERE employee_id = 97 OR first_name = 'Amr Magdy'; 
