@@ -68,10 +68,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="InsertCmd.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/edudb/InsertCmd.java">
+      <file leaf-file-name="Schema.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/edudb_2/statistics/Schema.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="50" selection-start="1479" selection-end="1479" vertical-scroll-proportion="1.0253165" vertical-offset="0" max-vertical-offset="8100">
+            <state line="11" column="21" selection-start="246" selection-end="246" vertical-scroll-proportion="-0.27244583" vertical-offset="288" max-vertical-offset="1008">
               <folding />
             </state>
           </provider>
@@ -173,6 +173,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -357,7 +358,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1048,16 +1048,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edudb_2/statistics/Schema.java">
+    <entry file="file://$PROJECT_DIR$/src/edudb/InsertCmd.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="44" selection-start="1097" selection-end="1097" vertical-scroll-proportion="0.30044842" vertical-offset="465" max-vertical-offset="1134">
+        <state line="62" column="26" selection-start="1567" selection-end="1567" vertical-scroll-proportion="0.8593997" vertical-offset="96" max-vertical-offset="7200">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edudb/InsertCmd.java">
+    <entry file="file://$PROJECT_DIR$/src/edudb_2/statistics/Schema.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="50" selection-start="1479" selection-end="1479" vertical-scroll-proportion="1.0253165" vertical-offset="0" max-vertical-offset="8100">
+        <state line="11" column="21" selection-start="246" selection-end="246" vertical-scroll-proportion="-0.27244583" vertical-offset="288" max-vertical-offset="1008">
           <folding />
         </state>
       </provider>
