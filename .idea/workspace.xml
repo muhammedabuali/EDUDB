@@ -71,7 +71,7 @@
       <file leaf-file-name="Schema.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edudb_2/statistics/Schema.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="21" selection-start="246" selection-end="246" vertical-scroll-proportion="-0.27244583" vertical-offset="288" max-vertical-offset="1008">
+            <state line="49" column="21" selection-start="1302" selection-end="1302" vertical-scroll-proportion="0.55417955" vertical-offset="362" max-vertical-offset="1008">
               <folding />
             </state>
           </provider>
@@ -1057,7 +1057,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edudb_2/statistics/Schema.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="21" selection-start="246" selection-end="246" vertical-scroll-proportion="-0.27244583" vertical-offset="288" max-vertical-offset="1008">
+        <state line="49" column="21" selection-start="1302" selection-end="1302" vertical-scroll-proportion="0.55417955" vertical-offset="362" max-vertical-offset="1008">
           <folding />
         </state>
       </provider>
