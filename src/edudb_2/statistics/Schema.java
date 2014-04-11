@@ -1,6 +1,5 @@
 package edudb_2.statistics;
 
-import com.sun.swing.internal.plaf.synth.resources.synth_sv;
 import edudb_2.FileUtils.FileManager;
 
 import java.util.ArrayList;
@@ -31,12 +30,17 @@ public class Schema {
     private static void setSchema(){
         ArrayList<String> lines = FileManager.readFile(FileManager.getSchema());
         for(String line : lines){
-            getTable(line);
+            putTable(line);
         }
     }
 
+    // get column list of table
+    public static ArrayList<String> getColumns(String tableName){
+        return schema.get(tableName);
+    }
+
     // add table to schema object
-    private static void getTable(String line) {
+    private static void putTable(String line) {
         String[] tokens = line.split(" ");
         String TableName = tokens[0];
         ArrayList<String> columns = new ArrayList<String>();
@@ -50,7 +54,7 @@ public class Schema {
     // add table to schema file
     public static void AddTable(String line){
         initSchema();
-        getTable(line);
+        putTable(line);
         line += System.lineSeparator();
         System.out.println("new table");
         FileManager.addToFile(FileManager.getSchema(), line);

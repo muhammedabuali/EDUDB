@@ -108,4 +108,17 @@ public class FileManager {
     }
 
 
+    public static void writeToFile(String data, String file) {
+        try {
+            File dataFile = new  File(file);
+            if (!dataFile.exists()){
+                dataFile.createNewFile();
+            }
+            BufferedWriter output = new BufferedWriter(new FileWriter(file, true));
+            output.write(data);
+            output.close();
+        } catch ( IOException e ) {
+            e.printStackTrace();
+        }
+    }
 }

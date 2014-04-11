@@ -65,4 +65,7 @@ public class BTree<TKey extends Comparable<TKey>, TValue> {
 		return (BTreeLeafNode<TKey, TValue>)node;
 	}
 
+    public String commit() {
+        return this.root.commit();
+    }
 }

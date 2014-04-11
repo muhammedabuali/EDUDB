@@ -213,4 +213,13 @@ class BTreeInnerNode<TKey extends Comparable<TKey>> extends BTreeNode<TKey> {
 		
 		return upKey;
 	}
+
+    @Override
+    public String commit() {
+        String result = null;
+        for(int i=0; i< children.length; i++){
+            result += ( (BTreeNode<TKey>)children[0] ).commit() + "\r\n";
+        }
+        return result;
+    }
 }

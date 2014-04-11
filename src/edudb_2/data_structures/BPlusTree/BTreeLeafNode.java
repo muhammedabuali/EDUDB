@@ -148,8 +148,17 @@ class BTreeLeafNode<TKey extends Comparable<TKey>, TValue> extends BTreeNode<TKe
 		BTreeLeafNode<TKey, TValue> siblingNode = (BTreeLeafNode<TKey, TValue>)sibling;
 		
 		this.insertKey(siblingNode.getKey(borrowIndex), siblingNode.getValue(borrowIndex));
-		siblingNode.deleteAt(borrowIndex);
+		siblingNode.deleteAt(borrowIndex);i
 		
 		return borrowIndex == 0 ? sibling.getKey(0) : this.getKey(0);
 	}
+
+    @Override
+    public String commit() {
+        String result = null;
+        for(int i =0; i< values.length; i++){
+            result += values[i].toString()+"\r\n";
+        }
+        return result;
+    }
 }

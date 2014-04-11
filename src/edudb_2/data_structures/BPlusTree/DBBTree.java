@@ -3,17 +3,21 @@ package edudb_2.data_structures.BPlusTree;
 import edudb_2.FileUtils.FileManager;
 import edudb_2.data_structures.DBStructure.DBIndex;
 import edudb_2.data_structures.DBStructure.DBRecord;
+import edudb_2.statistics.Schema;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by mohamed on 4/11/14.
  */
 public class DBBTree extends BTree<Integer, DBRecord> implements DBIndex{
     private String tableName;
+    private ArrayList<String> columnNames;
 
     public DBBTree(String tableName){
         this.tableName = tableName;
+        columnNames = Schema.getColumns(tableName);
     }
 
     public void insert(int key, DBRecord value) {
@@ -35,5 +39,19 @@ public class DBBTree extends BTree<Integer, DBRecord> implements DBIndex{
                 this.insert(key, record);
             }
         }
+    }
+
+    @Override
+    public ArrayList<String> getColumns() {
+        ArrayList<String> columns = new ArrayList<>();
+        columns.add(columnNames.get(0));
+        //TODO primary key doesn't have to be the first
+        return columns;
+    }
+
+    public void write() {
+        String table = FileManager.getTable(tableName);
+        String data = commit();
+        FileManager.writeToFile(data, table);
     }
 }
