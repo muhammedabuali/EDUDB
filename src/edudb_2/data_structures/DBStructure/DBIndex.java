@@ -8,4 +8,5 @@ import java.util.ArrayList;
 public interface DBIndex {
     public ArrayList<String> getColumns();
     public void write();
+    public void insert(int key, DBRecord value);
 }

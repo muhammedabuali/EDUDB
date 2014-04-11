@@ -39,6 +39,14 @@ public static class DB_Int implements DataType {
         public int hashCode(){
             return number;
         }
+
+        public int getNumber(){
+            return number;
+        }
+
+        public String toString(){
+            return number+"";
+        }
 }
 
     public static class DB_Char implements DataType{

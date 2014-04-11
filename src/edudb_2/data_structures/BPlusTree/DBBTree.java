@@ -21,11 +21,11 @@ public class DBBTree extends BTree<Integer, DBRecord> implements DBIndex{
     }
 
     public void insert(int key, DBRecord value) {
-        this.insert(key, value);
+        super.insert(key, value);
     }
 
     public void remove(int key) {
-        this.delete(key);
+        super.delete(key);
     }
 
     public void readTable(){
@@ -33,11 +33,9 @@ public class DBBTree extends BTree<Integer, DBRecord> implements DBIndex{
         ArrayList<String> lines = FileManager.readFile(table);
         for (int i=0; i< lines.size(); i++){
             String[] line = lines.get(i).split(",");
-            if(line.length > 1){
-                Integer key = Integer.parseInt(line[0]);
-                DBRecord record = new DBRecord(line, tableName);
-                this.insert(key, record);
-            }
+            Integer key = Integer.parseInt(line[0]);
+            DBRecord record = new DBRecord(line, tableName);
+            this.insert(key, record);
         }
     }
 

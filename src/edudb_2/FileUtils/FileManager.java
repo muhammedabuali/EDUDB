@@ -107,7 +107,6 @@ public class FileManager {
         return null;
     }
 
-
     public static void writeToFile(String data, String file) {
         try {
             File dataFile = new  File(file);

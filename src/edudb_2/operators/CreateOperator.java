@@ -16,7 +16,7 @@ public class CreateOperator implements Operator {
     }
     @Override
     public void execute() {
-        System.out.println("executing");
+        System.out.println("executing create operation");
         // add table to schema
         String line = statement.getTableName().toString();
         line += " "+ statement.getColumnList().toString();

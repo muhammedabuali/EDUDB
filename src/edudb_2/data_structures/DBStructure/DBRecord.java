@@ -3,6 +3,7 @@ package edudb_2.data_structures.DBStructure;
 import edudb_2.data_structures.dataTypes.DB_Type;
 import edudb_2.data_structures.dataTypes.DataType;
 import edudb_2.statistics.Schema;
+import gudusoft.gsqlparser.nodes.TResultColumnList;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,13 +16,34 @@ public class DBRecord {
     private ArrayList<DataType> values;
 
     public DBRecord(String[] line, String tableName) {
-        HashMap<String,ArrayList<String>> schema = Schema.getSchema();
-        columns = schema.get(tableName);
+        columns = Schema.getColumns(tableName);
         // TODO remove redundant schema calls
+        values = new ArrayList<>();
         for (int i=0; i< line.length; i++){
             // TODO add data types support
             values.add(new DB_Type.DB_Int(Integer.parseInt(line[i])));
         }
     }
 
+    public DBRecord(TResultColumnList RValues, String tableName){
+        columns = Schema.getColumns(tableName);
+        values = new ArrayList<>();
+        for(int i=0; i< RValues.size(); i++){
+            values.add( new DB_Type.DB_Int( Integer.parseInt( RValues.getResultColumn(i).toString() ) ) );
+        }
+    }
+
+    public DataType getValue(int i){
+        return values.get(i);
+    }
+
+    @Override
+    public String toString(){
+        String result = values.get(0).toString();
+        for(int i=1; i< values.size(); i++){
+            result += ',';
+            result += values.get(i).toString();
+        }
+        return  result;
+    }
 }

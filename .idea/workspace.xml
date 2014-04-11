@@ -67,93 +67,151 @@
     <favorites_list name="edudb" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="InsertPlanner.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/edudb_2/query_planner/InsertPlanner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="13" selection-start="336" selection-end="336" vertical-scroll-proportion="0.30769232" vertical-offset="16" max-vertical-offset="432">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DBBTree.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/BPlusTree/DBBTree.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="5" selection-start="1637" selection-end="1637" vertical-scroll-proportion="0.0" vertical-offset="718" max-vertical-offset="1134">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BTree.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/BPlusTree/BTree.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="17" selection-start="1867" selection-end="1867" vertical-scroll-proportion="0.0" vertical-offset="970" max-vertical-offset="1386">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BTreeNode.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/BPlusTree/BTreeNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="157" column="32" selection-start="4185" selection-end="4185" vertical-scroll-proportion="0.0" vertical-offset="2369" max-vertical-offset="2772">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BTreeLeafNode.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/BPlusTree/BTreeLeafNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="150" column="43" selection-start="4048" selection-end="4048" vertical-scroll-proportion="0.0" vertical-offset="2554" max-vertical-offset="3024">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BTreeInnerNode.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/BPlusTree/BTreeInnerNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="220" column="9" selection-start="6256" selection-end="6256" vertical-scroll-proportion="0.0" vertical-offset="3186" max-vertical-offset="4104">
-              <folding>
-                <element signature="e#320#350#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edudb_2/FileUtils/FileManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="117" column="22" selection-start="3381" selection-end="3381" vertical-scroll-proportion="0.0" vertical-offset="1816" max-vertical-offset="2322">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Schema.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edudb_2/statistics/Schema.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="28" selection-start="1411" selection-end="1411" vertical-scroll-proportion="0.0" vertical-offset="614" max-vertical-offset="1260">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DBIndex.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/DBStructure/DBIndex.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="21" selection-start="208" selection-end="208" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="InsertPlanner.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/edudb_2/query_planner/InsertPlanner.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="21" column="40" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+                  <folding>
+                    <element signature="imports" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="InsertOperator.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/edudb_2/operators/InsertOperator.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="39" column="0" selection-start="1500" selection-end="1500" vertical-scroll-proportion="0.0" vertical-offset="361" max-vertical-offset="720">
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Plan.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/edudb_2/query_planner/Plan.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="19" column="0" selection-start="375" selection-end="375" vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="405">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DBRecord.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/DBStructure/DBRecord.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="46" column="16" selection-start="1429" selection-end="1429" vertical-scroll-proportion="0.0" vertical-offset="436" max-vertical-offset="825">
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DataManager.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/DBStructure/DataManager.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="27" column="29" selection-start="776" selection-end="776" vertical-scroll-proportion="0.0" vertical-offset="318" max-vertical-offset="690">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DBTable.java" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/DBStructure/DBTable.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="14" column="37" selection-start="325" selection-end="325" vertical-scroll-proportion="0.5625" vertical-offset="0" max-vertical-offset="510">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="schema.txt" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/database/schema.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="DBTable.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/DBStructure/DBTable.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="11" column="29" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DataType.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/dataTypes/DataType.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="6" column="22" selection-start="179" selection-end="179" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DB_Type.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/dataTypes/DB_Type.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="47" column="29" selection-start="1110" selection-end="1110" vertical-scroll-proportion="0.0" vertical-offset="551" max-vertical-offset="1755">
+                  <folding>
+                    <element signature="e#1007#1008#0" expanded="true" />
+                    <element signature="e#1044#1045#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DBIndex.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/DBStructure/DBIndex.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="10" column="48" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DBBTree.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/BPlusTree/DBBTree.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="52" column="31" selection-start="1560" selection-end="1560" vertical-scroll-proportion="0.0" vertical-offset="453" max-vertical-offset="825">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FileManager.java" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/edudb_2/FileUtils/FileManager.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="115" column="29" selection-start="3303" selection-end="3303" vertical-scroll-proportion="0.53125" vertical-offset="1540" max-vertical-offset="1920">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="BTree.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/BPlusTree/BTree.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="47" column="12" selection-start="1314" selection-end="1314" vertical-scroll-proportion="0.0" vertical-offset="518" max-vertical-offset="1155">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -163,10 +221,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/edudb_2/processor/Planar.java" />
-        <option value="$PROJECT_DIR$/src/edudb_2/processor/Planer.java" />
-        <option value="$PROJECT_DIR$/src/edudb_2/processor/CreatePlaner.java" />
-        <option value="$PROJECT_DIR$/src/edudb_2/processor/Parser.java" />
         <option value="$PROJECT_DIR$/src/edudb_2/processor/PlanFactory.java" />
         <option value="$PROJECT_DIR$/src/edudb_2/processor/CreateTablePlaner.java" />
         <option value="$PROJECT_DIR$/src/edudb_2/operations/Operation.java" />
@@ -197,23 +251,27 @@
         <option value="$PROJECT_DIR$/src/edudb_2/query_planner/PlanFactory.java" />
         <option value="$PROJECT_DIR$/src/edudb_2/data_structures/kDTree/KDTreeTest.java" />
         <option value="$PROJECT_DIR$/src/edudb_2/data_structures/linearHashTable/LinearHashTableTest.java" />
-        <option value="$PROJECT_DIR$/src/edudb_2/query_planner/InsertPlanner.java" />
-        <option value="$PROJECT_DIR$/src/edudb_2/data_structures/dataTypes/DataType.java" />
-        <option value="$PROJECT_DIR$/src/edudb_2/data_structures/dataTypes/DB_Type.java" />
         <option value="$PROJECT_DIR$/src/edudb_2/data_structures/DBRecord/DBRecord.java" />
         <option value="$PROJECT_DIR$/src/edudb_2/user_interface/Main.java" />
         <option value="$PROJECT_DIR$/src/edudb_2/data_structures/DBRecord/DataManager.java" />
         <option value="$PROJECT_DIR$/src/edudb_2/data_structures/DBRecord/DBTable.java" />
         <option value="$PROJECT_DIR$/src/edudb_2/data_structures/DBRecord/DBIndex.java" />
-        <option value="$PROJECT_DIR$/src/edudb_2/data_structures/DBStructure/DataManager.java" />
         <option value="$PROJECT_DIR$/src/edudb_2/statistics/Schema.java" />
         <option value="$PROJECT_DIR$/src/edudb_2/data_structures/BPlusTree/BTreeNode.java" />
         <option value="$PROJECT_DIR$/src/edudb_2/data_structures/BPlusTree/BTreeInnerNode.java" />
         <option value="$PROJECT_DIR$/src/edudb_2/data_structures/BPlusTree/BTree.java" />
-        <option value="$PROJECT_DIR$/src/edudb_2/FileUtils/FileManager.java" />
-        <option value="$PROJECT_DIR$/src/edudb_2/data_structures/BPlusTree/DBBTree.java" />
+        <option value="$PROJECT_DIR$/src/edudb_2/operators/CreateOperator.java" />
         <option value="$PROJECT_DIR$/src/edudb_2/data_structures/DBStructure/DBIndex.java" />
+        <option value="$PROJECT_DIR$/src/edudb_2/query_planner/InsertPlanner.java" />
+        <option value="$PROJECT_DIR$/src/edudb_2/data_structures/DBStructure/DataManager.java" />
+        <option value="$PROJECT_DIR$/src/edudb_2/data_structures/DBStructure/DBTable.java" />
+        <option value="$PROJECT_DIR$/src/edudb_2/data_structures/BPlusTree/DBBTree.java" />
+        <option value="$PROJECT_DIR$/src/edudb_2/operators/InsertOperator.java" />
+        <option value="$PROJECT_DIR$/src/edudb_2/data_structures/dataTypes/DataType.java" />
+        <option value="$PROJECT_DIR$/src/edudb_2/data_structures/dataTypes/DB_Type.java" />
+        <option value="$PROJECT_DIR$/src/edudb_2/data_structures/DBStructure/DBRecord.java" />
         <option value="$PROJECT_DIR$/src/edudb_2/data_structures/BPlusTree/BTreeLeafNode.java" />
+        <option value="$PROJECT_DIR$/src/edudb_2/FileUtils/FileManager.java" />
       </list>
     </option>
   </component>
@@ -248,73 +306,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="edudb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="edudb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="edudb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="edudb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="edudb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="edudb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="edudb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="edudb_2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="edudb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="edudb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -413,48 +404,75 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
             </PATH_ELEMENT>
           </PATH>
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="edudb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="edudb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="edudb_2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data_structures" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="edudb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="edudb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="edudb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="edudb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="edudb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="edudb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="edudb_2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="edudb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="data_structures" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+              <option name="myItemId" value="edudb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="BPlusTree" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -465,7 +483,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="FullScreen" value="false" />
-    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.General" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -489,7 +507,7 @@
       <recent name="edudb_2.processor" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EDUDB">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="EDUDB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edudb.EDUDB" />
       <option name="VM_PARAMETERS" />
@@ -616,6 +634,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -641,19 +672,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -718,9 +736,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.EDUDB" />
-        <item index="1" class="java.lang.String" itemvalue="Application.BTreeTest" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="1" class="java.lang.String" itemvalue="Application.EDUDB" />
+        <item index="2" class="java.lang.String" itemvalue="Application.BTreeTest" />
         <item index="3" class="java.lang.String" itemvalue="Application.RA" />
         <item index="4" class="java.lang.String" itemvalue="Application.DBFile" />
       </list>
@@ -784,51 +802,26 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932332" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32998565" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904148" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39885223" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.397711" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32781956" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32711622" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32711622" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27732342" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47368422" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27732342" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.472103" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32781956" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932332" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39885223" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32781956" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32781956" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27732342" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47368422" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
+    </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -851,21 +844,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/edudb/CreateIndexCmd.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="66" selection-start="2206" selection-end="2206" vertical-scroll-proportion="0.902439" vertical-offset="812" max-vertical-offset="3078" />
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/j2sdk1.7-oracle/src.zip!/java/io/FileInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="305" column="37" selection-start="11415" selection-end="11415" vertical-scroll-proportion="0.32884902" vertical-offset="4820" max-vertical-offset="7614" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edudb/DeleteCmd.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="30" selection-start="774" selection-end="774" vertical-scroll-proportion="0.68292683" vertical-offset="218" max-vertical-offset="7524" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edudb/DropTableCmd.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="35" selection-start="815" selection-end="815" vertical-scroll-proportion="0.8340807" vertical-offset="0" max-vertical-offset="2538" />
@@ -876,15 +854,6 @@
         <state line="54" column="12" selection-start="1401" selection-end="1401" vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="1638" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edudb_2/query_planner/Plan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="5" selection-start="433" selection-end="433" vertical-scroll-proportion="0.8363636" vertical-offset="10" max-vertical-offset="522">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edudb/AnalyzeSQLStmt.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="444" column="14" selection-start="17110" selection-end="17110" vertical-scroll-proportion="0.63414633" vertical-offset="7126" max-vertical-offset="12978" />
@@ -892,9 +861,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edudb_2/query_planner/Planer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="16" selection-start="164" selection-end="164" vertical-scroll-proportion="0.22291021" vertical-offset="0" max-vertical-offset="646">
-          <folding />
-        </state>
+        <state line="8" column="16" selection-start="164" selection-end="164" vertical-scroll-proportion="0.22291021" vertical-offset="0" max-vertical-offset="646" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edudb/RA.java">
@@ -971,9 +938,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edudb_2/query_planner/relational_algebra/Translator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="46" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324">
-          <folding />
-        </state>
+        <state line="7" column="46" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edudb_2/iterators/SequentialIterator.java">
@@ -985,18 +950,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edudb_2/operators/Operator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="27" selection-start="96" selection-end="96" vertical-scroll-proportion="0.13452914" vertical-offset="0" max-vertical-offset="669">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edudb_2/operators/ProjectOperator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="5" selection-start="318" selection-end="318" vertical-scroll-proportion="0.3497758" vertical-offset="0" max-vertical-offset="669">
-          <folding />
-        </state>
+        <state line="13" column="5" selection-start="318" selection-end="318" vertical-scroll-proportion="0.3497758" vertical-offset="0" max-vertical-offset="669" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edudb/InsertCmd.java">
@@ -1022,9 +978,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edudb_2/query_planner/CreateTablePlanner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="92" selection-start="463" selection-end="547" vertical-scroll-proportion="0.3375" vertical-offset="0" max-vertical-offset="640">
-          <folding />
-        </state>
+        <state line="18" column="92" selection-start="463" selection-end="547" vertical-scroll-proportion="0.3375" vertical-offset="0" max-vertical-offset="640" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/linearHashTable/LinearHashTableTest.java">
@@ -1043,29 +997,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/dataTypes/DataType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="26" selection-start="154" selection-end="154" vertical-scroll-proportion="0.13452914" vertical-offset="0" max-vertical-offset="669">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/dataTypes/DB_Type.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="9" selection-start="254" selection-end="254" vertical-scroll-proportion="0.32286996" vertical-offset="0" max-vertical-offset="1962">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/DBStructure/DBRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="9" selection-start="798" selection-end="798" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/BPlusTree/BTreeTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="102" column="50" selection-start="1688" selection-end="1719" vertical-scroll-proportion="0.6233184" vertical-offset="1419" max-vertical-offset="2088">
@@ -1073,85 +1004,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edudb_2/user_interface/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="39" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="1368">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edudb/EDUDB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="67" selection-start="826" selection-end="826" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1188">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edudb_2/user_interface/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="2" selection-start="1577" selection-end="1577" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="1026">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/DBStructure/DBTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="26" selection-start="196" selection-end="196" vertical-scroll-proportion="0.24215247" vertical-offset="0" max-vertical-offset="669">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/DBStructure/DataManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="5" selection-start="122" selection-end="122" vertical-scroll-proportion="0.18834081" vertical-offset="0" max-vertical-offset="669">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edudb_2/operators/CreateOperator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="39" selection-start="676" selection-end="676" vertical-scroll-proportion="0.4375" vertical-offset="178" max-vertical-offset="594">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edudb_2/statistics/Schema.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="28" selection-start="1411" selection-end="1411" vertical-scroll-proportion="0.0" vertical-offset="614" max-vertical-offset="1260">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/BPlusTree/BTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="17" selection-start="1867" selection-end="1867" vertical-scroll-proportion="0.0" vertical-offset="970" max-vertical-offset="1386">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edudb_2/FileUtils/FileManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="22" selection-start="3381" selection-end="3381" vertical-scroll-proportion="0.0" vertical-offset="1816" max-vertical-offset="2322">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/DBStructure/DBIndex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="21" selection-start="208" selection-end="208" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/BPlusTree/DBBTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="5" selection-start="1637" selection-end="1637" vertical-scroll-proportion="0.0" vertical-offset="718" max-vertical-offset="1134">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="28" column="67" selection-start="826" selection-end="826" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1188" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/BPlusTree/BTreeNode.java">
@@ -1170,16 +1025,151 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/BPlusTree/BTreeLeafNode.java">
+    <entry file="file://$PROJECT_DIR$/src/edudb_2/operators/CreateOperator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="150" column="43" selection-start="4048" selection-end="4048" vertical-scroll-proportion="0.0" vertical-offset="2554" max-vertical-offset="3024">
+        <state line="17" column="12" selection-start="431" selection-end="431" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edudb_2/statistics/Schema.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="0" selection-start="552" selection-end="552" vertical-scroll-proportion="0.0" vertical-offset="284" max-vertical-offset="1260">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/schema.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="339">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edudb_2/operators/Operator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="27" selection-end="27" vertical-scroll-proportion="0.023076924" vertical-offset="0" max-vertical-offset="650">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edudb_2/query_planner/InsertPlanner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="336" selection-end="336" vertical-scroll-proportion="0.30769232" vertical-offset="16" max-vertical-offset="432">
+        <state line="21" column="40" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edudb_2/user_interface/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="23" selection-start="1598" selection-end="1598" vertical-scroll-proportion="0.5121951" vertical-offset="240" max-vertical-offset="855">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edudb_2/user_interface/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="0" selection-start="1093" selection-end="1093" vertical-scroll-proportion="0.18211383" vertical-offset="338" max-vertical-offset="1140">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/DBStructure/DataManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="29" selection-start="776" selection-end="776" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="864">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/DBStructure/DBIndex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="48" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/dataTypes/DataType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="22" selection-start="179" selection-end="179" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/DBStructure/DBRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="16" selection-start="1429" selection-end="1429" vertical-scroll-proportion="0.0" vertical-offset="436" max-vertical-offset="825">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/dataTypes/DB_Type.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="29" selection-start="1110" selection-end="1110" vertical-scroll-proportion="0.0" vertical-offset="551" max-vertical-offset="1755">
+          <folding>
+            <element signature="e#1007#1008#0" expanded="true" />
+            <element signature="e#1044#1045#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edudb_2/operators/InsertOperator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="0" selection-start="1500" selection-end="1500" vertical-scroll-proportion="0.0" vertical-offset="361" max-vertical-offset="720">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edudb_2/query_planner/Plan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="375" selection-end="375" vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="405">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/BPlusTree/BTreeLeafNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="164" column="22" selection-start="4391" selection-end="4391" vertical-scroll-proportion="0.90228015" vertical-offset="2153" max-vertical-offset="2565">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/BPlusTree/DBBTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="31" selection-start="1560" selection-end="1560" vertical-scroll-proportion="0.0" vertical-offset="453" max-vertical-offset="825">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/hello/hello.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="372">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/BPlusTree/BTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="12" selection-start="1314" selection-end="1314" vertical-scroll-proportion="0.0" vertical-offset="518" max-vertical-offset="1155">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edudb_2/data_structures/DBStructure/DBTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="29" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edudb_2/FileUtils/FileManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="29" selection-start="3303" selection-end="3303" vertical-scroll-proportion="0.53125" vertical-offset="1540" max-vertical-offset="1920">
           <folding />
         </state>
       </provider>
