@@ -25,6 +25,8 @@ public class PlanFactory implements Planer{
                planner = new CreateTablePlanner(); break;
            case sstselect:
                planner = new SelectPlanner();break;
+           case sstinsert:
+               planner= new InsertPlanner();break;
            default:
                System.out.println("Sorry! such statement not supported");
        }

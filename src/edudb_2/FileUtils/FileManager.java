@@ -66,6 +66,7 @@ public class FileManager {
             return S1+"/"+S2;
         }
     }
+
     public static void addToFile(String file, String text) {
         try {
             File dataFile = new  File(file);
@@ -93,4 +94,18 @@ public class FileManager {
             e.printStackTrace();
         }
     }
+
+    public static String getTable(String tableName){
+        String table;
+        try{
+            String dir = appendToPath(dataDirectory,tableName);
+            table = appendToPath(dir,(tableName+".txt"));
+            return table;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
 }

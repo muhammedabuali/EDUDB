@@ -1,7 +1,7 @@
-package dataStructures.KDTree;
+package edudb_2.data_structures.kDTree;
 
-import dataStructures.dataTypes.DB_Type;
-import dataStructures.dataTypes.DataType;
+import edudb_2.data_structures.dataTypes.DB_Type;
+import edudb_2.data_structures.dataTypes.DataType;
 import org.junit.Test;
 
 /**

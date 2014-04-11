@@ -18,7 +18,7 @@ public static class DB_Int implements DataType {
             return -1;
         }
 
-        public int compareTo(DataType dataType){
+        public int compareTo(Object dataType){
             if (dataType instanceof DB_Int){
                 return number - ((DB_Int) dataType).number;
             }
@@ -39,7 +39,7 @@ public static class DB_Int implements DataType {
         public int hashCode(){
             return number;
         }
-    }
+}
 
     public static class DB_Char implements DataType{
         public char c;
@@ -54,7 +54,7 @@ public static class DB_Int implements DataType {
             return -1;
         }
 
-        public int compareTo(DataType dataType){
+        public int compareTo(Object dataType){
             if (dataType instanceof DB_Char){
                 return c - ((DB_Char) dataType).c;
             }
@@ -84,7 +84,7 @@ public static class DB_Int implements DataType {
             return -1;
         }
 
-        public int compareTo(DataType dataType){
+        public int compareTo(Object dataType){
             if (dataType instanceof DB_String){
                 return str.compareTo(((DB_String)dataType).str);
             }

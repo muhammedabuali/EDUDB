@@ -1,9 +1,9 @@
-package dataStructures.linearHashTable;
+package edudb_2.data_structures.linearHashTable;
 
 import static org.junit.Assert.*;
 
-import dataStructures.dataTypes.DB_Type;
-import dataStructures.dataTypes.DataType;
+import edudb_2.data_structures.dataTypes.DB_Type;
+import edudb_2.data_structures.dataTypes.DataType;
 import org.junit.Test;
 
 public class LinearHashTableTest {

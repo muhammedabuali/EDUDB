@@ -34,11 +34,11 @@ public class Main {
 //                    continue;
 //                }
                 if(line.equals("exit")){
-                    System.exit( 0 );
-                }
-                if(line.equals("clear")){
+                    System.exit(0);
+                }else if(line.equals("clear")){
                     console.clearScreen();
-                }else{
+                }else if( line.equals("commit") ){
+                 }else{
                     parser.parseSQL(line);
                 }
             }

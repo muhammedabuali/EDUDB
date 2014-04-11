@@ -35,6 +35,7 @@ public class Schema {
         }
     }
 
+    // add table to schema object
     private static void getTable(String line) {
         String[] tokens = line.split(" ");
         String TableName = tokens[0];
@@ -46,6 +47,7 @@ public class Schema {
         schema.put(TableName, columns);
     }
 
+    // add table to schema file
     public static void AddTable(String line){
         initSchema();
         getTable(line);
