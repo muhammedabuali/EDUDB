@@ -1,16 +1,9 @@
 package query_planner;
 
-import adipe.translate.sql.Queries;
-import edudb_2.statistics.Schema;
+import statistics.Schema;
 import gudusoft.gsqlparser.TCustomSqlStatement;
-import gudusoft.gsqlparser.TSourceToken;
-import gudusoft.gsqlparser.nodes.TJoin;
-import gudusoft.gsqlparser.nodes.TJoinList;
-import gudusoft.gsqlparser.nodes.TWhereClause;
 import gudusoft.gsqlparser.stmt.TSelectSqlStatement;
-import query_planner.relational_algebra.Translator;
-import ra.Term;
-
+import relational_algebra.Translator;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -22,22 +15,17 @@ import operators.Operator;
 public class SelectPlanner implements Planer {
 
     @Override
-    public Plan makePlan(TCustomSqlStatement tCustomSqlStatement) {
+    public Operator makePlan(TCustomSqlStatement tCustomSqlStatement) {
         TSelectSqlStatement statement = (TSelectSqlStatement) tCustomSqlStatement;
-        ArrayList<Operator> operators = new ArrayList<Operator>();
+        Operator plan ;
         // TODO  add a tree of operators
-        /*TJoinList fromClause = statement.joins;
-        TWhereClause whereClause = statement.getWhereClause();
-        TSourceToken selectToken = statement.getSelectToken();*/
         HashMap<String, ArrayList<String>> schema = Schema.getSchema();
         try{
-
-            Translator.translate(statement.toString());
+            plan = Translator.translate(statement.toString());
         }catch (Exception e){
             e.printStackTrace();
         }
 
-        Plan plan = new Plan(operators);
         return plan;
     }
 }

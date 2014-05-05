@@ -1,6 +1,5 @@
 package query_planner;
 
-import edudb_2.statistics.Schema;
 import gudusoft.gsqlparser.TCustomSqlStatement;
 import gudusoft.gsqlparser.stmt.TCreateTableSqlStatement;
 
@@ -8,6 +7,7 @@ import java.util.ArrayList;
 
 import operators.CreateOperator;
 import operators.Operator;
+import statistics.Schema;
 
 /**
  * Created by mohamed on 4/1/14.

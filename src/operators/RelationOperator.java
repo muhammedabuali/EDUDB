@@ -17,12 +17,25 @@ public class RelationOperator implements Operator{
     }
 
     @Override
-    public int numOfParamaters() {
-        return 1;
+    public void print() {
+        System.out.print("table(" + tableName+ ")");
     }
 
     @Override
-    public void giveParameter(Operator relation) {
+    public int numOfParameters() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
 
+    @Override
+    public Operator getChildren() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public void giveParameter(DBParameter par) {
+        // TODO Auto-generated method stub
+        
     }
 }

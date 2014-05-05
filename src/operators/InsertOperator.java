@@ -1,9 +1,9 @@
 package operators;
 
-import edudb_2.data_structures.DBStructure.DBIndex;
-import edudb_2.data_structures.DBStructure.DBRecord;
-import edudb_2.data_structures.DBStructure.DBTable;
-import edudb_2.data_structures.DBStructure.DataManager;
+import DBStructure.DBIndex;
+import DBStructure.DBRecord;
+import DBStructure.DBTable;
+import DBStructure.DataManager;
 import edudb_2.data_structures.dataTypes.DB_Type;
 import gudusoft.gsqlparser.TCustomSqlStatement;
 import gudusoft.gsqlparser.nodes.TMultiTarget;

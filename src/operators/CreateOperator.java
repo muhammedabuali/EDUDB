@@ -1,7 +1,7 @@
 package operators;
 
+import statistics.Schema;
 import edudb_2.FileUtils.FileManager;
-import edudb_2.statistics.Schema;
 import gudusoft.gsqlparser.stmt.TCreateTableSqlStatement;
 
 /**

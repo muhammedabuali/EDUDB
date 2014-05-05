@@ -6,9 +6,9 @@ package operators;
 
 
 
-public interface Operator {
+public interface Operator extends DBParameter{
 
     public void execute();
     public Operator getChildren();
-    public void print();
+    public void giveParameter(DBParameter par);
 }

@@ -1,9 +1,10 @@
 package operators;
 
-import edudb_2.data_structures.DBStructure.DBColumn;
 import gudusoft.gsqlparser.stmt.TSelectSqlStatement;
 
 import java.util.ArrayList;
+
+import DBStructure.DBColumn;
 
 /**
  * Created by mohamed on 4/2/14.
