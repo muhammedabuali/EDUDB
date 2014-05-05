@@ -11,11 +11,8 @@ import DBStructure.DBColumn;
  */
 public class ProjectOperator implements Operator{
 
-    private TSelectSqlStatement statement;
-
-    public ProjectOperator(TSelectSqlStatement statement){
-        this.statement = statement;
-    }
+    SelectColumns columns;
+    DBParameter tableDbParameter;
 
     public ProjectOperator() {
 
@@ -27,15 +24,28 @@ public class ProjectOperator implements Operator{
     }
 
     @Override
-    public int numOfParamaters() {
+    public void print() {
+        System.out.print("project " + columns.toString()+ " ");
+        tableDbParameter.print();
+        
+    }
+
+    @Override
+    public int numOfParameters() {
         return 2;
     }
 
     @Override
-    public void giveParameter(Operator relation) {
-
+    public Operator getChildren() {
+        // TODO Auto-generated method stub
+        return null;
     }
 
-    public void giveParameter(ArrayList<DBColumn> columns) {
+    @Override
+    public void giveParameter(DBParameter par) {
+        if(par instanceof SelectColumns)
+            columns = (SelectColumns) par;
+        else
+            tableDbParameter = par;
     }
 }

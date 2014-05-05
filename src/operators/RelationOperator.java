@@ -20,7 +20,7 @@ public class RelationOperator implements Operator{
     public void print() {
         System.out.print("table(" + tableName+ ")");
     }
-
+    
     @Override
     public int numOfParameters() {
         // TODO Auto-generated method stub

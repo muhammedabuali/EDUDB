@@ -13,6 +13,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
+import org.apache.poi.ss.formula.functions.Count;
+
 import operators.*;
 
 /**
@@ -43,6 +45,7 @@ public class Translator {
      * conditions, fields , relations pop operators from the stack
      */
     public static Operator extractOperations(String cur) {
+        boolean first = true;
         Operator out = null;
         Stack<Operator> required = new Stack<Operator>();
         Operator[] given = new Operator[2];
@@ -61,10 +64,18 @@ public class Translator {
                 cur = cur.substring(8);
                 ProjectOperator project = new ProjectOperator();
                 required.push(project);
+                if(first){
+                    out = project;
+                    first = false;
+                }
             } else if (cur.startsWith("Filter")) {
                 cur = cur.substring(7);
                 FilterOperator filter = new FilterOperator();
                 required.push(filter);
+                if(first){
+                    out = filter;
+                    first = false;
+                }
             }/* else if (cur.charAt(0) == '"') {// filter condition
                 /******************** extract condition ************/
                /* String condition = "";
@@ -105,16 +116,27 @@ public class Translator {
                 while ((c = cur.charAt(i++)) != '=') {
                     tableName += c;
                 }
-                while ((c = cur.charAt(i++)) != ')') {
+                while ((c = cur.charAt(i++)) != '(') {
                 }
+                int count = 0;
+                while ((c = cur.charAt(i++)) != ')') {
+                    if(cur.charAt(i-1) != ','){
+                        count++;
+                    }
+                }
+                //System.out.println("count " + count);
                 if (i < cur.length() - 1) {
                     cur = cur.substring(++i);
                 } else {
                     cur = "";
                 }
                 tableNames.add(tableName);
-                //tableCounts.add(Schema.getCount(tableName));
+                tableCounts.add(count);
                 relation.setTableName(tableName);
+                if(first){
+                    out = relation;
+                    first = false;
+                }
                 x = relation;
                 /********************** pop operators ********************/
                 while (!required.empty()) {
@@ -144,8 +166,8 @@ public class Translator {
                 cur = cur.substring(8);
                 SortOperator sort = new SortOperator();
                 required.push(sort);
-            } else if (cur.startsWith("[")) {
-                cur.replaceAll(" ", "");
+            } else if (cur.startsWith("[")) {// column list
+                cur = cur.replaceAll("\\s", "");
                 int i = 1;
                 ArrayList<DBColumn> columns = new ArrayList<DBColumn>();
                 while (i < cur.length() && cur.charAt(i) <= '9'
@@ -167,7 +189,8 @@ public class Translator {
                 }
 
                 ProjectOperator operator = (ProjectOperator) required.pop();
-                operator.giveParameter(columns);
+                SelectColumns columns2 = new SelectColumns(columns);
+                operator.giveParameter(columns2);
                 operator.giveParameter(given[0]);
                 empty = true;
                 if (i >= cur.length()) {
@@ -175,10 +198,10 @@ public class Translator {
                 } else {
                     cur = cur.substring(--i);
                 }
-
+                cur = cur.substring(2);
             }
         }
-        return x;
+        return out;
     }
 
     private static DBParameter extractCondition(ArrayList<String> names,
@@ -279,7 +302,7 @@ public class Translator {
 
     public static void main(String[] args) {
         Operator x = (Operator) Translator
-                .translate("SELECT * FROM l");
+                .translate("SELECT ra, rb FROM r4");
         x.print();
     }
 }

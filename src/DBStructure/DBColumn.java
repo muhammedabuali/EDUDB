@@ -10,4 +10,8 @@ public class DBColumn {
         this.order = num;
         this.tableName = tableName;
     }
+    
+    public String toString(){
+        return tableName + "." + order;
+    }
 }
