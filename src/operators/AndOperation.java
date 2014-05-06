@@ -29,6 +29,9 @@ public class AndOperation implements DBMulCondition {
         }
     }
 
+    public String toString(){
+        return "and( " + condition1.toString() + ", " + condition2.toString() +") ";
+    }
     @Override
     public DBCond[] getChildren() {
         return new DBCond[] {condition1, condition2};

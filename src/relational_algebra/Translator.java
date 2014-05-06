@@ -200,19 +200,23 @@ public class Translator {
     // TODO constants in cond
     private static DBParameter extractCondition(ArrayList<String> names,
             ArrayList<Integer> counts, String condition) {
-        DBCondition x = null;
+        DBCond x = null;
+        DBCond given = null;
         Stack<DBParameter> required = new Stack<>();
         while (condition.length() > 0) {
-            while (condition.charAt(0) == ')' && condition.length() > 0) {
-                condition = condition.substring(0);
+            while (condition.length() > 0) {
+                if(condition.charAt(0) == ')'||condition.charAt(0) == ',')
+                    condition = condition.substring(1);
+                else
+                    break;
             }
             if (condition.startsWith("OR")) {
-                condition = condition.substring(3);
+                condition = condition.substring(4);
                 OrCondition orOperation = new OrCondition();
                 required.push(orOperation);
 
             } else if (condition.startsWith("AND")) {
-                condition = condition.substring(3);
+                condition = condition.substring(4);
                 AndOperation andOperation = new AndOperation();
                 required.push(andOperation);
             } else if (condition.startsWith("#")) {// parameter
@@ -253,29 +257,23 @@ public class Translator {
                     condition2 = new DBCondition(column, c, op);
                     condition = condition.substring(4);
                 }
-                boolean empty = true;
-                Operator operator;
-                DBCond[] given = new DBCondition[2];
-                if (empty) {
-                    if (required.empty()) {
-                           x = condition2;
-                    } else {
+                x = condition2;
+                if (given == null) {
+                    if (!required.empty()) {
                         if (required.peek().numOfParameters() == 1) {
                             DBParameter top = required.pop();
                             ((DBMulCondition) top).giveParameter(x);
-                            x = (DBCondition) top;
+                            x = (DBCond) top;
                         } else {
-                            given[0] = x;
-                            empty = false;
-                            break;
+                            given = x;
                         }
                     }
                 } else {
                     DBParameter top = required.pop();
                     ((DBMulCondition) top).giveParameter(x);
-                    ((DBMulCondition) top).giveParameter(given[0]);
-                    // x = top;
-                    empty = true;
+                    ((DBMulCondition) top).giveParameter(given);
+                    x = (DBCond) top;
+                    given = null;
                 }
             }
         }
@@ -306,7 +304,7 @@ public class Translator {
 
     public static void main(String[] args) {
         Operator x = (Operator) Translator
-                .translate("SELECT * FROM r4 WHERE ra=4");
+                .translate("SELECT * FROM r4 WHERE ra=4 and rb = rc");
         x.print();
     }
 }
