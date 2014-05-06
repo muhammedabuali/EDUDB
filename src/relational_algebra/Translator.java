@@ -57,8 +57,11 @@ public class Translator {
         ArrayList<Integer> tableCounts = new ArrayList<Integer>();
         Operator x = null;
         while (cur.length() > 0) {
-            while (cur.charAt(0) == ')' && cur.length() > 0) {
-                cur = cur.substring(0);
+            while (cur.length() > 0) {
+                if(cur.charAt(0) == ')' || cur.charAt(0) == ',') 
+                    cur = cur.substring(1);
+                else
+                    break;
             }
             if (cur.startsWith("0a0")) {
                 cur = cur.substring(3);
@@ -94,7 +97,8 @@ public class Translator {
                     FilterOperator top = (FilterOperator) required.pop();
                     top.giveParameter(given[0]);
                     top.giveParameter(cond);
-                    empty = true;
+                    empty = false;
+                    given[0] = top;
                     x = top;
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -185,7 +189,8 @@ public class Translator {
                 SelectColumns columns2 = new SelectColumns(columns);
                 operator.giveParameter(columns2);
                 operator.giveParameter(given[0]);
-                empty = true;
+                given[0] = operator;
+                empty = false;
                 if (i >= cur.length()) {
                     cur = "";
                 } else {
@@ -211,13 +216,13 @@ public class Translator {
                     break;
             }
             if (condition.startsWith("OR")) {
-                condition = condition.substring(4);
+                condition = condition.substring(3);
                 OrCondition orOperation = new OrCondition();
                 required.push(orOperation);
 
             } else if (condition.startsWith("AND")) {
                 condition = condition.substring(4);
-                AndOperation andOperation = new AndOperation();
+                AndCondition andOperation = new AndCondition();
                 required.push(andOperation);
             } else if (condition.startsWith("#")) {// parameter
                 int num = condition.charAt(1) - '0';
@@ -304,7 +309,24 @@ public class Translator {
 
     public static void main(String[] args) {
         Operator x = (Operator) Translator
-                .translate("SELECT * FROM r4 WHERE ra=4 and rb = rc");
-        x.print();
+                .translate("SELECT rc FROM r4 WHERE ra=4");
+        ArrayList<DBParameter> upper = new ArrayList<>();
+        ArrayList<DBParameter> lower = new ArrayList<>();
+        upper.add(x);
+        while(!upper.isEmpty() ){
+            DBParameter cur = upper.get(0);
+            if(cur instanceof Operator){
+                Operator child = (Operator)((Operator) cur).getChildren();
+                if(child != null)
+                lower.add( child );
+            }
+            System.out.print(cur.toString() + " ");
+            upper.remove(0);
+            if(upper.isEmpty()){
+                System.out.print("\n");
+                upper = lower;
+                lower = new ArrayList<>();
+            }
+        }
     }
 }

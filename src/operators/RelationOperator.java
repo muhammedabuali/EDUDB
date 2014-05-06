@@ -22,6 +22,11 @@ public class RelationOperator implements Operator{
     }
     
     @Override
+    public String toString(){
+        return "table(" + tableName+ ")";
+    }
+    
+    @Override
     public int numOfParameters() {
         // TODO Auto-generated method stub
         return 0;
@@ -29,7 +34,6 @@ public class RelationOperator implements Operator{
 
     @Override
     public Operator getChildren() {
-        // TODO Auto-generated method stub
         return null;
     }
 

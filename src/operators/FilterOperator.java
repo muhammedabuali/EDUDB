@@ -19,7 +19,12 @@ public class FilterOperator implements Operator {
 
     @Override
     public void print() {
-        System.out.print("project " + condition.toString()+ " ");
+        System.out.print("filter " + condition.toString()+ " ");
+    }
+    
+    @Override
+    public String toString(){
+        return "filter " + condition.toString()+ " ";
     }
 
     @Override

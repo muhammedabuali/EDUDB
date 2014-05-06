@@ -23,6 +23,10 @@ public class ProjectOperator implements Operator{
     }
 
     @Override
+    public String toString(){
+        return "project " + columns.toString()+ " ";
+    }
+    @Override
     public int numOfParameters() {
         return 2;
     }

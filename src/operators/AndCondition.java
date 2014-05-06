@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Created by mohamed on 4/19/14.
  */
-public class AndOperation implements DBMulCondition {
+public class AndCondition implements DBMulCondition {
 
     DBCond condition1;
     DBCond condition2;
@@ -32,6 +32,7 @@ public class AndOperation implements DBMulCondition {
     public String toString(){
         return "and( " + condition1.toString() + ", " + condition2.toString() +") ";
     }
+    
     @Override
     public DBCond[] getChildren() {
         return new DBCond[] {condition1, condition2};
