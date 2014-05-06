@@ -1,22 +1,30 @@
 package relational_algebra;
 
-import DBStructure.DBChar;
-import DBStructure.DBColumn;
-import adipe.translate.TranslationException;
-import adipe.translate.sql.Queries;
-import adipe.translate.sql.parser.SqlParser;
-import ra.Term;
-import statistics.Schema;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
-import org.apache.poi.ss.formula.functions.Count;
-
-import operators.*;
+import operators.AndCondition;
+import operators.DBCond;
+import operators.DBCondition;
+import operators.DBMulCondition;
+import operators.DBParameter;
+import operators.FilterOperator;
+import operators.JoinOperator;
+import operators.Operator;
+import operators.OrCondition;
+import operators.ProjectOperator;
+import operators.RelationOperator;
+import operators.SelectColumns;
+import operators.SortOperator;
+import ra.Term;
+import DBStructure.DBChar;
+import DBStructure.DBColumn;
+import adipe.translate.TranslationException;
+import adipe.translate.sql.Queries;
+import adipe.translate.sql.parser.SqlParser;
 
 /**
  * Created by mohamed on 4/2/14.
@@ -63,8 +71,8 @@ public class Translator {
                 else
                     break;
             }
-            if (cur.startsWith("0a0")) {
-                cur = cur.substring(3);
+            if (cur.startsWith("0a0=")) {
+                cur = cur.substring(4);
             }
             if (cur.startsWith("Project")) {
                 cur = cur.substring(8);
@@ -159,6 +167,10 @@ public class Translator {
                 cur = cur.substring(9);
                 JoinOperator join = new JoinOperator();
                 required.push(join);
+                if (first) {
+                    out = join;
+                    first = false;
+                }
             } else if (cur.startsWith("SortAsc")) {
                 cur = cur.substring(8);
                 SortOperator sort = new SortOperator();
@@ -219,7 +231,6 @@ public class Translator {
                 condition = condition.substring(3);
                 OrCondition orOperation = new OrCondition();
                 required.push(orOperation);
-
             } else if (condition.startsWith("AND")) {
                 condition = condition.substring(4);
                 AndCondition andOperation = new AndCondition();
@@ -309,16 +320,19 @@ public class Translator {
 
     public static void main(String[] args) {
         Operator x = (Operator) Translator
-                .translate("SELECT rc FROM r4 WHERE ra=4");
+                .translate("SELECT * FROM p, l");
         ArrayList<DBParameter> upper = new ArrayList<>();
         ArrayList<DBParameter> lower = new ArrayList<>();
         upper.add(x);
         while(!upper.isEmpty() ){
             DBParameter cur = upper.get(0);
             if(cur instanceof Operator){
-                Operator child = (Operator)((Operator) cur).getChildren();
-                if(child != null)
-                lower.add( child );
+                DBParameter[] children = ((Operator) cur).getChildren();
+                for (int i = 0; i < children.length; i++) {
+                    Operator child = (Operator)children[i];
+                    if(child != null)
+                        lower.add( child );
+                }
             }
             System.out.print(cur.toString() + " ");
             upper.remove(0);

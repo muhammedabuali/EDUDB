@@ -9,6 +9,6 @@ package operators;
 public interface Operator extends DBParameter{
 
     public void execute();
-    public DBParameter getChildren();
+    public DBParameter[] getChildren();
     public void giveParameter(DBParameter par);
 }

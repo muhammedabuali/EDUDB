@@ -33,8 +33,8 @@ public class FilterOperator implements Operator {
     }
 
     @Override
-    public DBParameter getChildren() {
-        return tableDbParameter;
+    public DBParameter[] getChildren() {
+        return new DBParameter[] {tableDbParameter};
     }
 
     @Override

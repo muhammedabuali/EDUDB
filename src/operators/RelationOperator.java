@@ -33,8 +33,8 @@ public class RelationOperator implements Operator{
     }
 
     @Override
-    public Operator getChildren() {
-        return null;
+    public DBParameter[] getChildren() {
+        return new DBParameter[] {};
     }
 
     @Override
