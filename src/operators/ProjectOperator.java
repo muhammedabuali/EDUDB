@@ -1,11 +1,5 @@
 package operators;
 
-import gudusoft.gsqlparser.stmt.TSelectSqlStatement;
-
-import java.util.ArrayList;
-
-import DBStructure.DBColumn;
-
 /**
  * Created by mohamed on 4/2/14.
  */
@@ -26,8 +20,6 @@ public class ProjectOperator implements Operator{
     @Override
     public void print() {
         System.out.print("project " + columns.toString()+ " ");
-        tableDbParameter.print();
-        
     }
 
     @Override
@@ -36,9 +28,8 @@ public class ProjectOperator implements Operator{
     }
 
     @Override
-    public Operator getChildren() {
-        // TODO Auto-generated method stub
-        return null;
+    public DBParameter getChildren() {
+        return tableDbParameter;
     }
 
     @Override

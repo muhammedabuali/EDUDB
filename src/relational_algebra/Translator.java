@@ -27,11 +27,13 @@ public class Translator {
         try {
             SqlParser.SelectStatementEofContext queryTree = Queries
                     .getQueryTree(sqlQuery);
-            Map<String,ArrayList<String>> schema = new HashMap<String, ArrayList<String>>();
+            Map<String, ArrayList<String>> schema = new HashMap<String, ArrayList<String>>();
             schema.put("p", new ArrayList<String>(Arrays.asList("a", "b", "p")));
             schema.put("l", new ArrayList<String>(Arrays.asList("a")));
             schema.put("xy", new ArrayList<String>(Arrays.asList("x", "y")));
-            schema.put("r4", new ArrayList<String>(Arrays.asList("ra", "rb", "rc", "rd")));
+            schema.put(
+                    "r4",
+                    new ArrayList<String>(Arrays.asList("ra", "rb", "rc", "rd")));
             Term ra = Queries.getRaOf(schema, sqlQuery);
             return Translator.extractOperations(ra.toString());
         } catch (TranslationException e) {
@@ -64,7 +66,7 @@ public class Translator {
                 cur = cur.substring(8);
                 ProjectOperator project = new ProjectOperator();
                 required.push(project);
-                if(first){
+                if (first) {
                     out = project;
                     first = false;
                 }
@@ -72,42 +74,32 @@ public class Translator {
                 cur = cur.substring(7);
                 FilterOperator filter = new FilterOperator();
                 required.push(filter);
-                if(first){
+                if (first) {
                     out = filter;
                     first = false;
                 }
-            }/* else if (cur.charAt(0) == '"') {// filter condition
+            } else if (cur.charAt(0) == '"') {// filter condition
                 /******************** extract condition ************/
-               /* String condition = "";
+                String condition = "";
                 char c;
                 int i = 0;
                 while ((c = cur.charAt(++i)) != '"') {
                     condition += c;
                 }
-                Operator op = extractCondition(tableNames, tableCounts,
+                DBParameter cond = extractCondition(tableNames, tableCounts,
                         condition);
-                cur = cur.substring(++i);
-                x = op;
-                while (!required.empty()) {
-                    if (empty) {
-                        if (required.peek().numOfParameters() == 1) {
-                            Operator top = required.pop();
-                            top.giveParameter(x);
-                            x = top;
-                        } else {
-                            given[0] = x;
-                            empty = false;
-                            break;
-                        }
-                    } else {
-                        Operator top = required.pop();
-                        top.giveParameter(x);
-                        top.giveParameter(given[0]);
-                        x = top;
-                        empty = true;
-                    }
+                cur = cur.substring(i+2);
+                try {// pop filter operator
+                    FilterOperator top = (FilterOperator) required.pop();
+                    top.giveParameter(given[0]);
+                    top.giveParameter(cond);
+                    empty = true;
+                    x = top;
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-            }*/ else if (cur.charAt(0) >= 'a' && cur.charAt(0) <= 'z') {// table name
+            } else if (cur.charAt(0) >= 'a' && cur.charAt(0) <= 'z') {// table
+                                                                      // name
                 RelationOperator relation = new RelationOperator();
                 /********************** extract relation ********************/
                 int i = 0;
@@ -120,11 +112,11 @@ public class Translator {
                 }
                 int count = 0;
                 while ((c = cur.charAt(i++)) != ')') {
-                    if(cur.charAt(i-1) != ','){
+                    if (cur.charAt(i - 1) != ',') {
                         count++;
                     }
                 }
-                //System.out.println("count " + count);
+                // System.out.println("count " + count);
                 if (i < cur.length() - 1) {
                     cur = cur.substring(++i);
                 } else {
@@ -133,7 +125,7 @@ public class Translator {
                 tableNames.add(tableName);
                 tableCounts.add(count);
                 relation.setTableName(tableName);
-                if(first){
+                if (first) {
                     out = relation;
                     first = false;
                 }
@@ -204,6 +196,7 @@ public class Translator {
         return out;
     }
 
+    // TODO constants in cond
     private static DBParameter extractCondition(ArrayList<String> names,
             ArrayList<Integer> counts, String condition) {
         DBCondition x = null;
@@ -221,7 +214,7 @@ public class Translator {
                 condition = condition.substring(3);
                 AndOperation andOperation = new AndOperation();
                 required.push(andOperation);
-            } else if (condition.startsWith("#")) {
+            } else if (condition.startsWith("#")) {// parameter
                 int num = condition.charAt(1) - '0';
                 // TODO num could be > 9
                 int i = 0;
@@ -238,7 +231,8 @@ public class Translator {
                 char op = condition.charAt(2);
                 char right = condition.charAt(3);
                 if (right == '#') {
-                    num = condition.charAt(1) - '0';
+                    num = condition.charAt(4) - '0';
+                    condition = condition.substring(5);
                     // TODO num could be > 9
                     i = 0;
                     while (true) {
@@ -252,24 +246,28 @@ public class Translator {
                     DBColumn column2 = new DBColumn(num, tableName);
                     DBCondition condition2 = new DBCondition(column, column2,
                             op);
-                    boolean empty = false;
+                    boolean empty = true;
                     Operator operator;
                     DBParameter[] given = new DBCondition[2];
                     if (empty) {
-                        if (required.peek().numOfParameters() == 1) {
-                            DBParameter top = required.pop();
-                            ((DBMulCondition)top).giveParameter(x);
-                            //x = top;
+                        if (required.empty()) {
+                               x = condition2;
                         } else {
-                            given[0] = x;
-                            empty = false;
-                            break;
+                            if (required.peek().numOfParameters() == 1) {
+                                DBParameter top = required.pop();
+                                ((DBMulCondition) top).giveParameter(x);
+                                x = (DBCondition) top;
+                            } else {
+                                given[0] = x;
+                                empty = false;
+                                break;
+                            }
                         }
                     } else {
                         DBParameter top = required.pop();
-                        ((DBMulCondition)top).giveParameter(x);
-                        ((DBMulCondition)top).giveParameter(given[0]);
-                        //x = top;
+                        ((DBMulCondition) top).giveParameter(x);
+                        ((DBMulCondition) top).giveParameter(given[0]);
+                        // x = top;
                         empty = true;
                     }
                 }
@@ -302,7 +300,7 @@ public class Translator {
 
     public static void main(String[] args) {
         Operator x = (Operator) Translator
-                .translate("SELECT ra, rb FROM r4");
+                .translate("SELECT * FROM r4 WHERE ra=rc");
         x.print();
     }
 }

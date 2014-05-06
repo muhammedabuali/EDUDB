@@ -3,10 +3,13 @@ package operators;
 /**
  * Created by mohamed on 4/13/14.
  */
-public class FilterOperator implements Operator{
+public class FilterOperator implements Operator {
 
-    public FilterOperator(){
-        
+    DBCond condition;
+    DBParameter tableDbParameter;
+
+    public FilterOperator() {
+
     }
 
     @Override
@@ -15,12 +18,27 @@ public class FilterOperator implements Operator{
     }
 
     @Override
-    public int numOfParamaters() {
+    public void print() {
+        System.out.print("project " + condition.toString()+ " ");
+    }
+
+    @Override
+    public int numOfParameters() {
         return 2;
     }
 
     @Override
-    public void giveParameter(Operator relation) {
-
+    public DBParameter getChildren() {
+        return tableDbParameter;
     }
+
+    @Override
+    public void giveParameter(DBParameter par) {
+        if(par instanceof DBCond){
+            condition = (DBCond) par;
+        }else{
+            tableDbParameter = par;
+        }
+    }
+
 }
