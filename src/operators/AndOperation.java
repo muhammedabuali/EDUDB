@@ -7,11 +7,8 @@ import java.util.ArrayList;
  */
 public class AndOperation implements DBMulCondition {
 
-    ArrayList<Operator> parameters;
-
-    public AndOperation() {
-        parameters = new ArrayList<Operator>();
-    }
+    DBCond condition1;
+    DBCond condition2;
 
     @Override
     public int numOfParameters() {
@@ -24,8 +21,16 @@ public class AndOperation implements DBMulCondition {
     }
 
     @Override
-    public void giveParameter(DBParameter param) {
-        // TODO Auto-generated method stub
+    public void giveParameter(DBCond param) {
+        if(condition1 == null){
+            condition1 = param;
+        }else{
+            condition2 = param; 
+        }
+    }
 
+    @Override
+    public DBCond[] getChildren() {
+        return new DBCond[] {condition1, condition2};
     }
 }

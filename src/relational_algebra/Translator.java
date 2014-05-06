@@ -1,5 +1,6 @@
 package relational_algebra;
 
+import DBStructure.DBChar;
 import DBStructure.DBColumn;
 import adipe.translate.TranslationException;
 import adipe.translate.sql.Queries;
@@ -88,7 +89,7 @@ public class Translator {
                 }
                 DBParameter cond = extractCondition(tableNames, tableCounts,
                         condition);
-                cur = cur.substring(i+2);
+                cur = cur.substring(i + 2);
                 try {// pop filter operator
                     FilterOperator top = (FilterOperator) required.pop();
                     top.giveParameter(given[0]);
@@ -230,6 +231,7 @@ public class Translator {
                 DBColumn column = new DBColumn(num, tableName);
                 char op = condition.charAt(2);
                 char right = condition.charAt(3);
+                DBCondition condition2;
                 if (right == '#') {
                     num = condition.charAt(4) - '0';
                     condition = condition.substring(5);
@@ -244,32 +246,36 @@ public class Translator {
                         }
                     }
                     DBColumn column2 = new DBColumn(num, tableName);
-                    DBCondition condition2 = new DBCondition(column, column2,
+                    condition2 = new DBCondition(column, (DBParameter)column2,
                             op);
-                    boolean empty = true;
-                    Operator operator;
-                    DBParameter[] given = new DBCondition[2];
-                    if (empty) {
-                        if (required.empty()) {
-                               x = condition2;
-                        } else {
-                            if (required.peek().numOfParameters() == 1) {
-                                DBParameter top = required.pop();
-                                ((DBMulCondition) top).giveParameter(x);
-                                x = (DBCondition) top;
-                            } else {
-                                given[0] = x;
-                                empty = false;
-                                break;
-                            }
-                        }
+                }else{
+                    DBChar c = new DBChar( condition.charAt(3) );
+                    condition2 = new DBCondition(column, c, op);
+                    condition = condition.substring(4);
+                }
+                boolean empty = true;
+                Operator operator;
+                DBCond[] given = new DBCondition[2];
+                if (empty) {
+                    if (required.empty()) {
+                           x = condition2;
                     } else {
-                        DBParameter top = required.pop();
-                        ((DBMulCondition) top).giveParameter(x);
-                        ((DBMulCondition) top).giveParameter(given[0]);
-                        // x = top;
-                        empty = true;
+                        if (required.peek().numOfParameters() == 1) {
+                            DBParameter top = required.pop();
+                            ((DBMulCondition) top).giveParameter(x);
+                            x = (DBCondition) top;
+                        } else {
+                            given[0] = x;
+                            empty = false;
+                            break;
+                        }
                     }
+                } else {
+                    DBParameter top = required.pop();
+                    ((DBMulCondition) top).giveParameter(x);
+                    ((DBMulCondition) top).giveParameter(given[0]);
+                    // x = top;
+                    empty = true;
                 }
             }
         }
@@ -300,7 +306,7 @@ public class Translator {
 
     public static void main(String[] args) {
         Operator x = (Operator) Translator
-                .translate("SELECT * FROM r4 WHERE ra=rc");
+                .translate("SELECT * FROM r4 WHERE ra=4");
         x.print();
     }
 }

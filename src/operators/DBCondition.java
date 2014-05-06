@@ -5,11 +5,12 @@ import DBStructure.DBColumn;
 /**
  * Created by mohamed on 4/19/14.
  */
-public class DBCondition  implements DBCond{
+public class DBCondition implements DBCond {
     DBColumn column1;
-    DBColumn column2;
+    DBParameter column2;
     char op;
-    public DBCondition(DBColumn column, DBColumn column2, char op) {
+
+    public DBCondition(DBColumn column, DBParameter column2, char op) {
         column1 = column;
         this.column2 = column2;
         this.op = op;
@@ -21,11 +22,12 @@ public class DBCondition  implements DBCond{
     }
 
     public void print() {
-        System.out.print(column1.toString() +" "+op+" " + column2.toString());
+        System.out.print(column1.toString() + " " + op + " "
+                + column2.toString());
     }
-    
+
     @Override
-    public String toString(){
-        return column1.toString() +" "+op+" " + column2.toString();
+    public String toString() {
+        return column1.toString() + " " + op + " " + column2.toString();
     }
 }
