@@ -43,6 +43,7 @@ public class Translator {
             schema.put(
                     "r4",
                     new ArrayList<String>(Arrays.asList("ra", "rb", "rc", "rd")));
+            schema.put("t", new ArrayList<String>(Arrays.asList("t2", "t3")));
             Term ra = Queries.getRaOf(schema, sqlQuery);
             return Translator.extractOperations(ra.toString());
         } catch (TranslationException e) {
@@ -289,7 +290,7 @@ public class Translator {
                     ((DBMulCondition) top).giveParameter(x);
                     ((DBMulCondition) top).giveParameter(given);
                     x = (DBCond) top;
-                    given = null;
+                    given = x;
                 }
             }
         }
@@ -320,7 +321,8 @@ public class Translator {
 
     public static void main(String[] args) {
         Operator x = (Operator) Translator
-                .translate("SELECT a,x FROM p, xy, r4 WHERE y = b AND y = rc");
+                .translate("SELECT a, x FROM p, xy WHERE (y = b AND y = a) OR"
+                        + " x = y");
         ArrayList<DBParameter> upper = new ArrayList<>();
         ArrayList<DBParameter> lower = new ArrayList<>();
         upper.add(x);
