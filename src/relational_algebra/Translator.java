@@ -320,7 +320,7 @@ public class Translator {
 
     public static void main(String[] args) {
         Operator x = (Operator) Translator
-                .translate("SELECT * FROM p, l");
+                .translate("SELECT a,x FROM p, xy, r4 WHERE y = b AND y = rc");
         ArrayList<DBParameter> upper = new ArrayList<>();
         ArrayList<DBParameter> lower = new ArrayList<>();
         upper.add(x);
