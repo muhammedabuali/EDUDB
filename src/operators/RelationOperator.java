@@ -1,5 +1,8 @@
 package operators;
 
+import DBStructure.DBTable;
+import DBStructure.DataManager;
+
 /**
  * Created by mohamed on 4/13/14.
  */
@@ -12,8 +15,10 @@ public class RelationOperator implements Operator{
     }
 
     @Override
-    public void execute() {
+    public DBResult execute() {
+        DBTable table = DataManager.getTable(tableName);
 
+        return null;
     }
 
     @Override

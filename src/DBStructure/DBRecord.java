@@ -1,8 +1,8 @@
 package DBStructure;
 
-import edudb_2.data_structures.dataTypes.DB_Type;
-import edudb_2.data_structures.dataTypes.DataType;
-import edudb_2.statistics.Schema;
+import dataTypes.DB_Type;
+import dataTypes.DataType;
+import statistics.Schema;
 import gudusoft.gsqlparser.nodes.TResultColumnList;
 
 import java.util.ArrayList;

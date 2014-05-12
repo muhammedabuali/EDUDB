@@ -1,6 +1,7 @@
 package query_planner;
 
 import gudusoft.gsqlparser.TCustomSqlStatement;
+import operators.Operator;
 
 /**
  * Created by mohamed on 4/1/14.
@@ -9,12 +10,12 @@ public class PlanFactory implements Planer{
     private Planer planner;
 
     @Override
-    public Plan makePlan(TCustomSqlStatement tCustomSqlStatement) {
+    public Operator makePlan(TCustomSqlStatement tCustomSqlStatement) {
         setPlanar(tCustomSqlStatement);
         if (planner == null){
             return null;
         }
-        Plan plan = planner.makePlan(tCustomSqlStatement);
+        Operator plan = planner.makePlan(tCustomSqlStatement);
         return plan;
     }
 

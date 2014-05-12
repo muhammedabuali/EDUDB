@@ -1,5 +1,6 @@
 package user_interface;
 
+import operators.Operator;
 import query_planner.Plan;
 import query_planner.PlanFactory;
 import adipe.translate.TranslationException;
@@ -21,12 +22,12 @@ public class Parser {
         int ret = sqlparser.parse();
         if (ret == 0){
             for(int i=0;i<sqlparser.sqlstatements.size();i++){
-                Plan plan = planFactory.makePlan(sqlparser.sqlstatements.get(i));
+                Operator plan = planFactory.makePlan(sqlparser.sqlstatements.get(i));
                 System.out.println("plan ready");
                 if (plan == null){
                     return;
                 }
-                plan.execute();
+                plan.print();
                 System.out.println("");
             }
         }else{

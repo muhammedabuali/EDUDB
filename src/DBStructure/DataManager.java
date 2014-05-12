@@ -1,6 +1,6 @@
 package DBStructure;
 
-import edudb_2.statistics.Schema;
+import statistics.Schema;
 
 import java.util.HashMap;
 

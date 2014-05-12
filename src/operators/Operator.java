@@ -8,7 +8,7 @@ package operators;
 
 public interface Operator extends DBParameter{
 
-    public void execute();
+    public DBResult execute();
     public DBParameter[] getChildren();
     public void giveParameter(DBParameter par);
 }

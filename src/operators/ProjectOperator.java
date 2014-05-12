@@ -13,8 +13,8 @@ public class ProjectOperator implements Operator{
     }
 
     @Override
-    public void execute(){
-
+    public DBResult execute(){
+        return null;
     }
 
     @Override

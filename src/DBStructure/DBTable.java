@@ -1,6 +1,7 @@
 package DBStructure;
 
-import edudb_2.data_structures.BPlusTree.DBBTree;
+import data_structures.BPlusTree.DBBTree;
+import operators.SelectResult;
 
 import java.util.ArrayList;
 
@@ -18,7 +19,7 @@ public class DBTable {
         //TODO add other indices
         DBBTree btree = new DBBTree(tableName);
         btree.readTable();
-        indices.add(btree);
+        indices.add((DBIndex) btree);
     }
 
     public String getTableName(){
@@ -29,4 +30,8 @@ public class DBTable {
         return indices.get(0);
         // TODO primary is at index 0
     }
+
+    /*public SelectResult getData(){
+       DBBTree primary = (DBBTree) indices.get(0);
+    }*/
 }

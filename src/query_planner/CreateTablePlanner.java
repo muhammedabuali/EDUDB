@@ -16,17 +16,15 @@ public class CreateTablePlanner implements Planer {
 
 
     @Override
-    public Plan makePlan(TCustomSqlStatement tCustomSqlStatement) {
+    public Operator makePlan(TCustomSqlStatement tCustomSqlStatement) {
         TCreateTableSqlStatement statement = (TCreateTableSqlStatement) tCustomSqlStatement;
-        ArrayList<Operator> operators = new ArrayList<Operator>();
+        Operator operator = null;
         if(!Schema.chekTableExists(statement.getTableName().toString())){
-            Operator operator = new CreateOperator(statement);
-            operators.add(operator);
+            operator = new CreateOperator(statement);
         }else {
             System.out.println("table already exists");
         }
-        Plan plan = new Plan(operators);
-        return plan;
+        return operator;
     }
 
 }

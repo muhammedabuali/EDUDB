@@ -15,15 +15,12 @@ import operators.Operator;
  */
 public class InsertPlanner implements Planer {
     @Override
-    public Plan makePlan(TCustomSqlStatement tCustomSqlStatement) {
+    public Operator makePlan(TCustomSqlStatement tCustomSqlStatement) {
         TInsertSqlStatement statement = (TInsertSqlStatement) tCustomSqlStatement;
         //TODO read column list
         TMultiTargetList values = statement.getValues();
         System.out.println(values.toString());
         Operator insert = new InsertOperator(tCustomSqlStatement);
-        ArrayList<Operator> operators = new ArrayList<>();
-        operators.add(insert);
-        Plan plan = new Plan(operators);
-        return plan;
+        return insert;
     }
 }

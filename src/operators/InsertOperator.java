@@ -4,11 +4,8 @@ import DBStructure.DBIndex;
 import DBStructure.DBRecord;
 import DBStructure.DBTable;
 import DBStructure.DataManager;
-import edudb_2.data_structures.dataTypes.DB_Type;
+import dataTypes.DB_Type;
 import gudusoft.gsqlparser.TCustomSqlStatement;
-import gudusoft.gsqlparser.nodes.TMultiTarget;
-import gudusoft.gsqlparser.nodes.TMultiTargetList;
-import gudusoft.gsqlparser.nodes.TObjectNameList;
 import gudusoft.gsqlparser.nodes.TResultColumnList;
 import gudusoft.gsqlparser.stmt.TInsertSqlStatement;
 
@@ -24,12 +21,12 @@ public class InsertOperator implements Operator{
     }
 
     @Override
-    public void execute() {
+    public DBResult execute() {
         System.out.println("executing insert operation");
         DBTable table = DataManager.getTable(statement.getTargetTable().toString());
         if(table == null){
             System.out.println("table doesnot exist");
-            return;
+            return null;
         }
         DBIndex index = table.getPrimaryIndex();
         // TODO value may be null
@@ -38,15 +35,26 @@ public class InsertOperator implements Operator{
         int key = ( (DB_Type.DB_Int) record.getValue(0) ).getNumber();
         index.insert(key, record);
         index.write();
+        return null;
     }
 
     @Override
-    public int numOfParamaters() {
-        return 1;
+    public DBParameter[] getChildren() {
+        return new DBParameter[0];
     }
 
     @Override
-    public void giveParameter(Operator relation) {
+    public void giveParameter(DBParameter par) {
 
+    }
+
+    @Override
+    public void print() {
+
+    }
+
+    @Override
+    public int numOfParameters() {
+        return 0;
     }
 }

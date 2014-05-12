@@ -25,6 +25,7 @@ import DBStructure.DBColumn;
 import adipe.translate.TranslationException;
 import adipe.translate.sql.Queries;
 import adipe.translate.sql.parser.SqlParser;
+import statistics.Schema;
 
 /**
  * Created by mohamed on 4/2/14.
@@ -36,15 +37,16 @@ public class Translator {
         try {
             SqlParser.SelectStatementEofContext queryTree = Queries
                     .getQueryTree(sqlQuery);
-            Map<String, ArrayList<String>> schema = new HashMap<String, ArrayList<String>>();
+           /* Map<String, ArrayList<String>> schema = new HashMap<String, ArrayList<String>>();
             schema.put("p", new ArrayList<String>(Arrays.asList("a", "b", "p")));
             schema.put("l", new ArrayList<String>(Arrays.asList("a")));
             schema.put("xy", new ArrayList<String>(Arrays.asList("x", "y")));
             schema.put(
                     "r4",
                     new ArrayList<String>(Arrays.asList("ra", "rb", "rc", "rd")));
-            schema.put("t", new ArrayList<String>(Arrays.asList("t2", "t3")));
-            Term ra = Queries.getRaOf(schema, sqlQuery);
+            schema.put("t", new ArrayList<String>(Arrays.asList("t2", "t3")));*/
+
+            Term ra = Queries.getRaOf(Schema.getSchema(), sqlQuery);
             return Translator.extractOperations(ra.toString());
         } catch (TranslationException e) {
             e.printStackTrace();

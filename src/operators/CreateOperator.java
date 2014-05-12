@@ -1,7 +1,7 @@
 package operators;
 
 import statistics.Schema;
-import edudb_2.FileUtils.FileManager;
+import FileUtils.FileManager;
 import gudusoft.gsqlparser.stmt.TCreateTableSqlStatement;
 
 /**
@@ -15,7 +15,7 @@ public class CreateOperator implements Operator {
         this.statement = statement;
     }
     @Override
-    public void execute() {
+    public DBResult execute() {
         System.out.println("executing create operation");
         // add table to schema
         String line = statement.getTableName().toString();
@@ -24,16 +24,27 @@ public class CreateOperator implements Operator {
         Schema.AddTable(line);
         //create table file and folder
         FileManager.createTable(statement.getTableName().toString());
+        return null;
+    }
+
+    @Override
+    public DBParameter[] getChildren() {
+        return new DBParameter[0];
+    }
+
+    @Override
+    public void giveParameter(DBParameter par) {
+
+    }
+
+
+    @Override
+    public void print() {
 
     }
 
     @Override
-    public int numOfParamaters() {
-        return 1;
-    }
-
-    @Override
-    public void giveParameter(Operator relation) {
-
+    public int numOfParameters() {
+        return 0;
     }
 }

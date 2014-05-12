@@ -8,8 +8,8 @@ public class JoinOperator implements Operator{
     DBParameter table2;
     
     @Override
-    public void execute() {
-
+    public DBResult execute() {
+        return null;
     }
 
     @Override

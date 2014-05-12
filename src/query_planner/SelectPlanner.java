@@ -17,7 +17,7 @@ public class SelectPlanner implements Planer {
     @Override
     public Operator makePlan(TCustomSqlStatement tCustomSqlStatement) {
         TSelectSqlStatement statement = (TSelectSqlStatement) tCustomSqlStatement;
-        Operator plan ;
+        Operator plan = null;
         // TODO  add a tree of operators
         HashMap<String, ArrayList<String>> schema = Schema.getSchema();
         try{

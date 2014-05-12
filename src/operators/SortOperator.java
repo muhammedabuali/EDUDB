@@ -5,17 +5,27 @@ package operators;
  */
 public class SortOperator implements Operator{
     @Override
-    public void execute() {
+    public DBResult execute() {
+        return null;
+    }
+
+    @Override
+    public DBParameter[] getChildren() {
+        return new DBParameter[0];
+    }
+
+    @Override
+    public void giveParameter(DBParameter par) {
 
     }
 
     @Override
-    public int numOfParamaters() {
-        return 1;
+    public void print() {
+
     }
 
     @Override
-    public void giveParameter(Operator relation) {
-
+    public int numOfParameters() {
+        return 0;
     }
 }
