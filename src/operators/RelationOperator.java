@@ -17,13 +17,12 @@ public class RelationOperator implements Operator{
     @Override
     public DBResult execute() {
         DBTable table = DataManager.getTable(tableName);
-
-        return null;
+        return table.getData();
     }
 
     @Override
     public void print() {
-        System.out.print("table(" + tableName+ ")");
+        System.out.print(execute());
     }
     
     @Override

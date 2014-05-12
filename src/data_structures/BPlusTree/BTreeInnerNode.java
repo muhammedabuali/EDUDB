@@ -246,7 +246,7 @@ class BTreeInnerNode<TKey extends Comparable<TKey>> extends BTreeNode<TKey> {
     }
 
     @Override
-    public BTreeNode getSmallest() {
+    public BTreeLeafNode getSmallest() {
         return this.getChild(0).getSmallest();
     }
 }

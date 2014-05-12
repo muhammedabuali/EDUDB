@@ -157,5 +157,5 @@ abstract class BTreeNode<TKey extends Comparable<TKey>> {
 
     public abstract String commit();
 
-    public abstract BTreeNode getSmallest();
+    public abstract BTreeLeafNode getSmallest();
 }

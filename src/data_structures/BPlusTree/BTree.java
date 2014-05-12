@@ -95,7 +95,7 @@ public class BTree<TKey extends Comparable<TKey>, TValue> {
     }
     }
 
-    public BTreeNode getSmallest(){
+    public BTreeLeafNode getSmallest(){
         return this.root.getSmallest();
     }
 

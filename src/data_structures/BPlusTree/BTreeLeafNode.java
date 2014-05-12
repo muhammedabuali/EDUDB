@@ -175,7 +175,7 @@ class BTreeLeafNode<TKey extends Comparable<TKey>, TValue> extends BTreeNode<TKe
     }
 
     @Override
-    public BTreeNode getSmallest() {
+    public BTreeLeafNode getSmallest() {
         return this;
     }
 }

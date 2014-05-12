@@ -1,6 +1,8 @@
 package DBStructure;
 
 import data_structures.BPlusTree.DBBTree;
+import data_structures.BPlusTree.DBBTreeIterator;
+import operators.DBResult;
 import operators.SelectResult;
 
 import java.util.ArrayList;
@@ -31,7 +33,8 @@ public class DBTable {
         // TODO primary is at index 0
     }
 
-    /*public SelectResult getData(){
+    public DBResult getData(){
        DBBTree primary = (DBBTree) indices.get(0);
-    }*/
+        return new DBBTreeIterator(primary);
+    }
 }

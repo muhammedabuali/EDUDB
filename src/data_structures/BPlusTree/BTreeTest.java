@@ -43,8 +43,8 @@ public class BTreeTest {
 		tree.insert(9);
 		
 		tree.print();
-
-        System.out.println(tree.getSmallest().toString());
+        DBBTreeIterator iterator = new DBBTreeIterator(tree);
+        iterator.print();
 		return;
 	}
 }

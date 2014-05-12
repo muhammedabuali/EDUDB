@@ -9,4 +9,8 @@ import java.util.ArrayList;
  */
 public class SelectResult implements DBResult{
     public ArrayList<DBRecord> data;
+
+    @Override
+    public void print() {
+    }
 }
