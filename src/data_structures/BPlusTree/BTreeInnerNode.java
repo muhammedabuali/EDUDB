@@ -1,5 +1,6 @@
 package data_structures.BPlusTree;
 
+import operators.DBCond;
 import operators.SelectColumns;
 
 import java.util.ArrayList;
@@ -255,5 +256,10 @@ class BTreeInnerNode<TKey extends Comparable<TKey>> extends BTreeNode<TKey> {
     @Override
     public String project(SelectColumns columns) {
         return null;
+    }
+
+    @Override
+    public void filter(ArrayList<DBCond> conditions) {
+
     }
 }

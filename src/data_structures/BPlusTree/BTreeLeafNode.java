@@ -1,13 +1,18 @@
 package data_structures.BPlusTree;
 
 import DBStructure.DBRecord;
+import operators.DBCond;
 import operators.SelectColumns;
+
+import java.util.ArrayList;
 
 class BTreeLeafNode<TKey extends Comparable<TKey>, TValue> extends BTreeNode<TKey> {
 	protected final static int LEAFORDER = 4;
 	private Object[] values;
-	
-	public BTreeLeafNode() {
+    private ArrayList<Boolean> filters;
+
+    public BTreeLeafNode() {
+        this.filters = new ArrayList<>();
 		this.keys = new Object[LEAFORDER + 1];
 		this.values = new Object[LEAFORDER + 1];
 	}
@@ -191,6 +196,9 @@ class BTreeLeafNode<TKey extends Comparable<TKey>, TValue> extends BTreeNode<TKe
     public String project(SelectColumns columns) {
         String out = "";
         for (int index = 0; index < this.getKeyCount(); ++index) {
+            if(! filters.get(index) ){
+                continue;
+            }
             TValue value = this.getValue(index);
             if(value instanceof DBRecord){
                 DBRecord record = (DBRecord) value;
@@ -200,6 +208,23 @@ class BTreeLeafNode<TKey extends Comparable<TKey>, TValue> extends BTreeNode<TKe
                 out += this.getValue(index).toString() + " ";
             }
         }
+        filters = new ArrayList<>();
         return out;
+    }
+
+    @Override
+    public void filter(ArrayList<DBCond> conditions) {
+        for (int index = 0; index < this.getKeyCount(); ++index) {
+            TValue value = this.getValue(index);
+            if(value instanceof DBRecord){
+                DBRecord record = (DBRecord) value;
+                String inc = record.evaluate(conditions);
+                if (inc .equals("")){
+                    filters.add(false);
+                }else{
+                    filters.add(true);
+                }
+            }
+        }
     }
 }

@@ -2,6 +2,7 @@ package DBStructure;
 
 import dataTypes.DB_Type;
 import dataTypes.DataType;
+import operators.DBCond;
 import operators.SelectColumns;
 import statistics.Schema;
 import gudusoft.gsqlparser.nodes.TResultColumnList;
@@ -60,5 +61,17 @@ public class DBRecord {
             result += values.get(i).toString();
         }
         return  result;
+    }
+
+    public String evaluate(ArrayList<DBCond> conditions) {
+        if (conditions.isEmpty())
+            return this.toString();
+        for (int i=0; i< conditions.size(); i++){
+            DBCond dbCond = conditions.get(i);
+            if (! dbCond.evaluate(this) ){
+                return "";
+            }
+        }
+        return this.toString();
     }
 }

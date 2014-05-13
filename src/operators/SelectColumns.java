@@ -40,4 +40,17 @@ public class SelectColumns implements DBParameter {
         }
         return outString;
     }
+
+    public void union(SelectColumns selectColumns) {
+        ArrayList<DBColumn> dbColumns = selectColumns.getDBColumns();
+        for(int i=0; i<dbColumns.size(); i++){
+            if ( columns.indexOf( dbColumns.get(i) ) == -1 ){
+                columns.add(dbColumns.get(i));
+            }
+        }
+    }
+
+    private ArrayList<DBColumn> getDBColumns() {
+        return columns;
+    }
 }

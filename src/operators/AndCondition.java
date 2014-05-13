@@ -1,5 +1,7 @@
 package operators;
 
+import DBStructure.DBRecord;
+
 import java.util.ArrayList;
 
 /**
@@ -36,5 +38,10 @@ public class AndCondition implements DBMulCondition {
     @Override
     public DBCond[] getChildren() {
         return new DBCond[] {condition1, condition2};
+    }
+
+    @Override
+    public boolean evaluate(DBRecord dbRecord) {
+        return false;
     }
 }

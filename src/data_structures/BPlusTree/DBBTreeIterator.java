@@ -1,8 +1,10 @@
 package data_structures.BPlusTree;
 
+import operators.DBCond;
 import operators.DBResult;
 import operators.SelectColumns;
 
+import java.util.ArrayList;
 import java.util.ListIterator;
 
 /**
@@ -13,15 +15,22 @@ public class DBBTreeIterator implements ListIterator, DBResult {
     BTreeLeafNode cur;
     private int index;
     SelectColumns columns;
+    private ArrayList<DBCond> conditions;
 
     public DBBTreeIterator(BTree tree){
         this.tree = tree;
         this.cur = tree.getSmallest();
         this.index = 0;
+        conditions = new ArrayList<>();
     }
 
     public void project(SelectColumns columns){
-        this.columns = columns;
+        if (this.columns == null){
+            this.columns = columns;
+        }else {
+            this.columns.union(columns);
+        }
+
     }
     @Override
     public boolean hasNext() {
@@ -77,7 +86,8 @@ public class DBBTreeIterator implements ListIterator, DBResult {
         DBBTreeIterator itr = this;
         do {
             BTreeNode element = (BTreeNode) itr.cur;
-            out+= (element.project(columns) );
+            element.filter(conditions);
+            out+= (element.project(columns));
         }while (itr.next() != null);
         return out;
     }
@@ -85,5 +95,9 @@ public class DBBTreeIterator implements ListIterator, DBResult {
     @Override
     public void print() {
         System.out.print(this);
+    }
+
+    public void filter(DBCond condition) {
+        this.conditions.add(condition);
     }
 }

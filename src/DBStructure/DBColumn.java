@@ -24,6 +24,14 @@ public class DBColumn implements DBParameter{
     }
 
     @Override
+    public boolean equals(Object o){
+        if (o instanceof DBColumn){
+            return ((DBColumn) o).order == order
+                    && ( (DBColumn) o).tableName.equals(tableName);
+        }
+        return false;
+    }
+    @Override
     public int numOfParameters() {
         return 0;
     }

@@ -1,6 +1,9 @@
 package data_structures.BPlusTree;
 
+import operators.DBCond;
 import operators.SelectColumns;
+
+import java.util.ArrayList;
 
 enum TreeNodeType {
 	InnerNode,
@@ -162,4 +165,7 @@ abstract class BTreeNode<TKey extends Comparable<TKey>> {
     public abstract BTreeLeafNode getSmallest();
 
     public abstract String project(SelectColumns columns);
+
+
+    public abstract void filter(ArrayList<DBCond> conditions);
 }

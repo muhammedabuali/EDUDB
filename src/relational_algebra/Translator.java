@@ -1,11 +1,9 @@
 package relational_algebra;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Stack;
 
+import dataTypes.DB_Type;
 import operators.AndCondition;
 import operators.DBCond;
 import operators.DBCondition;
@@ -20,7 +18,6 @@ import operators.RelationOperator;
 import operators.SelectColumns;
 import operators.SortOperator;
 import ra.Term;
-import DBStructure.DBChar;
 import DBStructure.DBColumn;
 import adipe.translate.TranslationException;
 import adipe.translate.sql.Queries;
@@ -269,10 +266,10 @@ public class Translator {
                         }
                     }
                     DBColumn column2 = new DBColumn(num, tableName);
-                    condition2 = new DBCondition(column, (DBParameter)column2,
+                    condition2 = new DBCondition(column, column2,
                             op);
                 }else{
-                    DBChar c = new DBChar( condition.charAt(3) );
+                    DB_Type.DB_Int c = new DB_Type.DB_Int( condition.charAt(3) );
                     condition2 = new DBCondition(column, c, op);
                     condition = condition.substring(4);
                 }

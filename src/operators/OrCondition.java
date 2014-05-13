@@ -1,5 +1,7 @@
 package operators;
 
+import DBStructure.DBRecord;
+
 /**
  * Created by mohamed on 4/19/14.
  */
@@ -33,5 +35,10 @@ public class OrCondition implements DBMulCondition {
     @Override
     public DBCond[] getChildren() {
         return new DBCond[] { condition1, condition2 };
+    }
+
+    @Override
+    public boolean evaluate(DBRecord dbRecord) {
+        return false;
     }
 }

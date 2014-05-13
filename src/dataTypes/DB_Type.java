@@ -1,15 +1,21 @@
 package dataTypes;
 
+import DBStructure.DBConst;
+
 /**
  * Created by mohamed on 3/23/14.
  */
 public class DB_Type {
 
-public static class DB_Int implements DataType {
+public static class DB_Int implements DataType , DBConst{
         public int number;
 
         public DB_Int(int num){
             number = num;
+        }
+
+        public DB_Int(char num){
+            number = num - '0';
         }
         public double diff(DataType key){
             if (key instanceof DB_Int){
@@ -47,9 +53,19 @@ public static class DB_Int implements DataType {
         public String toString(){
             return number+"";
         }
+
+    @Override
+    public void print() {
+        System.out.print(number);
+    }
+
+    @Override
+    public int numOfParameters() {
+        return 0;
+    }
 }
 
-    public static class DB_Char implements DataType{
+    public static class DB_Char implements DataType, DBConst{
         public char c;
 
         public DB_Char(char c){
@@ -82,6 +98,16 @@ public static class DB_Int implements DataType {
         @Override
         public int hashCode(){
             return c;
+        }
+
+        @Override
+        public void print() {
+            System.out.print(c);
+        }
+
+        @Override
+        public int numOfParameters() {
+            return 0;
         }
     }
 
