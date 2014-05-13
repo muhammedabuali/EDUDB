@@ -2,6 +2,7 @@ package DBStructure;
 
 import dataTypes.DB_Type;
 import dataTypes.DataType;
+import operators.SelectColumns;
 import statistics.Schema;
 import gudusoft.gsqlparser.nodes.TResultColumnList;
 
@@ -33,10 +34,24 @@ public class DBRecord {
         }
     }
 
+
     public DataType getValue(int i){
         return values.get(i);
     }
 
+    public String project(SelectColumns columns){
+        if (columns == null)
+            return toString();
+        ArrayList<Integer> columnsArray = columns.getColumns();
+        String result = "";
+        for(int i=0; i< values.size(); i++){
+            if (columnsArray.indexOf(i+1) != -1){
+                result += values.get(i).toString();
+                result += ',';
+            }
+        }
+        return result;
+    }
     @Override
     public String toString(){
         String result = values.get(0).toString();

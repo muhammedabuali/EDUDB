@@ -1,5 +1,8 @@
 package data_structures.BPlusTree;
 
+import DBStructure.DBRecord;
+import operators.SelectColumns;
+
 class BTreeLeafNode<TKey extends Comparable<TKey>, TValue> extends BTreeNode<TKey> {
 	protected final static int LEAFORDER = 4;
 	private Object[] values;
@@ -9,7 +12,12 @@ class BTreeLeafNode<TKey extends Comparable<TKey>, TValue> extends BTreeNode<TKe
 		this.values = new Object[LEAFORDER + 1];
 	}
 
-	@SuppressWarnings("unchecked")
+    public BTreeLeafNode(BTreeLeafNode smallest) {
+        this.keys = smallest.keys;
+        this.values = smallest.values;
+    }
+
+    @SuppressWarnings("unchecked")
 	public TValue getValue(int index) {
 		return (TValue)this.values[index];
 	}
@@ -43,7 +51,7 @@ class BTreeLeafNode<TKey extends Comparable<TKey>, TValue> extends BTreeNode<TKe
     public String toString(){
         String out = "";
         for (int index = 0; index < this.getKeyCount(); ++index) {
-            out += this.getKey(index).toString() + ",";
+            out += this.getValue(index).toString() + " ";
         }
         return out;
     }
@@ -177,5 +185,21 @@ class BTreeLeafNode<TKey extends Comparable<TKey>, TValue> extends BTreeNode<TKe
     @Override
     public BTreeLeafNode getSmallest() {
         return this;
+    }
+
+    @Override
+    public String project(SelectColumns columns) {
+        String out = "";
+        for (int index = 0; index < this.getKeyCount(); ++index) {
+            TValue value = this.getValue(index);
+            if(value instanceof DBRecord){
+                DBRecord record = (DBRecord) value;
+                String inc = record.project(columns);
+                out += inc + "\n";
+            }else{
+                out += this.getValue(index).toString() + " ";
+            }
+        }
+        return out;
     }
 }

@@ -1,10 +1,9 @@
 package data_structures.BPlusTree;
 
 import operators.DBResult;
+import operators.SelectColumns;
 
-import java.util.Iterator;
 import java.util.ListIterator;
-import java.util.Objects;
 
 /**
  * Created by mohamed on 5/12/14.
@@ -13,6 +12,7 @@ public class DBBTreeIterator implements ListIterator, DBResult {
     BTree tree;
     BTreeLeafNode cur;
     private int index;
+    SelectColumns columns;
 
     public DBBTreeIterator(BTree tree){
         this.tree = tree;
@@ -20,6 +20,9 @@ public class DBBTreeIterator implements ListIterator, DBResult {
         this.index = 0;
     }
 
+    public void project(SelectColumns columns){
+        this.columns = columns;
+    }
     @Override
     public boolean hasNext() {
         if(cur == null)
@@ -69,12 +72,18 @@ public class DBBTreeIterator implements ListIterator, DBResult {
     }
 
     @Override
-    public void print() {
+    public String toString(){
+        String out = "";
         DBBTreeIterator itr = this;
-        System.out.print(itr.cur + " ");
-        while (itr.hasNext()){
-            BTreeNode element = (BTreeNode) itr.next();
-            System.out.print(element + " ");
-        }
+        do {
+            BTreeNode element = (BTreeNode) itr.cur;
+            out+= (element.project(columns) );
+        }while (itr.next() != null);
+        return out;
+    }
+
+    @Override
+    public void print() {
+        System.out.print(this);
     }
 }

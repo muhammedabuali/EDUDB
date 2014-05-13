@@ -20,6 +20,13 @@ public class SelectColumns implements DBParameter {
         }
     }
 
+    public ArrayList<Integer> getColumns(){
+        ArrayList<Integer> out = new ArrayList<>();
+        for (int i=0; i< columns.size(); i++){
+            out.add(columns.get(i).order);
+        }
+        return out;
+    }
     @Override
     public int numOfParameters() {
         return 0;

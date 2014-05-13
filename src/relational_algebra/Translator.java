@@ -299,28 +299,6 @@ public class Translator {
         return x;
     }
 
-    private static Operator extractHelper(String[] operations, int i) {
-        String cur = operations[i];
-        if (cur.startsWith("0a0")) {
-            cur = cur.substring(3);
-        }
-        if (cur.startsWith("Project")) {
-            ProjectOperator project = new ProjectOperator();
-        } else if (cur.startsWith("Filter")) {
-            FilterOperator filter = new FilterOperator();
-        } else if (cur.charAt(0) >= 'a' && cur.charAt(0) <= 'z') {// table name
-                                                                  // lower case
-            RelationOperator relation = new RelationOperator();
-            String tableName = cur.split("=")[0];
-            relation.setTableName(tableName);
-        } else if (cur.startsWith("CartProd")) {
-            JoinOperator join = new JoinOperator();
-        } else if (cur.startsWith("SortAsc")) {
-            SortOperator sort = new SortOperator();
-        }
-        return null;
-    }
-
     public static void main(String[] args) {
         Operator x = (Operator) Translator
                 .translate("SELECT a, x FROM p, xy WHERE (y = b AND y = a) OR"

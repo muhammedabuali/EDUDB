@@ -1,5 +1,6 @@
 package DBStructure;
 
+import data_structures.BPlusTree.BTree;
 import data_structures.BPlusTree.DBBTree;
 import data_structures.BPlusTree.DBBTreeIterator;
 import operators.DBResult;

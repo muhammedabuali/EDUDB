@@ -1,5 +1,7 @@
 package data_structures.BPlusTree;
 
+import operators.SelectColumns;
+
 enum TreeNodeType {
 	InnerNode,
 	LeafNode
@@ -158,4 +160,6 @@ abstract class BTreeNode<TKey extends Comparable<TKey>> {
     public abstract String commit();
 
     public abstract BTreeLeafNode getSmallest();
+
+    public abstract String project(SelectColumns columns);
 }

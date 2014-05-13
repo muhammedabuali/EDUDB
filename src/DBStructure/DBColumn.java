@@ -6,8 +6,8 @@ import operators.DBParameter;
  * Created by mohamed on 4/19/14.
  */
 public class DBColumn implements DBParameter{
-    int order;
-    String tableName;
+    public int order;
+    public String tableName;
     public DBColumn(int num, String tableName) {
         this.order = num;
         this.tableName = tableName;
