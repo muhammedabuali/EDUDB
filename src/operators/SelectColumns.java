@@ -4,8 +4,15 @@ import java.util.ArrayList;
 
 import DBStructure.DBColumn;
 
+/**
+ * @author  mohamed
+ */
 public class SelectColumns implements DBParameter {
 
+    /**
+     * @uml.property  name="columns"
+     * @uml.associationEnd  multiplicity="(0 -1)" elementType="DBStructure.DBColumn"
+     */
     ArrayList<DBColumn> columns;
 
     public SelectColumns(ArrayList<DBColumn> columns) {

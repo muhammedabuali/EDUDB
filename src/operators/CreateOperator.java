@@ -9,6 +9,10 @@ import gudusoft.gsqlparser.stmt.TCreateTableSqlStatement;
  */
 public class CreateOperator implements Operator {
 
+    /**
+     * @uml.property  name="statement"
+     * @uml.associationEnd  multiplicity="(1 1)"
+     */
     private TCreateTableSqlStatement statement;
 
     public CreateOperator(TCreateTableSqlStatement statement){

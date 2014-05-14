@@ -6,14 +6,19 @@ import operators.Operator;
 import java.util.ArrayList;
 
 /**
- * A B+ tree
- * Since the structures and behaviors between internal node and external node are different, 
- * so there are two different classes for each kind of node.
- * @param <TKey> the data type of the key
- * @param <TValue> the data type of the value
+ * A B+ tree Since the structures and behaviors between internal node and external node are different,  so there are two different classes for each kind of node.
+ * @param  < TKey  >  the data type of the key
+ * @param  < TValue  >  the data type of the value
  */
 public class BTree<TKey extends Comparable<TKey>, TValue> {
+	/**
+     * @uml.property  name="root"
+     * @uml.associationEnd  multiplicity="(1 1)"
+     */
 	private BTreeNode<TKey> root;
+	/**
+     * @uml.property  name="tableName"
+     */
 	private String tableName;
 
 	public BTree() {

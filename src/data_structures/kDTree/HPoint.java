@@ -29,8 +29,15 @@ package data_structures.kDTree;
 
 import dataTypes.DataType;
 
+/**
+ * @author  mohamed
+ */
 class HPoint {
 
+    /**
+     * @uml.property  name="coord"
+     * @uml.associationEnd  multiplicity="(0 -1)"
+     */
     protected DataType[] coord;
 
     protected HPoint(int n) {

@@ -1,1 +1,1 @@
-hello numbers int, age int
+persons number integer, age integer, birth integer, married integer

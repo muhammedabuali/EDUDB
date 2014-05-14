@@ -4,7 +4,15 @@ package operators;
  * Created by mohamed on 4/13/14.
  */
 public class JoinOperator implements Operator{
+    /**
+     * @uml.property  name="table1"
+     * @uml.associationEnd  
+     */
     DBParameter table1;
+    /**
+     * @uml.property  name="table2"
+     * @uml.associationEnd  
+     */
     DBParameter table2;
     
     @Override

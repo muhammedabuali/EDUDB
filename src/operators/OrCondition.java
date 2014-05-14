@@ -7,7 +7,15 @@ import DBStructure.DBRecord;
  */
 public class OrCondition implements DBMulCondition {
 
+    /**
+     * @uml.property  name="condition1"
+     * @uml.associationEnd  
+     */
     DBCond condition1;
+    /**
+     * @uml.property  name="condition2"
+     * @uml.associationEnd  
+     */
     DBCond condition2;
 
     public int numOfParameters() {
@@ -39,6 +47,6 @@ public class OrCondition implements DBMulCondition {
 
     @Override
     public boolean evaluate(DBRecord dbRecord) {
-        return false;
+        return condition1.evaluate(dbRecord) || condition2.evaluate(dbRecord);
     }
 }

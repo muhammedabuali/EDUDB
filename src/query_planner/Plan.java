@@ -9,6 +9,9 @@ import operators.Operator;
  */
 public class Plan {
 
+    /**
+     * @uml.property  name="operators"
+     */
     private final ArrayList<Operator> operators;
 
     public Plan(ArrayList<Operator> operators){

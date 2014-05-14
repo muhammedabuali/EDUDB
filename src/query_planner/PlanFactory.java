@@ -7,6 +7,10 @@ import operators.Operator;
  * Created by mohamed on 4/1/14.
  */
 public class PlanFactory implements Planer{
+    /**
+     * @uml.property  name="planner"
+     * @uml.associationEnd  
+     */
     private Planer planner;
 
     @Override

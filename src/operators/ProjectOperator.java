@@ -7,7 +7,15 @@ import data_structures.BPlusTree.DBBTreeIterator;
  */
 public class ProjectOperator implements Operator{
 
+    /**
+     * @uml.property  name="columns"
+     * @uml.associationEnd  
+     */
     SelectColumns columns;
+    /**
+     * @uml.property  name="tableDbParameter"
+     * @uml.associationEnd  
+     */
     DBParameter tableDbParameter;
 
     public ProjectOperator() {

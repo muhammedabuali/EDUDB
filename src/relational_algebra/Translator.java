@@ -269,9 +269,23 @@ public class Translator {
                     condition2 = new DBCondition(column, column2,
                             op);
                 }else{
-                    DB_Type.DB_Int c = new DB_Type.DB_Int( condition.charAt(3) );
+                    int index = 3;
+                    char ch = condition.charAt(index);
+                    int param =0;
+                    while (ch >= '0' && ch <= '9'){
+                        param *= 10;
+                        param += ch - '0';
+                        index++;
+                        if(index == condition.length())
+                            break;
+                        ch = condition.charAt(index);
+                    }
+                    DB_Type.DB_Int c = new DB_Type.DB_Int( param );
                     condition2 = new DBCondition(column, c, op);
-                    condition = condition.substring(4);
+                    if(index == condition.length())
+                        condition = "";
+                    else
+                        condition = condition.substring(index + 1);
                 }
                 x = condition2;
                 if (given == null) {

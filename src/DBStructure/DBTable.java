@@ -13,7 +13,15 @@ import java.util.ArrayList;
  */
 public class DBTable {
  //TODO initialize object
+    /**
+     * @uml.property  name="tableName"
+     * @uml.associationEnd  qualifier="key:java.lang.String DBStructure.DBTable"
+     */
     private String tableName;
+    /**
+     * @uml.property  name="indices"
+     * @uml.associationEnd  multiplicity="(0 -1)" elementType="data_structures.BPlusTree.DBBTree"
+     */
     private ArrayList<DBIndex> indices;
 
     public DBTable(String tableName){
@@ -25,6 +33,10 @@ public class DBTable {
         indices.add((DBIndex) btree);
     }
 
+    /**
+     * @return
+     * @uml.property  name="tableName"
+     */
     public String getTableName(){
         return tableName;
     }

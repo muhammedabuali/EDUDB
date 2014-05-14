@@ -6,9 +6,19 @@ import operators.SelectColumns;
 
 import java.util.ArrayList;
 
+/**
+ * @author  mohamed
+ */
 class BTreeLeafNode<TKey extends Comparable<TKey>, TValue> extends BTreeNode<TKey> {
 	protected final static int LEAFORDER = 4;
+	/**
+     * @uml.property  name="values"
+     */
 	private Object[] values;
+    /**
+     * @uml.property  name="filters"
+     * @uml.associationEnd  multiplicity="(0 -1)" elementType="java.lang.Boolean"
+     */
     private ArrayList<Boolean> filters;
 
     public BTreeLeafNode() {
