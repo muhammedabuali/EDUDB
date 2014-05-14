@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="jline-2.10">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../libs/java/jline-2.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../libs/java/gsp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../libs/java/translate-ng-7.1.0/translate-ng-7.1.0.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../../libs/java/translate-ng-7.1.0/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../libs/java/translate-ng-7.1.0/lib" recursive="false" />
+  </library>
+</component>
