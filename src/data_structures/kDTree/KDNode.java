@@ -29,15 +29,38 @@ import java.util.Vector;
 
 // K-D Tree node class
 
+/**
+ * @author  mohamed
+ */
 class KDNode {
 
     // these are seen by kDTree
+    /**
+     * @uml.property  name="k"
+     * @uml.associationEnd  multiplicity="(1 1)"
+     */
     protected HPoint k;
 
+    /**
+     * @uml.property  name="v"
+     */
     Object v;
 
-    protected KDNode left, right;
+    /**
+     * @uml.property  name="left"
+     * @uml.associationEnd  multiplicity="(1 1)" inverse="right:data_structures.kDTree.KDNode"
+     */
+    protected KDNode left;
 
+    /**
+     * @uml.property  name="right"
+     * @uml.associationEnd  multiplicity="(1 1)" inverse="left:data_structures.kDTree.KDNode"
+     */
+    protected KDNode right;
+
+    /**
+     * @uml.property  name="deleted"
+     */
     protected boolean deleted;
 
     // Method ins translated from 352.ins.c of Gonnet & Baeza-Yates

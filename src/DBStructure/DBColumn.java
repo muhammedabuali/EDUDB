@@ -6,7 +6,13 @@ import operators.DBParameter;
  * Created by mohamed on 4/19/14.
  */
 public class DBColumn implements DBParameter{
+    /**
+     * @uml.property  name="order"
+     */
     public int order;
+    /**
+     * @uml.property  name="tableName"
+     */
     public String tableName;
     public DBColumn(int num, String tableName) {
         this.order = num;

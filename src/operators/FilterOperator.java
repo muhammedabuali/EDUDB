@@ -7,7 +7,15 @@ import data_structures.BPlusTree.DBBTreeIterator;
  */
 public class FilterOperator implements Operator {
 
+    /**
+     * @uml.property  name="condition"
+     * @uml.associationEnd  
+     */
     DBCond condition;
+    /**
+     * @uml.property  name="tableDbParameter"
+     * @uml.associationEnd  
+     */
     DBParameter tableDbParameter;
 
     public FilterOperator() {

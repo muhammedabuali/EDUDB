@@ -10,8 +10,19 @@ import dataTypes.DataType;
  * Created by mohamed on 4/19/14.
  */
 public class DBCondition implements DBCond {
+    /**
+     * @uml.property  name="column1"
+     * @uml.associationEnd  multiplicity="(1 1)"
+     */
     DBColumn column1;
+    /**
+     * @uml.property  name="column2"
+     * @uml.associationEnd  multiplicity="(1 1)"
+     */
     DBParameter column2;
+    /**
+     * @uml.property  name="op"
+     */
     char op;
 
     public DBCondition(DBColumn column, DBParameter column2, char op) {

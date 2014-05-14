@@ -3,8 +3,15 @@ package data_structures.BinaryTree;
 import dataTypes.DataType;
 
 // BinaryTree.java
+/**
+ * @author  mohamed
+ */
 public class BinaryTree {
     // Root node pointer. Will be null for an empty tree.
+    /**
+     * @uml.property  name="root"
+     * @uml.associationEnd  
+     */
     private Node root;
 
 
@@ -16,9 +23,24 @@ public class BinaryTree {
      The node is a "dumb" nested class -- we just use it for
      storage; it does not have any methods.
     */
+    /**
+     * @author   mohamed
+     */
     private static class Node {
+        /**
+         * @uml.property  name="left"
+         * @uml.associationEnd  
+         */
         Node left;
+        /**
+         * @uml.property  name="right"
+         * @uml.associationEnd  
+         */
         Node right;
+        /**
+         * @uml.property  name="data"
+         * @uml.associationEnd  
+         */
         DataType data;
 
         Node(DataType newData) {

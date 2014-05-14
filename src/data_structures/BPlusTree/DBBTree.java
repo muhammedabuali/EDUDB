@@ -12,7 +12,14 @@ import java.util.HashMap;
  * Created by mohamed on 4/11/14.
  */
 public class DBBTree extends BTree<Integer, DBRecord> implements DBIndex{
+    /**
+     * @uml.property  name="tableName"
+     * @uml.associationEnd  
+     */
     private String tableName;
+    /**
+     * @uml.property  name="columnNames"
+     */
     private ArrayList<String> columnNames;
 
     public DBBTree(String tableName){

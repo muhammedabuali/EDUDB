@@ -10,14 +10,39 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
+/**
+ * @author  mohamed
+ */
 public class LinearHashTable implements Map<DataType, DataType> {
 
+	/**
+     * @uml.property  name="loadFactor"
+     */
 	private float loadFactor;
+	/**
+     * @uml.property  name="bucketSize"
+     */
 	private int bucketSize;
+	/**
+     * @uml.property  name="size"
+     */
 	private int size;
+	/**
+     * @uml.property  name="digits"
+     */
 	private int digits;
+	/**
+     * @uml.property  name="hashSeed"
+     */
 	private int hashSeed;
+	/**
+     * @uml.property  name="numberOfItems"
+     */
 	private int numberOfItems;
+	/**
+     * @uml.property  name="buckets"
+     * @uml.associationEnd  multiplicity="(0 -1)" inverse="this$0:data_structures.linearHashTable.LinearHashTable$Bucket"
+     */
 	private ArrayList<Bucket> buckets;
 
 	public LinearHashTable(float loadFactor, int bucketSize) {
@@ -165,7 +190,14 @@ public class LinearHashTable implements Map<DataType, DataType> {
 		return null;
 	}
 	
+	/**
+     * @author   mohamed
+     */
 	class Bucket {
+		/**
+         * @uml.property  name="entries"
+         * @uml.associationEnd  multiplicity="(0 -1)"
+         */
 		LHTEntry[] entries;
 		int lastItem;
 		LinkedList<LHTEntry> overflow;
@@ -256,8 +288,19 @@ public class LinearHashTable implements Map<DataType, DataType> {
         }
     }
 	
+	/**
+     * @author   mohamed
+     */
 	class LHTEntry implements Entry<DataType, DataType>{
+		/**
+         * @uml.property  name="key"
+         * @uml.associationEnd  
+         */
 		private DataType key;
+		/**
+         * @uml.property  name="value"
+         * @uml.associationEnd  
+         */
 		private DataType value;
         private int hash;
 
@@ -267,15 +310,28 @@ public class LinearHashTable implements Map<DataType, DataType> {
             this.hash = hash;
 		}
 
+		/**
+         * @return
+         * @uml.property  name="value"
+         */
 		public DataType getValue(){
 			return value;
 		}
 
+		/**
+         * @return
+         * @uml.property  name="key"
+         */
 		@Override
 		public DataType getKey() {
 			return key;
 		}
 
+		/**
+         * @param value
+         * @return
+         * @uml.property  name="value"
+         */
 		@Override
 		public DataType setValue(DataType value) {
 			DataType old = this.value;

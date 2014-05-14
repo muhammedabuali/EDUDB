@@ -8,8 +8,15 @@ import DBStructure.DataManager;
  */
 public class RelationOperator implements Operator{
 
+    /**
+     * @uml.property  name="tableName"
+     */
     private String tableName;
 
+    /**
+     * @param  tableName
+     * @uml.property  name="tableName"
+     */
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }

@@ -14,6 +14,10 @@ import gudusoft.gsqlparser.stmt.TInsertSqlStatement;
  */
 public class InsertOperator implements Operator{
 
+    /**
+     * @uml.property  name="statement"
+     * @uml.associationEnd  multiplicity="(1 1)"
+     */
     private TInsertSqlStatement statement;
 
     public InsertOperator(TCustomSqlStatement statement){

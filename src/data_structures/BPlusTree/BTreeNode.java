@@ -10,11 +10,32 @@ enum TreeNodeType {
 	LeafNode
 }
 
+/**
+ * @author   mohamed
+ */
 abstract class BTreeNode<TKey extends Comparable<TKey>> {
+	/**
+     * @uml.property  name="keys"
+     */
 	protected Object[] keys;
+	/**
+     * @uml.property  name="keyCount"
+     */
 	protected int keyCount;
+	/**
+     * @uml.property  name="parentNode"
+     * @uml.associationEnd  inverse="leftSibling:data_structures.BPlusTree.BTreeNode"
+     */
 	protected BTreeNode<TKey> parentNode;
+	/**
+     * @uml.property  name="leftSibling"
+     * @uml.associationEnd  inverse="parentNode:data_structures.BPlusTree.BTreeNode"
+     */
 	protected BTreeNode<TKey> leftSibling;
+	/**
+     * @uml.property  name="rightSibling"
+     * @uml.associationEnd  
+     */
 	protected BTreeNode<TKey> rightSibling;
 	
 
@@ -25,6 +46,10 @@ abstract class BTreeNode<TKey extends Comparable<TKey>> {
 		this.rightSibling = null;
 	}
 
+	/**
+     * @return
+     * @uml.property  name="keyCount"
+     */
 	public int getKeyCount() {
 		return this.keyCount;
 	}
@@ -46,6 +71,10 @@ abstract class BTreeNode<TKey extends Comparable<TKey>> {
 		this.parentNode = parent;
 	}	
 	
+	/**
+     * @uml.property  name="nodeType"
+     * @uml.associationEnd  readOnly="true"
+     */
 	public abstract TreeNodeType getNodeType();
 	
 	
@@ -162,6 +191,10 @@ abstract class BTreeNode<TKey extends Comparable<TKey>> {
 
     public abstract String commit();
 
+    /**
+     * @uml.property  name="smallest"
+     * @uml.associationEnd  readOnly="true"
+     */
     public abstract BTreeLeafNode getSmallest();
 
     public abstract String project(SelectColumns columns);

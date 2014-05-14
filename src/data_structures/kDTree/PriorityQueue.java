@@ -25,6 +25,9 @@
  */
 package data_structures.kDTree;
 
+/**
+ * @author  mohamed
+ */
 class PriorityQueue implements java.io.Serializable {
 
     /**
@@ -45,26 +48,31 @@ class PriorityQueue implements java.io.Serializable {
 
     /**
      * The maximum priority possible in this priority queue.
+     * @uml.property  name="maxPriority"
      */
     private double maxPriority = Double.MAX_VALUE;
 
     /**
      * This contains the list of objects in the queue.
+     * @uml.property  name="data"
      */
     private Object[] data;
 
     /**
      * This contains the list of prioritys in the queue.
+     * @uml.property  name="value"
      */
     private double[] value;
 
     /**
      * Holds the number of elements currently in the queue.
+     * @uml.property  name="count"
      */
     private int count;
 
     /**
      * This holds the number elements this queue can have.
+     * @uml.property  name="capacity"
      */
     private int capacity;
 

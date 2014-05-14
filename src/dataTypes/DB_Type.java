@@ -7,7 +7,13 @@ import DBStructure.DBConst;
  */
 public class DB_Type {
 
+/**
+ * @author   mohamed
+ */
 public static class DB_Int implements DataType , DBConst{
+        /**
+         * @uml.property  name="number"
+         */
         public int number;
 
         public DB_Int(int num){
@@ -46,6 +52,10 @@ public static class DB_Int implements DataType , DBConst{
             return number;
         }
 
+        /**
+         * @return
+         * @uml.property  name="number"
+         */
         public int getNumber(){
             return number;
         }

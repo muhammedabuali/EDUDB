@@ -27,13 +27,23 @@ package data_structures.kDTree;
 
 // Bjoern Heckel's solution to the KD-Tree n-nearest-neighbor problem
 
+/**
+ * @author  mohamed
+ */
 class NearestNeighborList {
 
    public static int REMOVE_HIGHEST = 1;
    public static int REMOVE_LOWEST = 2;
 
-   PriorityQueue m_Queue = null;
-   int m_Capacity = 0;
+   /**
+ * @uml.property  name="m_Queue"
+ * @uml.associationEnd  multiplicity="(1 1)"
+ */
+PriorityQueue m_Queue = null;
+   /**
+ * @uml.property  name="m_Capacity"
+ */
+int m_Capacity = 0;
 
    // constructor
    public NearestNeighborList(int capacity) {

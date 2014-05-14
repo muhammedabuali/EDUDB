@@ -14,7 +14,14 @@ import java.util.HashMap;
  * Created by mohamed on 4/11/14.
  */
 public class DBRecord {
+    /**
+     * @uml.property  name="columns"
+     */
     private ArrayList<String> columns;
+    /**
+     * @uml.property  name="values"
+     * @uml.associationEnd  multiplicity="(0 -1)" elementType="dataTypes.DB_Type$DB_Int"
+     */
     private ArrayList<DataType> values;
 
     public DBRecord(String[] line, String tableName) {

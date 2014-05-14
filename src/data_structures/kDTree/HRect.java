@@ -30,9 +30,20 @@ package data_structures.kDTree;
 
 import dataTypes.DB_Type;
 
+/**
+ * @author  mohamed
+ */
 class HRect {
 
+    /**
+     * @uml.property  name="min"
+     * @uml.associationEnd  multiplicity="(1 1)"
+     */
     protected HPoint min;
+    /**
+     * @uml.property  name="max"
+     * @uml.associationEnd  multiplicity="(1 1)"
+     */
     protected HPoint max;
 
     protected HRect(int ndims) {

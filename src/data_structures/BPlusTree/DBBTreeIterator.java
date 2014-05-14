@@ -11,10 +11,29 @@ import java.util.ListIterator;
  * Created by mohamed on 5/12/14.
  */
 public class DBBTreeIterator implements ListIterator, DBResult {
+    /**
+     * @uml.property  name="tree"
+     * @uml.associationEnd  multiplicity="(1 1)"
+     */
     BTree tree;
+    /**
+     * @uml.property  name="cur"
+     * @uml.associationEnd  multiplicity="(1 1)"
+     */
     BTreeLeafNode cur;
+    /**
+     * @uml.property  name="index"
+     */
     private int index;
+    /**
+     * @uml.property  name="columns"
+     * @uml.associationEnd  
+     */
     SelectColumns columns;
+    /**
+     * @uml.property  name="conditions"
+     * @uml.associationEnd  multiplicity="(0 -1)" elementType="operators.DBCond"
+     */
     private ArrayList<DBCond> conditions;
 
     public DBBTreeIterator(BTree tree){

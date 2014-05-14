@@ -8,7 +8,8 @@ import java.util.ArrayList;
 public class FileManager {
     private static String dataDirectory ;
     private static String schema;
-    private static boolean initialized, isWindows;
+    private static boolean initialized;
+    private static boolean isWindows;
 
     public FileManager(){
 

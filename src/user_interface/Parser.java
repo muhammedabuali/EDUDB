@@ -1,5 +1,6 @@
 package user_interface;
 
+import gudusoft.gsqlparser.ESqlStatementType;
 import operators.Operator;
 import query_planner.Plan;
 import query_planner.PlanFactory;
@@ -11,7 +12,15 @@ import gudusoft.gsqlparser.TGSqlParser;
  * Created by mohamed on 4/1/14.
  */
 public class Parser {
+    /**
+     * @uml.property  name="sqlparser"
+     * @uml.associationEnd  multiplicity="(1 1)"
+     */
     TGSqlParser sqlparser;
+    /**
+     * @uml.property  name="planFactory"
+     * @uml.associationEnd  multiplicity="(1 1)"
+     */
     PlanFactory planFactory;
     public Parser(){
         sqlparser = new TGSqlParser(EDbVendor.dbvoracle);
@@ -27,7 +36,10 @@ public class Parser {
                 if (plan == null){
                     return;
                 }
-                plan.print();
+                if(sqlparser.sqlstatements.get(i).sqlstatementtype == ESqlStatementType.sstselect)
+                    plan.print();
+                else
+                    plan.execute();
                 System.out.println("");
             }
         }else{
