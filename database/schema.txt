@@ -1,3 +1,0 @@
-hello numbers integer
-hello2 numbers integer
-hello3 numbers integer, numbers2 integer

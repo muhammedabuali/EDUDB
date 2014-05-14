@@ -1,3 +1,0 @@
-MaximumRowsCountinPage=4;
-
-BPlusTreeN=20;
