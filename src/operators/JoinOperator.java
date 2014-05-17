@@ -17,13 +17,18 @@ public class JoinOperator implements Operator{
     
     @Override
     public DBResult execute() {
-        return null;
+        DBResult dbResult1 = ((Operator) table1).execute();
+        DBResult dbResult2 = ((Operator) table2).execute();
+        ProductIterator iter = new ProductIterator();
+        iter.giveIterator(dbResult1);
+        iter.giveIterator(dbResult2);
+        iter.finish();
+        return iter;
     }
 
     @Override
     public void print() {
-        // TODO Auto-generated method stub
-        
+        System.out.print(execute());
     }
 
     @Override

@@ -30,7 +30,7 @@ public class FilterOperator implements Operator {
             iter.filter(condition);
             return iter;
         }
-        System.out.println("project: 24 not iterator\n");
+        System.out.println("filter: not iterator\n");
         return null;
     }
 
