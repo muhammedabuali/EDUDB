@@ -24,6 +24,8 @@ public class DBBTreeIterator implements ListIterator, DBResult {
     /**
      * @uml.property  name="index"
      */
+    private int currentkey;
+
     private int index;
     /**
      * @uml.property  name="columns"
@@ -41,6 +43,7 @@ public class DBBTreeIterator implements ListIterator, DBResult {
         this.cur = tree.getSmallest();
         this.index = 0;
         conditions = new ArrayList<>();
+        this.currentkey = 0;
     }
 
     public void project(SelectColumns columns){
@@ -55,11 +58,29 @@ public class DBBTreeIterator implements ListIterator, DBResult {
     public boolean hasNext() {
         if(cur == null)
             return false;
-        return cur.rightSibling != null;
+        return cur.rightSibling != null
+                || currentkey < cur.getKeyCount()-1;
     }
 
     @Override
     public Object next() {
+        if (cur == null){
+            return null;
+        }
+        currentkey++;
+        if(currentkey< cur.getKeyCount()){
+            return cur.getValue(currentkey);
+        }else {
+            currentkey = 0;
+            cur = (BTreeLeafNode) cur.rightSibling;
+            if (cur== null){
+                return null;
+            }
+            return cur.getValue(0);
+        }
+    }
+
+    private Object nextNode() {
         cur = (BTreeLeafNode) cur.rightSibling;
         return cur;
     }
@@ -107,9 +128,11 @@ public class DBBTreeIterator implements ListIterator, DBResult {
             BTreeNode element = (BTreeNode) itr.cur;
             element.filter(conditions);
             out+= (element.project(columns));
-        }while (itr.next() != null);
+        }while (itr.nextNode() != null);
         return out;
     }
+
+
 
     @Override
     public void print() {
@@ -118,5 +141,10 @@ public class DBBTreeIterator implements ListIterator, DBResult {
 
     public void filter(DBCond condition) {
         this.conditions.add(condition);
+    }
+
+    public Object first() {
+        cur = tree.getSmallest();
+        return cur.getValue(0);
     }
 }

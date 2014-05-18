@@ -1,6 +1,7 @@
 package operators;
 
 import DBStructure.DBRecord;
+import data_structures.BPlusTree.DBBTreeIterator;
 
 import java.util.ArrayList;
 
@@ -19,7 +20,12 @@ public class ProductIterator implements DBResult{
 
     @Override
     public void print() {
+        System.out.println(this);
+    }
 
+    @Override
+    public String toString(){
+        return getIterator().toString();
     }
 
     public void giveIterator(DBResult dbResult) {
@@ -33,13 +39,26 @@ public class ProductIterator implements DBResult{
     private DBResult getIterator() {
         DBSimpleiterator iter = new DBSimpleiterator();
         ArrayList<DBRecord> records = new ArrayList<DBRecord>();
-        //if(table1 instanceof)
-        /*DBBTreeIterator itr = this;
-        do {
-            BTreeNode element = (BTreeNode) itr.cur;
-            element.filter(conditions);
-            out+= (element.project(columns));
-        }while (itr.next() != null);*/
+        if(iterators.get(0) instanceof DBBTreeIterator &&
+                iterators.get(1) instanceof DBBTreeIterator){
+            DBBTreeIterator itr1 = (DBBTreeIterator) iterators.get(0);
+            DBBTreeIterator itr2 = (DBBTreeIterator) iterators.get(1);
+            DBRecord element = (DBRecord) itr1.first();
+            do {
+                DBRecord element2 = (DBRecord) itr2.first();
+                do{
+                    DBRecord record = new DBRecord();
+                    record.add(element.getValues(),
+                            element.getColumns());
+                    record.add(element2.getValues(),
+                            element2.getColumns());
+                    iter.add(record);
+                    element2 = (DBRecord) itr2.next();
+                }while (element2 != null);
+                element = (DBRecord) itr1.next();
+            }while (element != null);
+            return iter;
+        }
         return null;
     }
 

@@ -42,6 +42,17 @@ public class DBRecord {
         }
     }
 
+    public  DBRecord(){
+        columns = new ArrayList<>();
+        values = new ArrayList<>();
+    }
+
+    public void add(ArrayList<DataType> dataValues, ArrayList<String> dataColumns) {
+        for (int i =0; i< dataValues.size(); i++){
+            this.values.add(dataValues.get(i));
+            this.columns.add(dataColumns.get(i));
+        }
+    }
 
     public DataType getValue(int i){
         return values.get(i);
@@ -80,5 +91,14 @@ public class DBRecord {
             }
         }
         return this.toString();
+    }
+
+    public ArrayList<DataType> getValues() {
+        return values;
+    }
+
+
+    public ArrayList<String> getColumns() {
+        return columns;
     }
 }

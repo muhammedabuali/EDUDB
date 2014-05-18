@@ -1,1 +1,2 @@
 persons number integer, age integer, birth integer, married integer
+places id integer, address integer
