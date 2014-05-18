@@ -1,6 +1,7 @@
 package data_structures.BPlusTree;
 
 import operators.DBCond;
+import operators.DBIterator;
 import operators.DBResult;
 import operators.SelectColumns;
 
@@ -10,7 +11,8 @@ import java.util.ListIterator;
 /**
  * Created by mohamed on 5/12/14.
  */
-public class DBBTreeIterator implements ListIterator, DBResult {
+public class DBBTreeIterator implements ListIterator,
+        DBResult , DBIterator{
     /**
      * @uml.property  name="tree"
      * @uml.associationEnd  multiplicity="(1 1)"
@@ -52,7 +54,6 @@ public class DBBTreeIterator implements ListIterator, DBResult {
         }else {
             this.columns.union(columns);
         }
-
     }
     @Override
     public boolean hasNext() {

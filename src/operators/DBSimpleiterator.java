@@ -7,9 +7,10 @@ import java.util.ListIterator;
 /**
  * Created by mohamed on 5/17/14.
  */
-public class DBSimpleiterator implements DBResult, ListIterator{
+public class DBSimpleiterator implements DBResult, ListIterator, DBIterator{
 
     private ArrayList<DBRecord> records;
+    private SelectColumns columns;
 
     public DBSimpleiterator(){
         this.records = new ArrayList<DBRecord>();
@@ -19,7 +20,7 @@ public class DBSimpleiterator implements DBResult, ListIterator{
     public String toString(){
         String out = "";
         for (int i=0; i< records.size(); i++){
-            out += records.get(i).toString() + "\n";
+            out += records.get(i).project(columns) + "\n";
         }
         return out;
     }
@@ -72,5 +73,14 @@ public class DBSimpleiterator implements DBResult, ListIterator{
     @Override
     public void add(Object o) {
         records.add((DBRecord) o);
+    }
+
+    @Override
+    public void project(SelectColumns columns) {
+        if (this.columns == null){
+            this.columns = columns;
+        }else {
+            this.columns.union(columns);
+        }
     }
 }

@@ -24,8 +24,8 @@ public class ProjectOperator implements Operator{
     @Override
     public DBResult execute(){
         DBResult dbResult = ((Operator) tableDbParameter).execute();
-        if(dbResult instanceof DBBTreeIterator){
-            DBBTreeIterator iter = (DBBTreeIterator) dbResult;
+        if(dbResult instanceof DBIterator){
+            DBIterator iter = (DBIterator) dbResult;
             iter.project(columns);
             return iter;
         }

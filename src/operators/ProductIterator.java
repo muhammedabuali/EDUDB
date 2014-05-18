@@ -8,10 +8,11 @@ import java.util.ArrayList;
 /**
  * Created by mohamed on 5/17/14.
  */
-public class ProductIterator implements DBResult{
+public class ProductIterator implements DBResult, DBIterator{
 
     ArrayList<DBResult> iterators;
     private boolean finished;
+    private SelectColumns columns;
 
     public ProductIterator(){
         iterators = new ArrayList<>();
@@ -38,6 +39,7 @@ public class ProductIterator implements DBResult{
     // execute join and return resulting iterator
     private DBResult getIterator() {
         DBSimpleiterator iter = new DBSimpleiterator();
+        iter.project(columns);
         ArrayList<DBRecord> records = new ArrayList<DBRecord>();
         if(iterators.get(0) instanceof DBBTreeIterator &&
                 iterators.get(1) instanceof DBBTreeIterator){
@@ -64,5 +66,14 @@ public class ProductIterator implements DBResult{
 
     public void finish() {
         finished = true;
+    }
+
+    @Override
+    public void project(SelectColumns columns) {
+        if (this.columns == null){
+            this.columns = columns;
+        }else {
+            this.columns.union(columns);
+        }
     }
 }
