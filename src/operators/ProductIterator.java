@@ -13,8 +13,10 @@ public class ProductIterator implements DBResult, DBIterator{
     ArrayList<DBResult> iterators;
     private boolean finished;
     private SelectColumns columns;
+    private ArrayList<DBCond> conditions;
 
     public ProductIterator(){
+        conditions = new ArrayList<>();
         iterators = new ArrayList<>();
         finished = false;
     }
@@ -40,6 +42,7 @@ public class ProductIterator implements DBResult, DBIterator{
     private DBResult getIterator() {
         DBSimpleiterator iter = new DBSimpleiterator();
         iter.project(columns);
+        iter.filter(conditions);
         ArrayList<DBRecord> records = new ArrayList<DBRecord>();
         if(iterators.get(0) instanceof DBBTreeIterator &&
                 iterators.get(1) instanceof DBBTreeIterator){
@@ -75,5 +78,10 @@ public class ProductIterator implements DBResult, DBIterator{
         }else {
             this.columns.union(columns);
         }
+    }
+
+    @Override
+    public void filter(DBCond condition) {
+        this.conditions.add(condition);
     }
 }

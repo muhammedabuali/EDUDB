@@ -48,7 +48,7 @@ public class DBCondition implements DBCond {
 
     @Override
     public boolean evaluate(DBRecord dbRecord) {
-        DataType value1 = dbRecord.getValue(column1.order-1);
+        DataType value1 = dbRecord.getValue(column1);
         if (column2 instanceof DBColumn){
             DataType value2 = dbRecord.getValue( ( (DBColumn) column2 ).order-1);
             return MathUtil.evaluateCond(value1, value2, op);

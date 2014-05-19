@@ -101,4 +101,9 @@ public class DBRecord {
     public ArrayList<DBColumn> getColumns() {
         return columns;
     }
+
+    public DataType getValue(DBColumn column) {
+        int index = columns.indexOf(column);
+        return values.get(index);
+    }
 }

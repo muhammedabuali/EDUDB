@@ -5,4 +5,6 @@ package operators;
  */
 public interface DBIterator extends DBResult{
     public void project(SelectColumns columns);
+
+    public void filter(DBCond condition);
 }

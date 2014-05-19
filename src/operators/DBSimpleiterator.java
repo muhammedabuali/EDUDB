@@ -11,6 +11,7 @@ public class DBSimpleiterator implements DBResult, ListIterator, DBIterator{
 
     private ArrayList<DBRecord> records;
     private SelectColumns columns;
+    private ArrayList<DBCond> conditions;
 
     public DBSimpleiterator(){
         this.records = new ArrayList<DBRecord>();
@@ -20,7 +21,9 @@ public class DBSimpleiterator implements DBResult, ListIterator, DBIterator{
     public String toString(){
         String out = "";
         for (int i=0; i< records.size(); i++){
-            out += records.get(i).project(columns) + "\n";
+            if( ! records.get(i).evaluate(conditions).equals("") ) {
+                out += records.get(i).project(columns) + "\n";
+            }
         }
         return out;
     }
@@ -82,5 +85,13 @@ public class DBSimpleiterator implements DBResult, ListIterator, DBIterator{
         }else {
             this.columns.union(columns);
         }
+    }
+
+    public void filter(ArrayList<DBCond> conditions) {
+        this.conditions = conditions;
+    }
+
+    public void filter(DBCond condition) {
+
     }
 }

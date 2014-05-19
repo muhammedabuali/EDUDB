@@ -25,8 +25,8 @@ public class FilterOperator implements Operator {
     @Override
     public DBResult execute() {
         DBResult dbResult = ((Operator) tableDbParameter).execute();
-        if(dbResult instanceof DBBTreeIterator){
-            DBBTreeIterator iter = (DBBTreeIterator) dbResult;
+        if(dbResult instanceof DBIterator){
+            DBIterator iter = (DBIterator) dbResult;
             iter.filter(condition);
             return iter;
         }

@@ -56,7 +56,37 @@
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/operators/JoinOperator.java" line="19" class="operators.JoinOperator" package="operators">
+      <breakpoint url="file://$PROJECT_DIR$/src/operators/FilterOperator.java" line="26" class="operators.FilterOperator" package="operators">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/operators/ProductIterator.java" line="64" class="operators.ProductIterator" package="operators">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/operators/DBCondition.java" line="50" class="operators.DBCondition" package="operators">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -84,28 +114,57 @@
     <splitter split-orientation="horizontal" split-proportion="0.53720933">
       <split-first>
         <leaf>
-          <file leaf-file-name="ProductIterator.java" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="JoinOperator.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/operators/JoinOperator.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="20" column="0" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0" vertical-offset="196" max-vertical-offset="1008">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ProductIterator.java" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/operators/ProductIterator.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="44" column="58" selection-start="1184" selection-end="1184" vertical-scroll-proportion="0.0" vertical-offset="383" max-vertical-offset="1312">
+                <state line="63" column="37" selection-start="2084" selection-end="2084" vertical-scroll-proportion="0.41990292" vertical-offset="787" max-vertical-offset="1440">
+                  <folding>
+                    <element signature="e#1169#1179#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FilterOperator.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/operators/FilterOperator.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="29" column="22" selection-start="668" selection-end="668" vertical-scroll-proportion="0.0" vertical-offset="292" max-vertical-offset="1152">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Schema.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/statistics/Schema.java">
+          <file leaf-file-name="DBRecord.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/DBStructure/DBRecord.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="38" column="36" selection-start="883" selection-end="883" vertical-scroll-proportion="0.0" vertical-offset="319" max-vertical-offset="1280">
+                <state line="106" column="33" selection-start="3075" selection-end="3075" vertical-scroll-proportion="0.0" vertical-offset="1239" max-vertical-offset="1648">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="DBColumn.java" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/DBStructure/DBColumn.java">
+          <file leaf-file-name="DBCond.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/operators/DBCond.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="17" column="13" selection-start="360" selection-end="360" vertical-scroll-proportion="-0.03686636" vertical-offset="288" max-vertical-offset="800">
+                <state line="4" column="17" selection-start="67" selection-end="67" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="224">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DBCondition.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/operators/DBCondition.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="50" column="51" selection-start="1165" selection-end="1165" vertical-scroll-proportion="0.0" vertical-offset="596" max-vertical-offset="1008">
                   <folding />
                 </state>
               </provider>
@@ -114,7 +173,7 @@
           <file leaf-file-name="DBSimpleiterator.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/operators/DBSimpleiterator.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="22" column="37" selection-start="547" selection-end="547" vertical-scroll-proportion="0.0" vertical-offset="32" max-vertical-offset="1440">
+                <state line="23" column="0" selection-start="552" selection-end="552" vertical-scroll-proportion="0.0" vertical-offset="212" max-vertical-offset="1616">
                   <folding />
                 </state>
               </provider>
@@ -124,34 +183,37 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="DBRecord.java" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/DBStructure/DBRecord.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="61" column="25" selection-start="1800" selection-end="1800" vertical-scroll-proportion="0.7125891" vertical-offset="548" max-vertical-offset="1600">
-                  <folding>
-                    <element signature="e#2916#2917#0" expanded="true" />
-                    <element signature="e#2946#2947#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="DBBTree.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/data_structures/BPlusTree/DBBTree.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="27" column="39" selection-start="680" selection-end="680" vertical-scroll-proportion="0.0" vertical-offset="176" max-vertical-offset="944">
-                  <folding>
-                    <element signature="e#1332#1333#0" expanded="true" />
-                    <element signature="e#1366#1367#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="DBIndex.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/DBStructure/DBIndex.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="8" column="29" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DBBTreeIterator.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/data_structures/BPlusTree/DBBTreeIterator.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="129" column="24" selection-start="2781" selection-end="2781" vertical-scroll-proportion="0.0" vertical-offset="1851" max-vertical-offset="2416">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="BTreeLeafNode.java" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/data_structures/BPlusTree/BTreeLeafNode.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="235" column="16" selection-start="6382" selection-end="6382" vertical-scroll-proportion="1.1629072" vertical-offset="3200" max-vertical-offset="3840">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ProjectOperator.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/operators/ProjectOperator.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="33" column="5" selection-start="801" selection-end="801" vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="1088">
                   <folding />
                 </state>
               </provider>
@@ -169,7 +231,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/edudb_2/data_tructures/dataTypes/DataType.java" />
         <option value="$PROJECT_DIR$/src/edudb_2/data_tructures/dataTypes/DB_Type.java" />
         <option value="$PROJECT_DIR$/src/edudb_2/data_tructures/linearHashTable/LinearHashTable.java" />
         <option value="$PROJECT_DIR$/src/edudb_2/data_tructures/KDTree/KDTree.java" />
@@ -208,17 +269,18 @@
         <option value="$PROJECT_DIR$/src/edudb_2/data_structures/BPlusTree/BTreeLeafNode.java" />
         <option value="$PROJECT_DIR$/src/edudb_2/FileUtils/FileManager.java" />
         <option value="$PROJECT_DIR$/database/persons/persons.txt" />
-        <option value="$PROJECT_DIR$/src/operators/FilterOperator.java" />
         <option value="$PROJECT_DIR$/src/operators/JoinOperator.java" />
         <option value="$PROJECT_DIR$/src/data_structures/BPlusTree/DBBTreeIterator.java" />
-        <option value="$PROJECT_DIR$/src/operators/DBSimpleiterator.java" />
         <option value="$PROJECT_DIR$/src/operators/ProjectOperator.java" />
-        <option value="$PROJECT_DIR$/src/operators/DBIterator.java" />
-        <option value="$PROJECT_DIR$/src/operators/ProductIterator.java" />
         <option value="$PROJECT_DIR$/src/operators/SelectColumns.java" />
         <option value="$PROJECT_DIR$/src/statistics/Schema.java" />
         <option value="$PROJECT_DIR$/src/DBStructure/DBIndex.java" />
         <option value="$PROJECT_DIR$/src/data_structures/BPlusTree/DBBTree.java" />
+        <option value="$PROJECT_DIR$/src/operators/FilterOperator.java" />
+        <option value="$PROJECT_DIR$/src/operators/DBIterator.java" />
+        <option value="$PROJECT_DIR$/src/operators/DBSimpleiterator.java" />
+        <option value="$PROJECT_DIR$/src/operators/ProductIterator.java" />
+        <option value="$PROJECT_DIR$/src/operators/DBCondition.java" />
         <option value="$PROJECT_DIR$/src/DBStructure/DBRecord.java" />
       </list>
     </option>
@@ -604,7 +666,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="53" y="-4" width="1313" height="772" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32621083" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -615,7 +677,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48433048" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34330484" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34330484" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32763532" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -656,34 +718,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/operators/JoinOperator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0" vertical-offset="356" max-vertical-offset="1008">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/operators/ProductIterator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="36" selection-start="915" selection-end="915" vertical-scroll-proportion="0.0" vertical-offset="624" max-vertical-offset="1360">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/operators/ProjectOperator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="48" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="192" max-vertical-offset="1088">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/operators/DBIterator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" vertical-offset="128" max-vertical-offset="224">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/user_interface/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="0" selection-start="1135" selection-end="1135" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="688">
@@ -897,44 +931,9 @@
         <state line="1" column="0" selection-start="12" selection-end="12" vertical-scroll-proportion="0.023703704" vertical-offset="0" max-vertical-offset="675" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/operators/FilterOperator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="23" selection-start="720" selection-end="720" vertical-scroll-proportion="0.0" vertical-offset="456" max-vertical-offset="1152">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/operators/JoinOperator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0" vertical-offset="348" max-vertical-offset="1008">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/user_interface/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="0" selection-start="1135" selection-end="1135" vertical-scroll-proportion="0.0" vertical-offset="279" max-vertical-offset="640">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/operators/ProjectOperator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="48" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="192" max-vertical-offset="1088">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/operators/DBIterator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="224">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data_structures/BPlusTree/DBBTreeIterator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="24" selection-start="2821" selection-end="2821" vertical-scroll-proportion="0.0" vertical-offset="1733" max-vertical-offset="2416">
           <folding />
         </state>
       </provider>
@@ -949,17 +948,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/statistics/Schema.java">
+    <entry file="file://$PROJECT_DIR$/src/DBStructure/DBColumn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="36" selection-start="883" selection-end="883" vertical-scroll-proportion="0.0" vertical-offset="319" max-vertical-offset="1280">
+        <state line="22" column="39" selection-start="489" selection-end="489" vertical-scroll-proportion="0.14746544" vertical-offset="288" max-vertical-offset="800">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/operators/DBSimpleiterator.java">
+    <entry file="file://$PROJECT_DIR$/src/statistics/Schema.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="37" selection-start="547" selection-end="547" vertical-scroll-proportion="0.0" vertical-offset="32" max-vertical-offset="1440">
+        <state line="38" column="36" selection-start="883" selection-end="883" vertical-scroll-proportion="0.51843315" vertical-offset="319" max-vertical-offset="1280">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data_structures/BPlusTree/DBBTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="39" selection-start="680" selection-end="680" vertical-scroll-proportion="0.34204274" vertical-offset="176" max-vertical-offset="944">
+          <folding>
+            <element signature="e#1332#1333#0" expanded="true" />
+            <element signature="e#1366#1367#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -970,37 +979,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/operators/ProductIterator.java">
+    <entry file="file://$PROJECT_DIR$/src/operators/DBIterator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="58" selection-start="1184" selection-end="1184" vertical-scroll-proportion="0.0" vertical-offset="383" max-vertical-offset="1312">
+        <state line="8" column="41" selection-start="198" selection-end="198" vertical-scroll-proportion="0.29493088" vertical-offset="0" max-vertical-offset="434">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data_structures/BPlusTree/DBBTree.java">
+    <entry file="file://$PROJECT_DIR$/src/operators/ProjectOperator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="39" selection-start="680" selection-end="680" vertical-scroll-proportion="0.0" vertical-offset="176" max-vertical-offset="944">
-          <folding>
-            <element signature="e#1332#1333#0" expanded="true" />
-            <element signature="e#1366#1367#0" expanded="true" />
-          </folding>
+        <state line="33" column="5" selection-start="801" selection-end="801" vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="1088">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data_structures/BPlusTree/BTreeNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="202" column="25" selection-start="5154" selection-end="5154" vertical-scroll-proportion="0.71929824" vertical-offset="2737" max-vertical-offset="3136">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data_structures/BPlusTree/DBBTreeIterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="24" selection-start="2781" selection-end="2781" vertical-scroll-proportion="0.0" vertical-offset="1851" max-vertical-offset="2416">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data_structures/BPlusTree/BTreeLeafNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="235" column="16" selection-start="6382" selection-end="6382" vertical-scroll-proportion="1.1629072" vertical-offset="3200" max-vertical-offset="3840">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/operators/DBCond.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="17" selection-start="67" selection-end="67" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="224">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/operators/JoinOperator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0" vertical-offset="196" max-vertical-offset="1008">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/operators/DBSimpleiterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="552" selection-end="552" vertical-scroll-proportion="0.0" vertical-offset="212" max-vertical-offset="1616">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/operators/FilterOperator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="22" selection-start="668" selection-end="668" vertical-scroll-proportion="0.0" vertical-offset="292" max-vertical-offset="1152">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/operators/DBCondition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="51" selection-start="1165" selection-end="1165" vertical-scroll-proportion="0.0" vertical-offset="596" max-vertical-offset="1008">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DBStructure/DBRecord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="25" selection-start="1800" selection-end="1800" vertical-scroll-proportion="0.7125891" vertical-offset="548" max-vertical-offset="1600">
-          <folding>
-            <element signature="e#2916#2917#0" expanded="true" />
-            <element signature="e#2946#2947#0" expanded="true" />
-          </folding>
+        <state line="106" column="33" selection-start="3075" selection-end="3075" vertical-scroll-proportion="0.0" vertical-offset="1239" max-vertical-offset="1648">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DBStructure/DBColumn.java">
+    <entry file="file://$PROJECT_DIR$/src/operators/ProductIterator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="13" selection-start="360" selection-end="360" vertical-scroll-proportion="-0.03686636" vertical-offset="288" max-vertical-offset="800">
-          <folding />
+        <state line="63" column="37" selection-start="2084" selection-end="2084" vertical-scroll-proportion="0.41990292" vertical-offset="787" max-vertical-offset="1440">
+          <folding>
+            <element signature="e#1169#1179#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
