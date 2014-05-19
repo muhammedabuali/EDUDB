@@ -1,5 +1,6 @@
 package data_structures.BPlusTree;
 
+import DBStructure.DBColumn;
 import FileUtils.FileManager;
 import DBStructure.DBIndex;
 import DBStructure.DBRecord;
@@ -20,7 +21,7 @@ public class DBBTree extends BTree<Integer, DBRecord> implements DBIndex{
     /**
      * @uml.property  name="columnNames"
      */
-    private ArrayList<String> columnNames;
+    private ArrayList<DBColumn> columnNames;
 
     public DBBTree(String tableName){
         this.tableName = tableName;
@@ -47,11 +48,8 @@ public class DBBTree extends BTree<Integer, DBRecord> implements DBIndex{
     }
 
     @Override
-    public ArrayList<String> getColumns() {
-        ArrayList<String> columns = new ArrayList<>();
-        columns.add(columnNames.get(0));
-        //TODO primary key doesn't have to be the first
-        return columns;
+    public ArrayList<DBColumn> getColumns() {
+        return columnNames;
     }
 
     public void write() {

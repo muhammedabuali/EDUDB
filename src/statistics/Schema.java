@@ -1,5 +1,6 @@
 package statistics;
 
+import DBStructure.DBColumn;
 import FileUtils.FileManager;
 
 import java.util.ArrayList;
@@ -35,8 +36,14 @@ public class Schema {
     }
 
     // get column list of table
-    public static ArrayList<String> getColumns(String tableName){
-        return schema.get(tableName);
+    public static ArrayList<DBColumn> getColumns(String tableName){
+        ArrayList<DBColumn> columns = new ArrayList<>();
+        int count = schema.get(tableName).size();
+        for (int i=1; i<= count; i++){
+            DBColumn column = new DBColumn(i, tableName);
+            columns.add(column);
+        }
+        return columns;
     }
 
     // add table to schema object

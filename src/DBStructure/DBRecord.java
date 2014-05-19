@@ -17,7 +17,7 @@ public class DBRecord {
     /**
      * @uml.property  name="columns"
      */
-    private ArrayList<String> columns;
+    private ArrayList<DBColumn> columns;
     /**
      * @uml.property  name="values"
      * @uml.associationEnd  multiplicity="(0 -1)" elementType="dataTypes.DB_Type$DB_Int"
@@ -47,7 +47,7 @@ public class DBRecord {
         values = new ArrayList<>();
     }
 
-    public void add(ArrayList<DataType> dataValues, ArrayList<String> dataColumns) {
+    public void add(ArrayList<DataType> dataValues, ArrayList<DBColumn> dataColumns) {
         for (int i =0; i< dataValues.size(); i++){
             this.values.add(dataValues.get(i));
             this.columns.add(dataColumns.get(i));
@@ -58,13 +58,13 @@ public class DBRecord {
         return values.get(i);
     }
 
-    public String project(SelectColumns columns){
-        if (columns == null)
+    public String project(SelectColumns selectColumns){
+        if (selectColumns == null)
             return toString();
-        ArrayList<Integer> columnsArray = columns.getColumns();
+        ArrayList<DBColumn> columnsArray = selectColumns.getColumns();
         String result = "";
         for(int i=0; i< values.size(); i++){
-            if (columnsArray.indexOf(i+1) != -1){
+            if (columnsArray.indexOf(columns.get(i)) != -1){
                 result += values.get(i).toString();
                 result += ',';
             }
@@ -98,7 +98,7 @@ public class DBRecord {
     }
 
 
-    public ArrayList<String> getColumns() {
+    public ArrayList<DBColumn> getColumns() {
         return columns;
     }
 }
