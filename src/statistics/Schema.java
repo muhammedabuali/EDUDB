@@ -75,4 +75,18 @@ public class Schema {
     public static int getCount(String tableName){
         return schema.get(tableName).size();
     }
+
+    public static ArrayList<String> getColumnNames(String tableName) {
+        initSchema();
+        ArrayList<String> columnNames = new ArrayList<>();
+        int count = schema.get(tableName).size();
+        for (int i=0; i< count; i++){
+            columnNames.add(schema.get(tableName).get(i));
+        }
+        return columnNames;
+    }
+
+    public static int getColumnNumber(String name, String tableName) {
+        return getColumnNames(tableName).indexOf(name);
+    }
 }

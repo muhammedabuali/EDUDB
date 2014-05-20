@@ -1,6 +1,9 @@
 package DBStructure;
 
 import operators.DBParameter;
+import statistics.Schema;
+
+import java.util.ArrayList;
 
 /**
  * Created by mohamed on 4/19/14.
@@ -18,7 +21,12 @@ public class DBColumn implements DBParameter{
         this.order = num;
         this.tableName = tableName;
     }
-    
+
+    public DBColumn(String name, String tableName) {
+        this.order = Schema.getColumnNumber(name, tableName)+1;
+        this.tableName = tableName;
+    }
+
     public String toString(){
         return tableName + "." + order;
     }

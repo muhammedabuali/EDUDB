@@ -5,6 +5,7 @@ import DBStructure.DBConst;
 import DBStructure.DBRecord;
 import dataTypes.DB_Type;
 import dataTypes.DataType;
+import gudusoft.gsqlparser.nodes.TExpression;
 
 /**
  * Created by mohamed on 4/19/14.
@@ -57,5 +58,22 @@ public class DBCondition implements DBCond {
             return MathUtil.evaluateCond(value1,(DB_Type.DB_Int) column2, op);
         }
         return false;
+    }
+
+    public static DBCond getCondition(TExpression expression){
+        //todo differnt condition types
+        /*switch (expression.getExpressionType()){
+            case simple_comparison_t:
+            {
+                TExpression exp1 = expression.getLeftOperand();
+                if (exp1.getExpressionType() == )
+                DBCondition condition = new DBCondition();
+
+            }
+        }*/
+        System.out.println(expression.getExpressionType());
+        System.out.println(expression.getLeftOperand().getExpressionType());
+        System.out.println(expression.getRightOperand().getExpressionType());
+        return null;
     }
 }

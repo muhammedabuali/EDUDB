@@ -39,8 +39,7 @@ public class Parser {
                 if(sqlparser.sqlstatements.get(i).sqlstatementtype == ESqlStatementType.sstselect)
                     plan.print();
                 else
-                    plan.execute();
-                System.out.println("");
+                    System.out.println(plan.execute());
             }
         }else{
             System.out.println(sqlparser.getErrormessage());

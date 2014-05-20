@@ -2,6 +2,7 @@ package DBStructure;
 
 import dataTypes.DB_Type;
 import dataTypes.DataType;
+import operators.DBAssignment;
 import operators.DBCond;
 import operators.SelectColumns;
 import statistics.Schema;
@@ -105,5 +106,15 @@ public class DBRecord {
     public DataType getValue(DBColumn column) {
         int index = columns.indexOf(column);
         return values.get(index);
+    }
+
+    public void update(ArrayList<DBAssignment> assignments) {
+        for (int i=0; i<assignments.size(); i++){
+            assignments.get(i).execute(this);
+        }
+    }
+
+    public void setValue(int order, DataType value) {
+        values.set(order, value);
     }
 }

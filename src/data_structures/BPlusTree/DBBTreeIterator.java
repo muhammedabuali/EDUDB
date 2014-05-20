@@ -125,6 +125,7 @@ public class DBBTreeIterator implements ListIterator,
     public String toString(){
         String out = "";
         DBBTreeIterator itr = this;
+        goToFirst();
         do {
             BTreeNode element = (BTreeNode) itr.cur;
             element.filter(conditions);
@@ -147,5 +148,10 @@ public class DBBTreeIterator implements ListIterator,
     public Object first() {
         cur = tree.getSmallest();
         return cur.getValue(0);
+    }
+
+    public void goToFirst() {
+        cur = tree.getSmallest();
+        index = 0;
     }
 }

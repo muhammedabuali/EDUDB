@@ -23,7 +23,12 @@ public static class DB_Int implements DataType , DBConst{
         public DB_Int(char num){
             number = num - '0';
         }
-        public double diff(DataType key){
+
+    public DB_Int(String s) {
+        number = Integer.parseInt(s);
+    }
+
+    public double diff(DataType key){
             if (key instanceof DB_Int){
                 return number - ((DB_Int) key).number;
             }
