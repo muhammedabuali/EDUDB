@@ -1,5 +1,6 @@
 package data_structures.BPlusTree;
 
+import DBStructure.DBRecord;
 import operators.DBCond;
 import operators.DBIterator;
 import operators.DBResult;
@@ -70,14 +71,20 @@ public class DBBTreeIterator implements ListIterator,
         }
         currentkey++;
         if(currentkey< cur.getKeyCount()){
-            return cur.getValue(currentkey);
+            if(! ((DBRecord) cur.getValue(currentkey)).evaluate(conditions).equals(""))
+                return cur.getValue(currentkey);
+            else
+                return next();
         }else {
             currentkey = 0;
             cur = (BTreeLeafNode) cur.rightSibling;
             if (cur== null){
                 return null;
             }
-            return cur.getValue(0);
+            if(! ((DBRecord) cur.getValue(0)).evaluate(conditions).equals(""))
+                return cur.getValue(0);
+            else
+                return next();
         }
     }
 
