@@ -18,7 +18,7 @@ public class DBBTreeIterator implements ListIterator,
      * @uml.property  name="tree"
      * @uml.associationEnd  multiplicity="(1 1)"
      */
-    BTree tree;
+    DBBTree tree;
     /**
      * @uml.property  name="cur"
      * @uml.associationEnd  multiplicity="(1 1)"
@@ -41,7 +41,7 @@ public class DBBTreeIterator implements ListIterator,
      */
     private ArrayList<DBCond> conditions;
 
-    public DBBTreeIterator(BTree tree){
+    public DBBTreeIterator(DBBTree tree){
         this.tree = tree;
         this.cur = tree.getSmallest();
         this.index = 0;
@@ -163,5 +163,9 @@ public class DBBTreeIterator implements ListIterator,
     public void goToFirst() {
         cur = tree.getSmallest();
         index = 0;
+    }
+
+    public void write() {
+        tree.write();
     }
 }

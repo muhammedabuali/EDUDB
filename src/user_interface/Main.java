@@ -13,11 +13,10 @@ public class Main {
 
         try {
             ConsoleReader console = new ConsoleReader();
-            console.setPrompt("edudb> ");
+            console.setPrompt("edudb2:) ");
             String line;
             Parser parser = new Parser();
             while ((line = console.readLine()) != null) {
-                DataManager.size();
                 if(line.equals("exit")){
                     System.exit(0);
                 }else if(line.equals("clear")){

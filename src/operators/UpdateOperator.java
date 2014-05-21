@@ -33,6 +33,7 @@ public class UpdateOperator implements Operator{
             record.update(assignments);
             record = (DBRecord) resultIterator.next();
         }while (record != null);
+        resultIterator.write();
         return resultIterator;
     }
 

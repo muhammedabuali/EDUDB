@@ -47,7 +47,6 @@ public class DBBTree extends BTree<Integer, DBRecord> implements DBIndex{
         }
     }
 
-    @Override
     public ArrayList<DBColumn> getColumns() {
         return columnNames;
     }
