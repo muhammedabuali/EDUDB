@@ -206,8 +206,10 @@ class BTreeLeafNode<TKey extends Comparable<TKey>, TValue> extends BTreeNode<TKe
     public String project(SelectColumns columns) {
         String out = "";
         for (int index = 0; index < this.getKeyCount(); ++index) {
-            if(! filters.get(index) ){
-                continue;
+            if(filters.size() != 0 ){
+                if(! filters.get(index) ){
+                    continue;
+                }
             }
             TValue value = this.getValue(index);
             if(value instanceof DBRecord){

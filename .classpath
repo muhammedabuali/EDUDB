@@ -20,5 +20,6 @@
 	<classpathentry kind="lib" path="/home/mohamed/workspace/libs/java/translate-ng-7.1.0/lib/translate-excel-7.1.0.jar"/>
 	<classpathentry kind="lib" path="/home/mohamed/workspace/libs/java/gsp.jar"/>
 	<classpathentry kind="lib" path="/home/mohamed/workspace/libs/java/jline-2.10.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

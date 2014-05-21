@@ -56,7 +56,7 @@
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/operators/DBCondition.java" line="51" class="operators.DBCondition" package="operators">
+      <breakpoint url="file://$PROJECT_DIR$/src/operators/UpdateOperator.java" line="32" class="operators.UpdateOperator" package="operators">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -71,7 +71,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/operators/UpdateOperator.java" line="32" class="operators.UpdateOperator" package="operators">
+      <breakpoint url="file://$PROJECT_DIR$/src/operators/UpdateOperator.java" line="29" class="operators.UpdateOperator" package="operators">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -100,16 +100,16 @@
       <file leaf-file-name="UpdateOperator.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/operators/UpdateOperator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="0" selection-start="1175" selection-end="1175" vertical-scroll-proportion="0.0" vertical-offset="444" max-vertical-offset="1098">
+            <state line="35" column="0" selection-start="1175" selection-end="1175" vertical-scroll-proportion="0.0" vertical-offset="452" max-vertical-offset="1098">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Parser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/user_interface/Parser.java">
+      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/user_interface/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="0" selection-start="1338" selection-end="1338" vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="846">
+            <state line="19" column="35" selection-start="659" selection-end="659" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="738">
               <folding />
             </state>
           </provider>
@@ -118,7 +118,25 @@
       <file leaf-file-name="DBRecord.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DBStructure/DBRecord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="120" column="0" selection-start="3385" selection-end="3385" vertical-scroll-proportion="0.0" vertical-offset="1533" max-vertical-offset="2034">
+            <state line="114" column="0" selection-start="3282" selection-end="3282" vertical-scroll-proportion="0.0" vertical-offset="1660" max-vertical-offset="2034">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBAssignment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/operators/DBAssignment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="0" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0" vertical-offset="292" max-vertical-offset="666">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataManager.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/DBStructure/DataManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="16" selection-start="744" selection-end="744" vertical-scroll-proportion="0.7788698" vertical-offset="169" max-vertical-offset="918">
               <folding />
             </state>
           </provider>
@@ -127,7 +145,7 @@
       <file leaf-file-name="FilterOperator.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/operators/FilterOperator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="20" selection-start="666" selection-end="666" vertical-scroll-proportion="0.0" vertical-offset="307" max-vertical-offset="1296">
+            <state line="30" column="0" selection-start="682" selection-end="682" vertical-scroll-proportion="0.0" vertical-offset="416" max-vertical-offset="1296">
               <folding />
             </state>
           </provider>
@@ -145,16 +163,25 @@
       <file leaf-file-name="DBBTreeIterator.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/data_structures/BPlusTree/DBBTreeIterator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="0" selection-start="1841" selection-end="1841" vertical-scroll-proportion="0.0" vertical-offset="993" max-vertical-offset="2934">
+            <state line="137" column="12" selection-start="3090" selection-end="3090" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="2988">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBCondition.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="BTreeLeafNode.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/data_structures/BPlusTree/BTreeLeafNode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="209" column="16" selection-start="5461" selection-end="5461" vertical-scroll-proportion="0.0" vertical-offset="3708" max-vertical-offset="4356">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBCondition.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/operators/DBCondition.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="0" selection-start="1160" selection-end="1160" vertical-scroll-proportion="0.30769232" vertical-offset="696" max-vertical-offset="1440">
+            <state line="51" column="0" selection-start="1160" selection-end="1160" vertical-scroll-proportion="0.0" vertical-offset="696" max-vertical-offset="1440">
               <folding />
             </state>
           </provider>
@@ -170,9 +197,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/edudb_2/query_planner/InsertPlanner.java" />
-        <option value="$PROJECT_DIR$/src/edudb_2/data_structures/DBStructure/DataManager.java" />
-        <option value="$PROJECT_DIR$/src/edudb_2/data_structures/DBStructure/DBTable.java" />
         <option value="$PROJECT_DIR$/src/edudb_2/data_structures/BPlusTree/DBBTree.java" />
         <option value="$PROJECT_DIR$/src/edudb_2/operators/InsertOperator.java" />
         <option value="$PROJECT_DIR$/src/edudb_2/data_structures/dataTypes/DataType.java" />
@@ -219,13 +243,16 @@
         <option value="$PROJECT_DIR$/src/user_interface/Parser.java" />
         <option value="$PROJECT_DIR$/src/query_planner/UpdatePlanner.java" />
         <option value="$PROJECT_DIR$/src/DBStructure/DBColumn.java" />
-        <option value="$PROJECT_DIR$/src/data_structures/BPlusTree/DBBTreeIterator.java" />
         <option value="$PROJECT_DIR$/src/operators/UpdateOperator.java" />
+        <option value="$PROJECT_DIR$/src/data_structures/BPlusTree/BTreeLeafNode.java" />
+        <option value="$PROJECT_DIR$/src/data_structures/BPlusTree/DBBTreeIterator.java" />
+        <option value="$PROJECT_DIR$/src/user_interface/Main.java" />
+        <option value="$PROJECT_DIR$/src/DBStructure/DataManager.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="53" />
+    <option name="x" value="1419" />
     <option name="y" value="-4" />
     <option name="width" value="1313" />
     <option name="height" value="772" />
@@ -605,7 +632,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="53" y="-4" width="1313" height="772" extended-state="6" />
+    <frame x="1419" y="-4" width="1313" height="772" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -622,6 +649,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32763532" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2767442" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3974359" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -634,7 +662,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296617" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47521636" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -658,11 +685,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/persons/persons.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="144" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/persons/persons.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="0" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="144" />
@@ -716,11 +738,6 @@
     <entry file="file://$PROJECT_DIR$/src/operators/DBSimpleiterator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="0" selection-start="552" selection-end="552" vertical-scroll-proportion="0.0694864" vertical-offset="368" max-vertical-offset="1854" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data_structures/BPlusTree/BTreeNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="202" column="25" selection-start="5154" selection-end="5154" vertical-scroll-proportion="0.80966765" vertical-offset="2866" max-vertical-offset="3528" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DBStructure/DBIndex.java">
@@ -838,21 +855,6 @@
         <state line="1" column="0" selection-start="19" selection-end="19" vertical-scroll-proportion="0.027565084" vertical-offset="0" max-vertical-offset="1224" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/user_interface/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="1135" selection-end="1135" vertical-scroll-proportion="0.0" vertical-offset="346" max-vertical-offset="720" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/operators/DBAssignment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0" vertical-offset="346" max-vertical-offset="720" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data_structures/BPlusTree/BTreeLeafNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="230" column="0" selection-start="6168" selection-end="6168" vertical-scroll-proportion="0.0" vertical-offset="3908" max-vertical-offset="4320" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DBStructure/DBColumn.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="11" selection-start="482" selection-end="482" vertical-scroll-proportion="0.3323124" vertical-offset="215" max-vertical-offset="1044">
@@ -883,34 +885,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DBStructure/DataManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="12" selection-start="625" selection-end="625" vertical-scroll-proportion="0.38666666" vertical-offset="153" max-vertical-offset="828">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DBStructure/DBRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="0" selection-start="3385" selection-end="3385" vertical-scroll-proportion="0.0" vertical-offset="1533" max-vertical-offset="2034">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/operators/FilterOperator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="20" selection-start="666" selection-end="666" vertical-scroll-proportion="0.0" vertical-offset="307" max-vertical-offset="1296">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data_structures/BPlusTree/DBBTreeIterator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="0" selection-start="1841" selection-end="1841" vertical-scroll-proportion="0.0" vertical-offset="993" max-vertical-offset="2934">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/operators/DBIterator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="16" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
@@ -918,23 +892,86 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/operators/DBCondition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="0" selection-start="1160" selection-end="1160" vertical-scroll-proportion="0.0" vertical-offset="696" max-vertical-offset="1440">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/operators/DBAssignment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="0" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0" vertical-offset="292" max-vertical-offset="666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DBStructure/DBRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="114" column="0" selection-start="3282" selection-end="3282" vertical-scroll-proportion="0.0" vertical-offset="1660" max-vertical-offset="2034">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/operators/FilterOperator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="0" selection-start="682" selection-end="682" vertical-scroll-proportion="0.0" vertical-offset="416" max-vertical-offset="1296">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/operators/UpdateOperator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="1175" selection-end="1175" vertical-scroll-proportion="0.0" vertical-offset="444" max-vertical-offset="1098">
+        <state line="35" column="0" selection-start="1175" selection-end="1175" vertical-scroll-proportion="0.0" vertical-offset="452" max-vertical-offset="1098">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/user_interface/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="0" selection-start="1338" selection-end="1338" vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="846">
+        <state line="44" column="48" selection-start="1471" selection-end="1471" vertical-scroll-proportion="0.0" vertical-offset="472" max-vertical-offset="846">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/operators/DBCondition.java">
+    <entry file="file://$PROJECT_DIR$/src/data_structures/BPlusTree/BTreeNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="0" selection-start="1160" selection-end="1160" vertical-scroll-proportion="0.30769232" vertical-offset="696" max-vertical-offset="1440">
+        <state line="199" column="27" selection-start="5095" selection-end="5095" vertical-scroll-proportion="0.55773956" vertical-offset="3121" max-vertical-offset="3528">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.7.0-openjdk-amd64/jre/lib/rt.jar!/com/sun/corba/se/impl/protocol/giopmsgheaders/ProfileAddr.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="17" selection-start="192" selection-end="192" vertical-scroll-proportion="0.22113022" vertical-offset="0" max-vertical-offset="407">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data_structures/BPlusTree/BTreeLeafNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="209" column="16" selection-start="5461" selection-end="5461" vertical-scroll-proportion="0.0" vertical-offset="3708" max-vertical-offset="4356">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data_structures/BPlusTree/DBBTreeIterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="137" column="12" selection-start="3090" selection-end="3090" vertical-scroll-proportion="0.0" vertical-offset="2232" max-vertical-offset="2988">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/user_interface/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="35" selection-start="659" selection-end="659" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="738">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DBStructure/DataManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="16" selection-start="744" selection-end="744" vertical-scroll-proportion="0.7788698" vertical-offset="169" max-vertical-offset="918">
           <folding />
         </state>
       </provider>

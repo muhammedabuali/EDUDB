@@ -1,5 +1,6 @@
 package user_interface;
 
+import DBStructure.DataManager;
 import adipe.translate.TranslationException;
 import jline.TerminalFactory;
 import jline.console.ConsoleReader;
@@ -16,6 +17,7 @@ public class Main {
             String line;
             Parser parser = new Parser();
             while ((line = console.readLine()) != null) {
+                DataManager.size();
                 if(line.equals("exit")){
                     System.exit(0);
                 }else if(line.equals("clear")){

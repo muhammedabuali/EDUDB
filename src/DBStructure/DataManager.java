@@ -11,9 +11,13 @@ public class DataManager {
     private static HashMap<String, DBTable > tables;
     private static boolean initialized;
 
-    public void addTable(DBTable table){
+    public static void addTable(DBTable table){
         init();// TODO init
         tables.put(table.getTableName(), table);
+    }
+
+    public static void size(){
+        System.out.println((tables == null )? "null": tables.size());
     }
 
     public static DBTable getTable(String tableName){
@@ -37,6 +41,7 @@ public class DataManager {
         if(!initialized){
             tables = new HashMap<>();
         }
+        initialized = true;
     }
 
 }
