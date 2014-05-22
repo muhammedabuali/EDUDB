@@ -2,6 +2,9 @@ package operators;
 
 import DBStructure.DBRecord;
 import data_structures.BPlusTree.DBBTreeIterator;
+import transcations.PageRead;
+import transcations.PageWrite;
+import transcations.Step;
 
 import java.util.ArrayList;
 
@@ -55,5 +58,23 @@ public class UpdateOperator implements Operator{
     @Override
     public int numOfParameters() {
         return 0;
+    }
+
+    public ArrayList<Step> getSteps() {
+        ArrayList<Step> out = new ArrayList<>();
+
+        FilterOperator filterOperator = new FilterOperator();
+        RelationOperator relationOperator = new RelationOperator();
+        relationOperator.setTableName(tableName);
+        filterOperator.giveParameter(relationOperator);
+        filterOperator.giveParameter(condition);
+        PageRead read = new PageRead(filterOperator, tableName);
+        out.add(read);
+
+        UpdateStep updateStep = new UpdateStep(assignments);
+        PageWrite write = new PageWrite(updateStep);
+
+        out.add(write);
+        return out;
     }
 }

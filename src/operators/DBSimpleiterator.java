@@ -94,4 +94,9 @@ public class DBSimpleiterator implements DBResult, ListIterator, DBIterator{
     public void filter(DBCond condition) {
 
     }
+
+    @Override
+    public Object first() {
+        return null;
+    }
 }

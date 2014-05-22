@@ -27,7 +27,7 @@ public class CreateOperator implements Operator {
         System.out.println("@create operation " + line);
         Schema.AddTable(line);
         //create table file and folder
-        FileManager.createTable(statement.getTableName().toString());
+        //FileManager.createTable(statement.getTableName().toString());
         return null;
     }
 

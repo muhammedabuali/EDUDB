@@ -17,8 +17,7 @@ public class DBBufferManager {
         usedSlots = new ArrayList<>();
     }
 
-    public synchronized Page read(  PageID pageID, Page page,
-                                    boolean bModify ){
+    public synchronized Page read( PageID pageID, boolean bModify ){
         if (used.containsKey(pageID)){
             Page page1 = used.get(pageID);
             page1.setLastAccessed();
@@ -28,10 +27,13 @@ public class DBBufferManager {
             if (used.size() == DBConfig.getMaximumUsedBufferSlots()){
                 removeLRU();
             }
-            page1.allocate();
+            allocate(page1);
             page1.setLastAccessed();
             return page1;
         }
+    }
+
+    private void allocate(Page page) {
     }
 
     public synchronized void write( PageID pageID, Page page ){

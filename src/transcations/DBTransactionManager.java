@@ -1,5 +1,7 @@
 package transcations;
 
+import operators.UpdateOperator;
+
 import java.util.Hashtable;
 import java.util.Iterator;
 
@@ -17,7 +19,6 @@ public class DBTransactionManager {
                             Hashtable<String,String>htblColNameRefs,
                             String strKeyColName)
             throws DBAppException{
-
     }
 
     public void createIndex(String strTableName,
@@ -32,10 +33,9 @@ public class DBTransactionManager {
 
     }
 
-    public void updateTable(String strTableName,
-                            Hashtable<String,String> htblColNameValue)
+    public void updateTable(UpdateOperator updateOperator)
             throws DBAppException{
-
+        updateOperator.getSteps();
     }
 
     public void deleteFromTable(String strTableName,
