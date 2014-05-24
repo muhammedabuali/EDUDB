@@ -154,6 +154,13 @@ public class DBBTreeIterator implements ListIterator,
 
     public Object first() {
         cur = tree.getSmallest();
+
+        if (cur == null){
+            System.out.println("1");
+        }
+        if (cur.getValue(0) == null){
+            System.out.println(cur);
+        }
         if(! ((DBRecord) cur.getValue(0)).evaluate(conditions).equals(""))
             return cur.getValue(0);
         else

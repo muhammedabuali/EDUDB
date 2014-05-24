@@ -20,6 +20,10 @@ public class DBBufferManager {
     public synchronized Page read( PageID pageID, boolean bModify ){
         if (used.containsKey(pageID)){
             Page page1 = used.get(pageID);
+            page1 = page1.getCopy();
+            if (bModify){
+
+            }
             page1.setLastAccessed();
             return page1;
         }else{
@@ -71,7 +75,14 @@ public class DBBufferManager {
         if (minIndex != -1){
             usedSlots.remove(minIndex);
             emptySlots.add(toBeReplaced);
+            if (toBeReplaced.getBufferState().equals(Page.PageState.dirty)){
+                writePage(toBeReplaced);
+            }
             toBeReplaced.free();
         }
+    }
+
+    private void writePage(Page toBeReplaced) {
+
     }
 }

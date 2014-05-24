@@ -117,4 +117,15 @@ public class DBRecord {
     public void setValue(int order, DataType value) {
         values.set(order, value);
     }
+
+    public DBRecord getCopy() {
+        DBRecord record = new DBRecord();
+        for(DataType value : values){
+            record.values.add(value);
+        }
+        for(DBColumn column: columns){
+            record.columns.add(column);
+        }
+        return record;
+    }
 }

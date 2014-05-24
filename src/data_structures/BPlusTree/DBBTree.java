@@ -4,6 +4,8 @@ import DBStructure.DBColumn;
 import FileUtils.FileManager;
 import DBStructure.DBIndex;
 import DBStructure.DBRecord;
+import dataTypes.DB_Type;
+import operators.DBIterator;
 import statistics.Schema;
 
 import java.util.ArrayList;
@@ -32,6 +34,23 @@ public class DBBTree extends BTree<Integer, DBRecord> implements DBIndex{
         super.insert(key, value);
     }
 
+    @Override
+    public DBIterator getIterator() {
+        return new DBBTreeIterator(this);
+    }
+
+    @Override
+    public DBIndex getCopy() {
+        DBBTree out = new DBBTree(tableName);
+        DBIterator iter = getIterator();
+        DBRecord record = (DBRecord) iter.first();
+        do{
+            out.insert( ( (DB_Type.DB_Int)record.getValue(0) ).getNumber() , record.getCopy());
+            record = (DBRecord) iter.next();
+        }while (record != null);
+        return out;
+    }
+
     public void remove(int key) {
         super.delete(key);
     }
@@ -55,5 +74,20 @@ public class DBBTree extends BTree<Integer, DBRecord> implements DBIndex{
         String table = FileManager.getTable(tableName);
         String data = commit();
         FileManager.writeToFile(data, table);
+    }
+
+    public static void main(String [] args){
+        DBBTree tree = new DBBTree("persons");
+        tree.readTable();
+        DBBTree copy = (DBBTree) tree.getCopy();
+        System.out.println("tree");
+        tree.print();
+        System.out.println("copy");
+        copy.print();
+        ( (DBRecord)copy.getSmallest().getValue(0) ).setValue(0, new DB_Type.DB_Int(5));
+        System.out.println("tree");
+        tree.print();
+        System.out.println("copy");
+        copy.print();
     }
 }

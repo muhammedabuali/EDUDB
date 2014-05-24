@@ -84,4 +84,14 @@ public class ProductIterator implements DBResult, DBIterator{
     public void filter(DBCond condition) {
         this.conditions.add(condition);
     }
+
+    @Override
+    public Object first() {
+        return null;
+    }
+
+    @Override
+    public Object next() {
+        return null;
+    }
 }

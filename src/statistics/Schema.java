@@ -37,6 +37,7 @@ public class Schema {
 
     // get column list of table
     public static ArrayList<DBColumn> getColumns(String tableName){
+        initSchema();
         ArrayList<DBColumn> columns = new ArrayList<>();
         int count = schema.get(tableName).size();
         for (int i=1; i<= count; i++){
