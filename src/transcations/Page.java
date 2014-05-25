@@ -40,7 +40,10 @@ public class Page {
     }
 
     public Page getCopy() {
-        return null;
+        Page page = new Page();
+        page.id = id;
+        page.tree = tree.getCopy();
+        return page;
     }
 
     public DBResult getData(){
