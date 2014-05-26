@@ -72,6 +72,7 @@ public class DBBufferManager {
     }
 
     private void allocate(PageID pageId, Page page) {
+        page.allocate();
         used.put(pageId, page);
         locks.put(pageId, Page.LockState.free);
         listeners.put(pageId, new ArrayList<Thread>());

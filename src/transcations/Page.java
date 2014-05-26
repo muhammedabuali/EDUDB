@@ -2,6 +2,7 @@ package transcations;
 
 import DBStructure.DBIndex;
 import DBStructure.DBTable;
+import data_structures.BPlusTree.DBBTree;
 import operators.DBResult;
 
 /**
@@ -11,7 +12,6 @@ public class Page {
     private PageID id;
     private PageState pageState;
     private LockState lockState;
-    private boolean inMemory;
     private int lastAccessed;
     private int readers;
     private boolean locked;
@@ -23,7 +23,6 @@ public class Page {
     }
 
     public Page() {
-
     }
 
     public void free() {
@@ -39,6 +38,10 @@ public class Page {
     }
 
     public void allocate() {
+        tree = new DBBTree(table);
+        if (tree instanceof DBBTree){
+            ( (DBBTree) tree ).readTable();
+        }
     }
 
     public int getlastAccessed() {
