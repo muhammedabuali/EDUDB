@@ -5,6 +5,7 @@ import FileUtils.FileManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Set;
 
 /**
  * Created by mohamed on 4/1/14.
@@ -89,5 +90,9 @@ public class Schema {
 
     public static int getColumnNumber(String name, String tableName) {
         return getColumnNames(tableName).indexOf(name);
+    }
+
+    public static Set<String> getTableNames() {
+        return schema.keySet();
     }
 }

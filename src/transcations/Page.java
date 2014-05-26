@@ -16,6 +16,15 @@ public class Page {
     private int readers;
     private boolean locked;
     private DBIndex tree;
+    private String table;
+
+    public Page(String table) {
+        this.table = table;
+    }
+
+    public Page() {
+
+    }
 
     public void free() {
         tree = null;
@@ -43,6 +52,7 @@ public class Page {
     public Page getCopy() {
         Page page = new Page();
         page.id = id;
+        // to make dbbuffermanager main work comment line below
         //page.tree = tree.getCopy();
         return this;
     }

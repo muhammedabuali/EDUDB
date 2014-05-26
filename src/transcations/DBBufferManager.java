@@ -12,6 +12,7 @@ import java.util.Map;
  * Created by mohamed on 5/20/14.
  */
 public class DBBufferManager {
+
     HashMap<PageID, Page> used;
     HashMap<PageID, Page> empty;
     HashMap<PageID, Page.LockState> locks;
