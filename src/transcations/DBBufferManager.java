@@ -5,6 +5,7 @@ import sun.org.mozilla.javascript.Synchronizer;
 import javax.print.DocFlavor;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 /**
  * Created by mohamed on 5/20/14.
@@ -15,8 +16,7 @@ public class DBBufferManager {
     HashMap<PageID, Page.LockState> locks;
     HashMap<PageID, ArrayList<Thread> > listeners;
     HashMap<PageID, Integer> readersCount;
-    ArrayList<Page> emptySlots;
-    ArrayList<Page> usedSlots;
+    HashMap<PageID, Page.PageState> states;
 
     public void init( ){
         used = new HashMap<>();
@@ -24,8 +24,7 @@ public class DBBufferManager {
         locks = new HashMap<>();
         listeners = new HashMap<>();
         readersCount = new HashMap<>();
-        emptySlots = new ArrayList<>();
-        usedSlots = new ArrayList<>();
+        states = new HashMap<>();
     }
 
     public synchronized Page read( PageID pageID, boolean bModify ){
@@ -75,10 +74,12 @@ public class DBBufferManager {
         locks.put(pageId, Page.LockState.free);
         listeners.put(pageId, new ArrayList<Thread>());
         readersCount.put(pageId, 0);
+        states.put(pageId, Page.PageState.clean);
     }
 
     public synchronized void write( PageID pageID, Page page ){
         used.put(pageID, page);
+        states.put(pageID, Page.PageState.dirty);
         releasePage(pageID);
     }
 
@@ -86,16 +87,12 @@ public class DBBufferManager {
         readersCount.put(pageID, readersCount.get(pageID) -1 );
         if (locks.get(pageID) == Page.LockState.write ||
                 (locks.get(pageID) == Page.LockState.read && readersCount.get(pageID) == 0) ){
-            System.out.println("release me");
             locks.put(pageID, Page.LockState.free);
             ArrayList<Thread> threads = listeners.get(pageID);
-            System.out.println("listeners " + threads.size());
             for (Thread t: threads){
                 synchronized (t){
-                    System.out.println("wake up");
                     System.out.println(t.getName());
                     t.notify();
-                    System.out.println(" coomon");
                 }
             }
         }
@@ -108,29 +105,34 @@ public class DBBufferManager {
         }
     }
 
-    private void removeLRU() {
+    private boolean removeLRU() {
         Page toBeReplaced = null;
         int min = Integer.MAX_VALUE;
         int minIndex = -1;
-        for (int i=0; i< usedSlots.size(); i++){
-            if(usedSlots.get(i).getlastAccessed() < min){
-                toBeReplaced = usedSlots.get(i);
-                min = usedSlots.get(i).getlastAccessed();
-                minIndex = i;
+        PageID minId= null;
+        Iterator iter = used.entrySet().iterator();
+        while (iter.hasNext()){
+            Page page1 = (Page) iter.next();
+            if (locks.get(page1.getPageId()) == Page.LockState.free &&
+                    page1.getlastAccessed() < min){
+                toBeReplaced = page1;
+                min = page1.getlastAccessed();
+                minId = page1.getPageId();
             }
         }
-        if (minIndex != -1){
-            usedSlots.remove(minIndex);
-            emptySlots.add(toBeReplaced);
-            if (toBeReplaced.getBufferState().equals(Page.PageState.dirty)){
-                writePage(toBeReplaced);
+        if (minId != null){
+            used.remove(minId);
+            locks.remove(minId);
+            readersCount.remove(minId);
+            listeners.remove(minId);
+            empty.put(minId, toBeReplaced);
+            if (states.get(toBeReplaced.getPageId()) == Page.PageState.dirty){
+                toBeReplaced.write();
             }
             toBeReplaced.free();
+            return true;
         }
-    }
-
-    private void writePage(Page toBeReplaced) {
-
+        return false;
     }
 
     public static class Reader implements Runnable{

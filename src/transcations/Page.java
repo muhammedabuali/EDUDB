@@ -18,6 +18,7 @@ public class Page {
     private DBIndex tree;
 
     public void free() {
+        tree = null;
     }
 
     public void getAccess(){
@@ -50,8 +51,15 @@ public class Page {
         return tree.getIterator();
     }
 
+    public PageID getPageId() {
+        return id;
+    }
+
+    public void write() {
+        tree.write();
+    }
+
     public enum PageState{
-        free,
         clean,
         dirty
     }
