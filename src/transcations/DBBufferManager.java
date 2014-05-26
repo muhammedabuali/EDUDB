@@ -6,6 +6,7 @@ import javax.print.DocFlavor;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 /**
  * Created by mohamed on 5/20/14.
@@ -95,6 +96,8 @@ public class DBBufferManager {
                     t.notify();
                 }
             }
+            listeners.put(pageID, new ArrayList<Thread>());
+
         }
     }
 
@@ -105,14 +108,18 @@ public class DBBufferManager {
         }
     }
 
-    private boolean removeLRU() {
+    private synchronized boolean removeLRU() {
+        System.out.println("lru " + used.size());
         Page toBeReplaced = null;
         int min = Integer.MAX_VALUE;
         int minIndex = -1;
         PageID minId= null;
         Iterator iter = used.entrySet().iterator();
         while (iter.hasNext()){
-            Page page1 = (Page) iter.next();
+            Map.Entry pair = (Map.Entry) iter.next();
+            Page page1 = (Page) pair.getValue();
+            System.out.println(locks);
+            System.out.println(page1.getPageId());
             if (locks.get(page1.getPageId()) == Page.LockState.free &&
                     page1.getlastAccessed() < min){
                 toBeReplaced = page1;
@@ -130,8 +137,10 @@ public class DBBufferManager {
                 toBeReplaced.write();
             }
             toBeReplaced.free();
+            System.out.println("lru " + used.size());
             return true;
         }
+        System.out.println("lru " + used.size());
         return false;
     }
 
@@ -214,18 +223,25 @@ public class DBBufferManager {
         manager.init();
         Page page1 = new Page();
         PageID id1 = new PageID();
+        page1.setPageID(id1);
         manager.empty.put(id1, page1);
         Writer writer1 = new Writer(id1, manager, 1);
         Thread t3 = new Thread(writer1);
-        System.out.println(t3.getName());
         t3.start();
         Reader reader1 = new Reader(id1, manager, 1);
         Thread t1 = new Thread(reader1);
-        System.out.println(t1.getName());
         t1.start();
-        Reader reader2 = new Reader(id1, manager, 2);
-        Thread t2 = new Thread(reader2);
-        System.out.println(t2.getName());
+        Thread t2 = new Thread(reader1);
         t2.start();
+        Thread t = Thread.currentThread();
+        synchronized (t){
+            try {
+                t.wait(3000);
+            }catch (Exception e){
+
+            }
+            System.out.println(manager.used.size());
+            manager.removeLRU();
+        }
     }
 }

@@ -59,6 +59,10 @@ public class Page {
         tree.write();
     }
 
+    public void setPageID(PageID id) {
+        this.id = id;
+    }
+
     public enum PageState{
         clean,
         dirty
