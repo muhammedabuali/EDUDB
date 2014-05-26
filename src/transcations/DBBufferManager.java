@@ -90,14 +90,14 @@ public class DBBufferManager {
             locks.put(pageID, Page.LockState.free);
             ArrayList<Thread> threads = listeners.get(pageID);
             System.out.println("listeners " + threads.size());
-            /*for (Thread t: threads){
+            for (Thread t: threads){
                 synchronized (t){
                     System.out.println("wake up");
                     System.out.println(t.getName());
                     t.notify();
                     System.out.println(" coomon");
                 }
-            }*/
+            }
         }
     }
 
@@ -153,7 +153,7 @@ public class DBBufferManager {
             manager.read(id, false);
             synchronized (this){
                 try {
-                    wait(200);
+                    wait(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -182,16 +182,27 @@ public class DBBufferManager {
             Page read = manager.read(id, true);
             if (read == null){
                 try {
-                    synchronized (this){
+                    Thread thread = Thread.currentThread();
+                    synchronized (thread){
                         System.out.println("going to sleep ");
-                        this.wait();
+                        thread.wait();
                         System.out.println("sleepy ");
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+
+            }
+            synchronized (this){
+                try {
+                    wait(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
             System.out.println("awake ");
+            manager.releasePage(id);
+            System.out.println("writer " + count + " released");
             //manager.write();
         }
     }
@@ -202,6 +213,10 @@ public class DBBufferManager {
         Page page1 = new Page();
         PageID id1 = new PageID();
         manager.empty.put(id1, page1);
+        Writer writer1 = new Writer(id1, manager, 1);
+        Thread t3 = new Thread(writer1);
+        System.out.println(t3.getName());
+        t3.start();
         Reader reader1 = new Reader(id1, manager, 1);
         Thread t1 = new Thread(reader1);
         System.out.println(t1.getName());
@@ -210,9 +225,5 @@ public class DBBufferManager {
         Thread t2 = new Thread(reader2);
         System.out.println(t2.getName());
         t2.start();
-        Writer writer1 = new Writer(id1, manager, 1);
-        Thread t3 = new Thread(writer1);
-        System.out.println(t3.getName());
-        t3.start();
     }
 }
