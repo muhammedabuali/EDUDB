@@ -10,6 +10,12 @@ import java.util.Iterator;
  */
 public class DBTransactionManager {
 
+    private static DBBufferManager bufferManager;
+
+    public static DBBufferManager getBufferManager() {
+        return bufferManager;
+    }
+
     public void init(){
 
     }

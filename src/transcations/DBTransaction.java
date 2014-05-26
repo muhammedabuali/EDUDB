@@ -1,6 +1,8 @@
 package transcations;
 
 
+import operators.DBResult;
+
 import java.util.Vector;
 
 /**
@@ -24,18 +26,21 @@ public class DBTransaction implements Runnable{
     @Override
     public void run() {
         for (int i=0; i<vSteps.size(); i++){
-            if ( vSteps.get(i) instanceof DBRead){
-                DBRead read = (DBRead) vSteps.get(i);
+            Step step = vSteps.get(i);
+            DBResult result = step.execute();
+
+            if ( step instanceof DBRead){
+                DBRead read = (DBRead) step;
                 //bufManager.read();
-            }else if ( vSteps.get(i) instanceof DBWrite){
-                DBWrite write = (DBWrite) vSteps.get(i);
+            }else if ( step instanceof DBWrite){
+                DBWrite write = (DBWrite) step;
                 //bufManager.write();
                 switch (write.getType()){
                     case dbupdate:
                         //logManager.recordUpdate();
                 }
             }
-            //vSteps.get(i).execute()
+            //step.execute()
         }
         logManager.recordCommit(String.valueOf(ID));
     }

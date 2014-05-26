@@ -8,7 +8,7 @@ import operators.DBResult;
 /**
  * Created by mohamed on 5/20/14.
  */
-public class Page {
+public class Page implements DBResult {
     private PageID id;
     private PageState pageState;
     private LockState lockState;
@@ -74,6 +74,11 @@ public class Page {
 
     public void setPageID(PageID id) {
         this.id = id;
+    }
+
+    @Override
+    public void print() {
+
     }
 
     public enum PageState{

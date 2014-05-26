@@ -10,10 +10,15 @@ import operators.UpdateStep;
  */
 public class PageWrite extends Step{
     private Operator operator;
+    private Page page;
 
-    public PageWrite(Operator operator) {
-
+    public PageWrite(Operator operator, Page page) {
         this.operator = operator;
+        this.page = page;
+    }
+
+    public PageWrite(Page page) {
+        this.page = page;
     }
 
     public void giveParameter(DBParameter par){
@@ -22,6 +27,8 @@ public class PageWrite extends Step{
 
     @Override
     public DBResult execute() {
+        DBBufferManager bufferManager = DBTransactionManager.getBufferManager();
+        bufferManager.write(page.getPageId(), page);
         return null;
     }
 }
