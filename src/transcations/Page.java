@@ -42,8 +42,8 @@ public class Page {
     public Page getCopy() {
         Page page = new Page();
         page.id = id;
-        page.tree = tree.getCopy();
-        return page;
+        //page.tree = tree.getCopy();
+        return this;
     }
 
     public DBResult getData(){

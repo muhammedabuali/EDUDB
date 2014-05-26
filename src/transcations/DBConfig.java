@@ -5,7 +5,7 @@ package transcations;
  */
 public class DBConfig {
     private static int MinimumEmptyBufferSlots;
-    private static int MaximumUsedBufferSlots;
+    private static int MaximumUsedBufferSlots = 5;
     private static String LogFile;
 
     public static int getMaximumUsedBufferSlots() {
