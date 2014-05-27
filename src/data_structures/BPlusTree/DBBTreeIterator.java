@@ -148,6 +148,11 @@ public class DBBTreeIterator implements ListIterator,
         System.out.print(this);
     }
 
+    @Override
+    public int numOfParameters() {
+        return 0;
+    }
+
     public void filter(DBCond condition) {
         this.conditions.add(condition);
     }

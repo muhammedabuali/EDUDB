@@ -1,5 +1,7 @@
 package operators;
 
+import transcations.Page;
+
 /**
  * Created by mohamed on 4/13/14.
  */
@@ -53,5 +55,15 @@ public class JoinOperator implements Operator{
             table2 = par;
         }
         
+    }
+
+    @Override
+    public void runStep(Page page) {
+
+    }
+
+    @Override
+    public Page getPage() {
+        return null;
     }
 }

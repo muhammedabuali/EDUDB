@@ -78,7 +78,12 @@ public class Page implements DBResult {
 
     @Override
     public void print() {
+        tree.getIterator().print();
+    }
 
+    @Override
+    public int numOfParameters() {
+        return 0;
     }
 
     public enum PageState{

@@ -2,6 +2,7 @@ package operators;
 
 import DBStructure.DBTable;
 import DBStructure.DataManager;
+import transcations.Page;
 
 /**
  * Created by mohamed on 4/13/14.
@@ -52,5 +53,15 @@ public class RelationOperator implements Operator{
     public void giveParameter(DBParameter par) {
         // TODO Auto-generated method stub
         
+    }
+
+    @Override
+    public void runStep(Page page) {
+
+    }
+
+    @Override
+    public Page getPage() {
+        return null;
     }
 }

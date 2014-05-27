@@ -1,6 +1,6 @@
 package operators;
 
-import data_structures.BPlusTree.DBBTreeIterator;
+import transcations.Page;
 
 /**
  * Created by mohamed on 4/2/14.
@@ -58,5 +58,15 @@ public class ProjectOperator implements Operator{
             columns = (SelectColumns) par;
         else
             tableDbParameter = par;
+    }
+
+    @Override
+    public void runStep(Page page) {
+
+    }
+
+    @Override
+    public Page getPage() {
+        return null;
     }
 }

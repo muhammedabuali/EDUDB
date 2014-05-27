@@ -1,6 +1,7 @@
 package operators;
 
 import DBStructure.DBRecord;
+import transcations.Page;
 
 import java.util.ArrayList;
 
@@ -35,6 +36,16 @@ public class UpdateStep implements Operator{
         if (par instanceof DBIterator){
             this.iterator = (DBIterator) par;
         }
+    }
+
+    @Override
+    public void runStep(Page page) {
+
+    }
+
+    @Override
+    public Page getPage() {
+        return null;
     }
 
     @Override

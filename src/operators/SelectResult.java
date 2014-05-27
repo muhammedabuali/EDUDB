@@ -16,4 +16,9 @@ public class SelectResult implements DBResult{
     @Override
     public void print() {
     }
+
+    @Override
+    public int numOfParameters() {
+        return 0;
+    }
 }

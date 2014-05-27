@@ -20,6 +20,9 @@ public class DBBufferManager {
     HashMap<PageID, Integer> readersCount;
     HashMap<PageID, Page.PageState> states;
 
+    public DBBufferManager(){
+        init();
+    }
     public void init( ){
         used = new HashMap<>();
         empty = new HashMap<>();
@@ -72,12 +75,14 @@ public class DBBufferManager {
     }
 
     private void allocate(PageID pageId, Page page) {
+        System.out.println("buf" + page);
         page.allocate();
         used.put(pageId, page);
         locks.put(pageId, Page.LockState.free);
         listeners.put(pageId, new ArrayList<Thread>());
         readersCount.put(pageId, 0);
         states.put(pageId, Page.PageState.clean);
+        empty.remove(pageId);
     }
 
     public synchronized void write( PageID pageID, Page page ){
@@ -101,6 +106,10 @@ public class DBBufferManager {
             listeners.put(pageID, new ArrayList<Thread>());
 
         }
+    }
+
+    public void initEmpty(HashMap<PageID, Page> empty) {
+        this.empty = empty;
     }
 
     class LRUThreaad implements Runnable{

@@ -1,10 +1,6 @@
 package transcations;
 
-import operators.DBResult;
-import operators.FilterOperator;
 import operators.Operator;
-import operators.UpdateOp;
-import user_interface.Main;
 
 /**
  * Created by mohamed on 5/20/14.
@@ -25,9 +21,11 @@ public class PageRead extends Step{
     }
 
     @Override
-    public DBResult execute() {
+    public void execute() {
         PageID pageID = PageUtil.getPageID(tableName);
         DBBufferManager bufferManager = DBTransactionManager.getBufferManager();
-        return bufferManager.read(pageID, bModify);
+
+        Page read = bufferManager.read(pageID, bModify);
+        operator.runStep(read);
     }
 }

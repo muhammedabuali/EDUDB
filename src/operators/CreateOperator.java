@@ -1,8 +1,8 @@
 package operators;
 
 import statistics.Schema;
-import FileUtils.FileManager;
 import gudusoft.gsqlparser.stmt.TCreateTableSqlStatement;
+import transcations.Page;
 
 /**
  * Created by mohamed on 4/1/14.
@@ -39,6 +39,16 @@ public class CreateOperator implements Operator {
     @Override
     public void giveParameter(DBParameter par) {
 
+    }
+
+    @Override
+    public void runStep(Page page) {
+
+    }
+
+    @Override
+    public Page getPage() {
+        return null;
     }
 
 

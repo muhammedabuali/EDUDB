@@ -7,6 +7,9 @@ import query_planner.PlanFactory;
 import adipe.translate.TranslationException;
 import gudusoft.gsqlparser.EDbVendor;
 import gudusoft.gsqlparser.TGSqlParser;
+import transcations.DBBufferManager;
+import transcations.DBTransaction;
+import transcations.DBTransactionManager;
 
 /**
  * Created by mohamed on 4/1/14.
@@ -25,7 +28,10 @@ public class Parser {
     public Parser(){
         sqlparser = new TGSqlParser(EDbVendor.dbvoracle);
         planFactory = new PlanFactory();
+        DBBufferManager bufferManager = new DBBufferManager();
+        DBTransactionManager.init(bufferManager);
     }
+
     public void parseSQL(String strSQL) throws TranslationException {
         sqlparser.sqltext = strSQL;
         int ret = sqlparser.parse();
@@ -36,10 +42,11 @@ public class Parser {
                 if (plan == null){
                     return;
                 }
-                if(sqlparser.sqlstatements.get(i).sqlstatementtype == ESqlStatementType.sstselect)
+                DBTransactionManager.run(plan);
+                /*if(sqlparser.sqlstatements.get(i).sqlstatementtype == ESqlStatementType.sstselect)
                     plan.print();
                 else
-                    System.out.println(plan.execute());
+                    System.out.println(plan.execute());*/
             }
         }else{
             System.out.println(sqlparser.getErrormessage());

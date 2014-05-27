@@ -34,6 +34,11 @@ public class DBSimpleiterator implements DBResult, ListIterator, DBIterator{
     }
 
     @Override
+    public int numOfParameters() {
+        return 0;
+    }
+
+    @Override
     public boolean hasNext() {
         return false;
     }

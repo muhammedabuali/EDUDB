@@ -1,6 +1,6 @@
 package operators;
 
-import data_structures.BPlusTree.DBBTreeIterator;
+import transcations.Page;
 
 /**
  * Created by mohamed on 4/13/14.
@@ -17,6 +17,7 @@ public class FilterOperator implements Operator {
      * @uml.associationEnd  
      */
     DBParameter tableDbParameter;
+    private DBIterator iterator;
 
     public FilterOperator() {
 
@@ -24,11 +25,15 @@ public class FilterOperator implements Operator {
 
     @Override
     public DBResult execute() {
-        DBResult dbResult = ((Operator) tableDbParameter).execute();
-        if(dbResult instanceof DBIterator){
-            DBIterator iter = (DBIterator) dbResult;
-            iter.filter(condition);
-            return iter;
+        if (iterator == null){
+            DBResult dbResult = ((Operator) tableDbParameter).execute();
+            if(dbResult instanceof DBIterator){
+                iterator = (DBIterator) dbResult;
+            }
+        }
+        if (iterator != null){
+            iterator.filter(condition);
+            return iterator;
         }
         System.out.println("filter: not iterator\n");
         return null;
@@ -58,9 +63,20 @@ public class FilterOperator implements Operator {
     public void giveParameter(DBParameter par) {
         if(par instanceof DBCond){
             condition = (DBCond) par;
+        }else if(par instanceof DBResult){
+            iterator = (DBIterator) par;
         }else{
             tableDbParameter = par;
         }
     }
 
+    @Override
+    public void runStep(Page page) {
+
+    }
+
+    @Override
+    public Page getPage() {
+        return null;
+    }
 }

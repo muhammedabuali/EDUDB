@@ -65,21 +65,29 @@ public class UpdateOp implements Operator{
 
     public ArrayList<Step> getSteps() {
         ArrayList<Step> out = new ArrayList<>();
-
         PageRead read = new PageRead(this, tableName, true);
         out.add(read);
 
-        PageWrite write = new PageWrite(this, getPage());
+        PageWrite write = new PageWrite(this);
 
         out.add(write);
         return out;
     }
 
-    public void runStep(DBResult result){
-        switch (state){
-            case 0:
-        }
-    }
+    public void runStep(Page page){
+        this.page = page;
+        System.out.println("run");
+        System.out.println(page);
+        FilterOperator filterOperator = new FilterOperator();
+        filterOperator.giveParameter(page.getData());
+        filterOperator.giveParameter(condition);
+        DBIterator iterator = (DBIterator) filterOperator.execute();
+        DBRecord record = (DBRecord) iterator.first();
+        do{
+            record.update(assignments);
+            record = (DBRecord) iterator.next();
+        }while (record != null);
+}
 
     public Page getPage() {
         return page;

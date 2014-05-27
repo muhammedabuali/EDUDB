@@ -5,6 +5,7 @@ import operators.DBResult;
 import statistics.Schema;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
@@ -29,14 +30,19 @@ public class PageUtil {
         if (!initialized){
             initialized = true;
             Set<String> tableNames = Schema.getTableNames();
+            tables = new HashMap<>();
+            DBBufferManager manager = DBTransactionManager.getBufferManager();
             Iterator iter = tableNames.iterator();
+            HashMap<PageID, Page> empty = new HashMap<>();
             while (iter.hasNext()){
                 String name = (String) iter.next();
                 Page page = new Page(name);
                 PageID id = new PageID();
                 page.setPageID(id);
                 tables.put(name, id);
+                empty.put(id, page);
             }
+            manager.initEmpty(empty);
         }
     }
 }

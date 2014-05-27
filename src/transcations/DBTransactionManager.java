@@ -1,7 +1,10 @@
 package transcations;
 
+import operators.Operator;
+import operators.UpdateOp;
 import operators.UpdateOperator;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Iterator;
 
@@ -12,12 +15,20 @@ public class DBTransactionManager {
 
     private static DBBufferManager bufferManager;
 
+    public static void init(DBBufferManager manager){
+        bufferManager = manager;
+    }
+
     public static DBBufferManager getBufferManager() {
         return bufferManager;
     }
 
-    public void init(){
-
+    public static void run(Operator op){
+        if (op instanceof UpdateOp){
+            updateTable((UpdateOp) op);
+        }else {
+            op.print();
+        }
     }
 
     public void createTable(String strTableName,
@@ -39,9 +50,12 @@ public class DBTransactionManager {
 
     }
 
-    public void updateTable(UpdateOperator updateOperator)
-            throws DBAppException{
-        updateOperator.getSteps();
+    public static void updateTable(UpdateOp updateOperator){
+        ArrayList<Step> steps = updateOperator.getSteps();
+        DBTransaction transaction = new DBTransaction();
+        transaction.init(steps);
+        Thread thread = new Thread(transaction);
+        thread.run();
     }
 
     public void deleteFromTable(String strTableName,

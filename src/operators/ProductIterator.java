@@ -27,6 +27,11 @@ public class ProductIterator implements DBResult, DBIterator{
     }
 
     @Override
+    public int numOfParameters() {
+        return 0;
+    }
+
+    @Override
     public String toString(){
         return getIterator().toString();
     }

@@ -22,12 +22,15 @@ public class UpdatePlanner implements Planer{
 
         String tableName = statement.getTargetTable().toString();
 
+        // extract assignments
         for(int i=0;i<statement.getResultColumnList().size();i++){
             TParseTreeNode assignment = statement.getResultColumnList().elementAt(i);
             DBAssignment assignment1 = new DBAssignment(assignment.getStartToken().toString(),
                     assignment.getEndToken().toString(),tableName );
             assignments.add(assignment1);
         }
+
+        // extract conditions
         TExpression expression = statement.getWhereClause().getCondition();
         if (expression.getExpressionType() == EExpressionType.simple_comparison_t){
             String leftString = expression.getLeftOperand().toString();
@@ -38,13 +41,13 @@ public class UpdatePlanner implements Planer{
                 DB_Type.DB_Int constant = new DB_Type.DB_Int(rightString);
                 DBCondition condition = new DBCondition(column1,constant,
                         expression.getOperatorToken().toString().charAt(0));
-                UpdateOperator update = new UpdateOperator(tableName, assignments, condition);
+                UpdateOp update = new UpdateOp(tableName, assignments, condition);
                 return update;
             }else{
                 DBColumn column2 = new DBColumn(rightString, tableName);
                 DBCondition condition = new DBCondition(column1,column2,
                         expression.getOperatorToken().toString().charAt(0));
-                UpdateOperator update = new UpdateOperator(tableName, assignments, condition);
+                UpdateOp update = new UpdateOp(tableName, assignments, condition);
                 return update;
             }
         }
