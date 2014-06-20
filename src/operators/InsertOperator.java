@@ -9,6 +9,9 @@ import gudusoft.gsqlparser.TCustomSqlStatement;
 import gudusoft.gsqlparser.nodes.TResultColumnList;
 import gudusoft.gsqlparser.stmt.TInsertSqlStatement;
 import transcations.Page;
+import transcations.Step;
+
+import java.util.ArrayList;
 
 /**
  * Created by mohamed on 4/11/14.
@@ -56,6 +59,11 @@ public class InsertOperator implements Operator{
     @Override
     public void runStep(Page page) {
 
+    }
+
+    @Override
+    public ArrayList<Step> getSteps() {
+        return null;
     }
 
     @Override

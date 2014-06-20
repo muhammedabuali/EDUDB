@@ -1,6 +1,9 @@
 package operators;
 
 import transcations.Page;
+import transcations.Step;
+
+import java.util.ArrayList;
 
 /**
  * Created by mohamed on 4/13/14.
@@ -60,6 +63,11 @@ public class JoinOperator implements Operator{
     @Override
     public void runStep(Page page) {
 
+    }
+
+    @Override
+    public ArrayList<Step> getSteps() {
+        return null;
     }
 
     @Override

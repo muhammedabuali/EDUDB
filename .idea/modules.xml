@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/EDUDB.iml" filepath="$PROJECT_DIR$/EDUDB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/edudb.iml" filepath="$PROJECT_DIR$/edudb.iml" />
     </modules>
   </component>
 </project>

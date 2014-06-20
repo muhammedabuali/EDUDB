@@ -9,7 +9,6 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) throws TranslationException {
-//        File sqlFile = new File("C:\\Users\\Azza\\Desktop\\workspace\\edudb\\SQLFile.txt");
 
         try {
             ConsoleReader console = new ConsoleReader();

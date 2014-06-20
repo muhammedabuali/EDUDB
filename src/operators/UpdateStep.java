@@ -2,6 +2,7 @@ package operators;
 
 import DBStructure.DBRecord;
 import transcations.Page;
+import transcations.Step;
 
 import java.util.ArrayList;
 
@@ -41,6 +42,11 @@ public class UpdateStep implements Operator{
     @Override
     public void runStep(Page page) {
 
+    }
+
+    @Override
+    public ArrayList<Step> getSteps() {
+        return null;
     }
 
     @Override

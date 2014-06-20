@@ -3,6 +3,9 @@ package operators;
 import statistics.Schema;
 import gudusoft.gsqlparser.stmt.TCreateTableSqlStatement;
 import transcations.Page;
+import transcations.Step;
+
+import java.util.ArrayList;
 
 /**
  * Created by mohamed on 4/1/14.
@@ -44,6 +47,11 @@ public class CreateOperator implements Operator {
     @Override
     public void runStep(Page page) {
 
+    }
+
+    @Override
+    public ArrayList<Step> getSteps() {
+        return null;
     }
 
     @Override
