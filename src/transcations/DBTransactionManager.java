@@ -1,5 +1,6 @@
 package transcations;
 
+import operators.CreateOperator;
 import operators.Operator;
 import operators.UpdateOp;
 import operators.UpdateOperator;
@@ -24,17 +25,23 @@ public class DBTransactionManager {
     }
 
     public static void run(Operator op){
-        if (op instanceof UpdateOp){
-            updateTable((UpdateOp) op);
+        if (op instanceof UpdateOp
+        || op instanceof CreateOperator){
+            runTransaction(op);
         }else {
             op.print();
         }
     }
 
-    public void createTable(String strTableName,
-                            Hashtable<String,String> htblColNameType,
-                            Hashtable<String,String>htblColNameRefs,
-                            String strKeyColName)
+    public static void runTransaction(Operator operator){
+        ArrayList<Step> steps = operator.getSteps();
+        DBTransaction transaction = new DBTransaction();
+        transaction.init(steps);
+        Thread thread = new Thread(transaction);
+        thread.run();
+    }
+
+    public void createTable(CreateOperator operator)
             throws DBAppException{
     }
 

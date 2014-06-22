@@ -4,6 +4,8 @@ import DBStructure.DataManager;
 import adipe.translate.TranslationException;
 import jline.TerminalFactory;
 import jline.console.ConsoleReader;
+import statistics.Schema;
+
 import java.io.IOException;
 
 public class Main {
@@ -20,7 +22,8 @@ public class Main {
                     System.exit(0);
                 }else if(line.equals("clear")){
                     console.clearScreen();
-                }else if( line.equals("commit") ){
+                }else if( line.equals("schema") ){
+                    System.out.println(Schema.getString());
                  }else{
                     parser.parseSQL(line);
                 }

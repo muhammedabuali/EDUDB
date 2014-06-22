@@ -38,7 +38,6 @@ public class Parser {
         if (ret == 0){
             for(int i=0;i<sqlparser.sqlstatements.size();i++){
                 Operator plan = planFactory.makePlan(sqlparser.sqlstatements.get(i));
-                System.out.println("plan ready");
                 if (plan == null){
                     return;
                 }

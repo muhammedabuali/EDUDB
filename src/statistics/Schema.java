@@ -95,4 +95,9 @@ public class Schema {
     public static Set<String> getTableNames() {
         return schema.keySet();
     }
+
+    public static String getString() {
+        initSchema();
+        return schema.toString();
+    }
 }
