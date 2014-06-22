@@ -93,6 +93,7 @@ public class Schema {
     }
 
     public static Set<String> getTableNames() {
+        initSchema();
         return schema.keySet();
     }
 

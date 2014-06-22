@@ -1,9 +1,6 @@
 package transcations;
 
-import operators.CreateOperator;
-import operators.Operator;
-import operators.UpdateOp;
-import operators.UpdateOperator;
+import operators.*;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -26,7 +23,8 @@ public class DBTransactionManager {
 
     public static void run(Operator op){
         if (op instanceof UpdateOp
-        || op instanceof CreateOperator){
+        || op instanceof CreateOperator
+        || op instanceof InsertOperator){
             runTransaction(op);
         }else {
             op.print();
