@@ -33,6 +33,10 @@ public class Page implements DBResult {
 
     }
 
+    public DBIndex getIndex(){
+        return tree;
+    }
+
     public void setLastAccessed() {
         lastAccessed = TimeUtil.getSeconds();
     }

@@ -67,9 +67,7 @@ public class UpdateOp implements Operator{
         ArrayList<Step> out = new ArrayList<>();
         PageRead read = new PageRead(this, tableName, true);
         out.add(read);
-
         PageWrite write = new PageWrite(this);
-
         out.add(write);
         return out;
     }
