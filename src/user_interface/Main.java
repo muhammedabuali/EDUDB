@@ -30,7 +30,7 @@ public class Main {
                  }else{
                     parser.parseSQL(line);
                     long count = 0;
-                    while (count++ < 100000000){
+                    while (count++ < 1000000000){
                         count++;
                     }
                 }

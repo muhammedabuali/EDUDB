@@ -21,6 +21,7 @@ public class FilterOperator implements Operator {
      */
     DBParameter tableDbParameter;
     private DBIterator iterator;
+    private DBIterator iter;
 
     public FilterOperator() {
 
@@ -36,6 +37,7 @@ public class FilterOperator implements Operator {
         }
         if (iterator != null){
             iterator.filter(condition);
+            this.iter = iterator;
             return iterator;
         }
         System.out.println("filter: not iterator\n");
@@ -44,7 +46,7 @@ public class FilterOperator implements Operator {
 
     @Override
     public void print() {
-        System.out.print(execute());
+        System.out.print(this.iter);
     }
     
     @Override
@@ -90,6 +92,6 @@ public class FilterOperator implements Operator {
 
     @Override
     public void release() {
-
+        ( (Operator) tableDbParameter).release();
     }
 }
