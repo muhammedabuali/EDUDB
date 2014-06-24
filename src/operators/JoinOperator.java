@@ -19,7 +19,8 @@ public class JoinOperator implements Operator{
      * @uml.associationEnd  
      */
     DBParameter table2;
-    
+    private ProductIterator iterator;
+
     @Override
     public DBResult execute() {
         DBResult dbResult1 = ((Operator) table1).execute();
@@ -28,12 +29,13 @@ public class JoinOperator implements Operator{
         iter.giveIterator(dbResult1);
         iter.giveIterator(dbResult2);
         iter.finish();
+        this.iterator = iter;
         return iter;
     }
 
     @Override
     public void print() {
-        System.out.print(execute());
+        System.out.print(iterator);
     }
 
     @Override
@@ -77,6 +79,7 @@ public class JoinOperator implements Operator{
 
     @Override
     public void release() {
-
+        ( (Operator) table1).release();
+        ( (Operator) table2).release();
     }
 }
