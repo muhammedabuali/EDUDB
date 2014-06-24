@@ -91,4 +91,9 @@ public class UpdateOp implements Operator{
     public Page getPage() {
         return page;
     }
+
+    @Override
+    public void release() {
+
+    }
 }

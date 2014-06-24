@@ -88,6 +88,11 @@ public class InsertOperator implements Operator{
     }
 
     @Override
+    public void release() {
+
+    }
+
+    @Override
     public void print() {
 
     }

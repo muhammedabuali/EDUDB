@@ -20,4 +20,6 @@ public interface Operator extends DBParameter{
     void runStep(Page page);
     public ArrayList<Step> getSteps();
     Page getPage();
+
+    public void release();
 }

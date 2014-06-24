@@ -55,6 +55,11 @@ public class UpdateStep implements Operator{
     }
 
     @Override
+    public void release() {
+
+    }
+
+    @Override
     public void print() {
 
     }

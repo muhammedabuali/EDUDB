@@ -40,6 +40,11 @@ public class SortOperator implements Operator{
     }
 
     @Override
+    public void release() {
+
+    }
+
+    @Override
     public void print() {
 
     }

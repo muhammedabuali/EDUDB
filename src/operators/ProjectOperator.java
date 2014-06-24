@@ -77,4 +77,9 @@ public class ProjectOperator implements Operator{
     public Page getPage() {
         return null;
     }
+
+    @Override
+    public void release() {
+
+    }
 }

@@ -9,6 +9,7 @@ public class PageRead extends Step{
     private Operator operator;
     private String tableName;
     private boolean bModify;
+    private Page page;
 
     public PageRead(Operator operator, String tableName) {
         this.operator = operator;
@@ -26,6 +27,11 @@ public class PageRead extends Step{
         DBBufferManager bufferManager = DBTransactionManager.getBufferManager();
 
         Page read = bufferManager.read(pageID, bModify);
-        operator.runStep(read);
+        this.page = read;
+        //operator.runStep(read);
+    }
+
+    public Page getPage() {
+        return page;
     }
 }

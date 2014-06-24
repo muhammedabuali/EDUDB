@@ -10,8 +10,11 @@ import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args) throws TranslationException {
+    static Thread mainThread;
 
+    public static void main(String[] args) throws TranslationException, InterruptedException {
+
+        mainThread = Thread.currentThread();
         try {
             ConsoleReader console = new ConsoleReader();
             console.setPrompt("edudb2:) ");
@@ -26,6 +29,10 @@ public class Main {
                     System.out.println(Schema.getString());
                  }else{
                     parser.parseSQL(line);
+                    long count = 0;
+                    while (count++ < 100000000){
+                        count++;
+                    }
                 }
             }
         } catch(IOException e) {

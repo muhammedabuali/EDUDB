@@ -22,21 +22,17 @@ public class DBTransactionManager {
     }
 
     public static void run(Operator op){
-        if (op instanceof UpdateOp
-        || op instanceof CreateOperator
-        || op instanceof InsertOperator){
-            runTransaction(op);
-        }else {
-            op.print();
-        }
+        runTransaction(op);
     }
 
     public static void runTransaction(Operator operator){
-        ArrayList<Step> steps = operator.getSteps();
+        //ArrayList<Step> steps = operator.getSteps();
+        //DBTransaction transaction = new DBTransaction();
+        //transaction.init(steps);
         DBTransaction transaction = new DBTransaction();
-        transaction.init(steps);
+        transaction.init(operator);
         Thread thread = new Thread(transaction);
-        thread.run();
+        thread.start();
     }
 
     public void createTable(CreateOperator operator)
@@ -55,13 +51,13 @@ public class DBTransactionManager {
 
     }
 
-    public static void updateTable(UpdateOp updateOperator){
+    /*public static void updateTable(UpdateOp updateOperator){
         ArrayList<Step> steps = updateOperator.getSteps();
         DBTransaction transaction = new DBTransaction();
         transaction.init(steps);
         Thread thread = new Thread(transaction);
         thread.run();
-    }
+    }*/
 
     public void deleteFromTable(String strTableName,
                                 Hashtable<String,String> htblColNameValue,

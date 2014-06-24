@@ -2,8 +2,8 @@ package operators;
 
 import DBStructure.DBTable;
 import DBStructure.DataManager;
-import transcations.Page;
-import transcations.Step;
+import transcations.*;
+import user_interface.Main;
 
 import java.util.ArrayList;
 
@@ -16,6 +16,7 @@ public class RelationOperator implements Operator{
      * @uml.property  name="tableName"
      */
     private String tableName;
+    private Page page;
 
     /**
      * @param  tableName
@@ -27,13 +28,15 @@ public class RelationOperator implements Operator{
 
     @Override
     public DBResult execute() {
-        DBTable table = DataManager.getTable(tableName);
-        return table.getData();
+        PageRead read = new PageRead(this, tableName, false);
+        read.execute();
+        this.page = read.getPage();
+        return read.getPage().getData();
     }
 
     @Override
     public void print() {
-        System.out.print(execute());
+        System.out.println(this.page.getData());
     }
     
     @Override
@@ -70,6 +73,12 @@ public class RelationOperator implements Operator{
 
     @Override
     public Page getPage() {
-        return null;
+        return page;
+    }
+
+    @Override
+    public void release() {
+        DBBufferManager manager = DBTransactionManager.getBufferManager();
+        manager.releasePage(page.getPageId());
     }
 }
