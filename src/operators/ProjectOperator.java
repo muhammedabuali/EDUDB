@@ -20,6 +20,7 @@ public class ProjectOperator implements Operator{
      * @uml.associationEnd  
      */
     DBParameter tableDbParameter;
+    private DBIterator iterator;
 
     public ProjectOperator() {
     }
@@ -30,6 +31,7 @@ public class ProjectOperator implements Operator{
         if(dbResult instanceof DBIterator){
             DBIterator iter = (DBIterator) dbResult;
             iter.project(columns);
+            this.iterator = iter;
             return iter;
         }
         System.out.println("project: 24 not iterator\n");
@@ -38,7 +40,7 @@ public class ProjectOperator implements Operator{
 
     @Override
     public void print() {
-        System.out.print(execute());
+        System.out.print(iterator);
     }
 
     @Override
@@ -80,6 +82,6 @@ public class ProjectOperator implements Operator{
 
     @Override
     public void release() {
-
+        ( (Operator) tableDbParameter).release();
     }
 }
