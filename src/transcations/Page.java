@@ -60,7 +60,7 @@ public class Page implements DBResult {
         Page page = new Page();
         page.id = id;
         // to make dbbuffermanager main work comment line below
-        //page.tree = tree.getCopy();
+        page.tree = tree.getCopy();
         return this;
     }
 
@@ -88,6 +88,10 @@ public class Page implements DBResult {
     @Override
     public int numOfParameters() {
         return 0;
+    }
+
+    public DBIndex getTree() {
+        return tree;
     }
 
     public enum PageState{

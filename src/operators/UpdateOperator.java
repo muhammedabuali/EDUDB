@@ -2,9 +2,7 @@ package operators;
 
 import DBStructure.DBRecord;
 import data_structures.BPlusTree.DBBTreeIterator;
-import transcations.Page;
-import transcations.PageRead;
-import transcations.Step;
+import transcations.*;
 
 import java.util.ArrayList;
 
@@ -16,6 +14,7 @@ public class UpdateOperator implements Operator{
     private  String tableName;
     private  ArrayList<DBAssignment> assignments;
     private DBCond condition;
+    private Page page;
 
     public UpdateOperator(String tableName, ArrayList<DBAssignment> assignments, DBCondition condition) {
         this.tableName = tableName;
@@ -26,17 +25,20 @@ public class UpdateOperator implements Operator{
     @Override
     public DBResult execute() {
         FilterOperator filterOperator = new FilterOperator();
-        RelationOperator relationOperator = new RelationOperator();
+        RelationOperator relationOperator = new RelationOperator(true);
         relationOperator.setTableName(tableName);
         filterOperator.giveParameter(relationOperator);
         filterOperator.giveParameter(condition);
         DBBTreeIterator resultIterator = (DBBTreeIterator) filterOperator.execute();
+        this.page = relationOperator.getPage();
         DBRecord record = (DBRecord) resultIterator.first();
         do{
             record.update(assignments);
             record = (DBRecord) resultIterator.next();
         }while (record != null);
         resultIterator.write();
+        PageWrite write = new PageWrite(this);
+        write.execute();
         return resultIterator;
     }
 
@@ -57,17 +59,18 @@ public class UpdateOperator implements Operator{
 
     @Override
     public Page getPage() {
-        return null;
+        return page;
     }
 
     @Override
     public void release() {
-
+        DBBufferManager manager = DBTransactionManager.getBufferManager();
+        manager.releasePage(page.getPageId());
     }
 
     @Override
     public void print() {
-
+        System.out.println(page.getData());
     }
 
     @Override

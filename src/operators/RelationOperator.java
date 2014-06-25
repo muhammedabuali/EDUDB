@@ -12,11 +12,20 @@ import java.util.ArrayList;
  */
 public class RelationOperator implements Operator{
 
+    private final boolean bModify;
     /**
      * @uml.property  name="tableName"
      */
     private String tableName;
     private Page page;
+
+    public RelationOperator(){
+        bModify = false;
+    }
+
+    public RelationOperator(boolean b) {
+        bModify = true;
+    }
 
     /**
      * @param  tableName
@@ -28,7 +37,7 @@ public class RelationOperator implements Operator{
 
     @Override
     public DBResult execute() {
-        PageRead read = new PageRead(this, tableName, false);
+        PageRead read = new PageRead(this, tableName, bModify);
         read.execute();
         this.page = read.getPage();
         return read.getPage().getData();

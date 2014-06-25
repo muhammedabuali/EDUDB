@@ -8,10 +8,7 @@ import dataTypes.DB_Type;
 import gudusoft.gsqlparser.TCustomSqlStatement;
 import gudusoft.gsqlparser.nodes.TResultColumnList;
 import gudusoft.gsqlparser.stmt.TInsertSqlStatement;
-import transcations.Page;
-import transcations.PageRead;
-import transcations.PageWrite;
-import transcations.Step;
+import transcations.*;
 
 import java.util.ArrayList;
 
@@ -36,18 +33,18 @@ public class InsertOperator implements Operator{
     @Override
     public DBResult execute() {
         System.out.println("executing insert operation");
-        DBTable table = DataManager.getTable(statement.getTargetTable().toString());
-        if(table == null){
-            System.out.println("table doesnot exist");
-            return null;
-        }
-        DBIndex index = table.getPrimaryIndex();
-        // TODO value may be null
+        PageRead read = new PageRead(this, tableName, true);
+        read.execute();
+        this.page = read.getPage();
+        DBIndex index = (DBIndex) this.page.getTree();
+
         TResultColumnList values = statement.getValues().getMultiTarget(0).getColumnList();
-        DBRecord record = new DBRecord(values, table.getTableName());
+        DBRecord record = new DBRecord(values, tableName);
         int key = ( (DB_Type.DB_Int) record.getValue(0) ).getNumber();
         index.insert(key, record);
         index.write();
+        PageWrite write = new PageWrite(this);
+        write.execute();
         return null;
     }
 
@@ -89,12 +86,13 @@ public class InsertOperator implements Operator{
 
     @Override
     public void release() {
-
+        DBBufferManager manager = DBTransactionManager.getBufferManager();
+        manager.releasePage(page.getPageId());
     }
 
     @Override
     public void print() {
-
+        System.out.println(page.getData());
     }
 
     @Override

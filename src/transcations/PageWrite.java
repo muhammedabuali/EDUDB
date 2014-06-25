@@ -23,6 +23,5 @@ public class PageWrite extends Step{
         Page page = operator.getPage();
         DBBufferManager bufferManager = DBTransactionManager.getBufferManager();
         bufferManager.write(page.getPageId(), page);
-        page.print();
     }
 }

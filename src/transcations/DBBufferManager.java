@@ -95,7 +95,7 @@ public class DBBufferManager {
         readersCount.put(pageID, readersCount.get(pageID) -1 );
         if (locks.get(pageID) == Page.LockState.write ||
                 (locks.get(pageID) == Page.LockState.read && readersCount.get(pageID) == 0) ){
-            System.out.println("page "+ pageID + "released");
+            System.out.println("page released");
             locks.put(pageID, Page.LockState.free);
             ArrayList<Thread> threads = listeners.get(pageID);
             for (Thread t: threads){

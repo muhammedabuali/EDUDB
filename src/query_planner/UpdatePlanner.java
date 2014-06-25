@@ -41,13 +41,13 @@ public class UpdatePlanner implements Planer{
                 DB_Type.DB_Int constant = new DB_Type.DB_Int(rightString);
                 DBCondition condition = new DBCondition(column1,constant,
                         expression.getOperatorToken().toString().charAt(0));
-                UpdateOp update = new UpdateOp(tableName, assignments, condition);
+                UpdateOperator update = new UpdateOperator(tableName, assignments, condition);
                 return update;
             }else{
                 DBColumn column2 = new DBColumn(rightString, tableName);
                 DBCondition condition = new DBCondition(column1,column2,
                         expression.getOperatorToken().toString().charAt(0));
-                UpdateOp update = new UpdateOp(tableName, assignments, condition);
+                UpdateOperator update = new UpdateOperator(tableName, assignments, condition);
                 return update;
             }
         }
