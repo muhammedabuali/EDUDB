@@ -3,6 +3,7 @@ package relational_algebra;
 import java.util.ArrayList;
 import java.util.Stack;
 
+import adipe.translate.Queries;
 import dataTypes.DB_Type;
 import operators.AndCondition;
 import operators.DBCond;
@@ -20,7 +21,6 @@ import operators.SortOperator;
 import ra.Term;
 import DBStructure.DBColumn;
 import adipe.translate.TranslationException;
-import adipe.translate.sql.Queries;
 import adipe.translate.sql.parser.SqlParser;
 import statistics.Schema;
 
@@ -43,7 +43,7 @@ public class Translator {
                     new ArrayList<String>(Arrays.asList("ra", "rb", "rc", "rd")));
             schema.put("t", new ArrayList<String>(Arrays.asList("t2", "t3")));*/
 
-            Term ra = Queries.getRaOf(Schema.getSchema(), sqlQuery);
+            Term ra = Queries.getRaOf(adipe.translate.ra.Schema.create(Schema.getSchema()), sqlQuery);
             return Translator.extractOperations(ra.toString());
         } catch (TranslationException e) {
             e.printStackTrace();

@@ -1,8 +1,7 @@
 <component name="libraryTable">
   <library name="gsp">
     <CLASSES>
-      <root url="jar://$USER_HOME$/libs/java/gsp.jar!/" />
-      <root url="jar://$USER_HOME$/libs/java/jline-2.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/gsp.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

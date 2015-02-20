@@ -1,8 +1,5 @@
 package transcations;
 
-import sun.org.mozilla.javascript.Synchronizer;
-
-import javax.print.DocFlavor;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;

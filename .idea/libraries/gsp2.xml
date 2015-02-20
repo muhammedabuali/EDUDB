@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="gsp">
+    <CLASSES />
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/libs/gsp_java_trial_1_5_3_0.zip!/dist/javadoc" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/libs/gsp_java_trial_1_5_3_0.zip!/dist" />
+    </SOURCES>
+  </library>
+</component>
